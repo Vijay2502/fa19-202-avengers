@@ -10,7 +10,7 @@ public class Player extends Actor
 { 
     public Player()
     {
-        GreenfootImage up = new GreenfootImage("/Users/vijayghanshani/Downloads/thor.png");
+        GreenfootImage up = new GreenfootImage("./images/thor.png");
         up.scale(150,150);
         setImage(up);
         //GreenfootImage down = new GreenfootImage("/Users/vijayghanshani/Downloads/cap marvel.png");

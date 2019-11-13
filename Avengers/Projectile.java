@@ -14,7 +14,7 @@ public class Projectile extends Actor
      */
     public Projectile()
     {
-        GreenfootImage up = new GreenfootImage("/Users/vijayghanshani/Downloads/thor hammer.png");
+        GreenfootImage up = new GreenfootImage("./images/thor hammer.png");
         up.scale(40,40);
         setImage(up);
     }
