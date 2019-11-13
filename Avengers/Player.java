@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Player extends Actor
 { 
+    int time = 0;
     public Player()
     {
         GreenfootImage up = new GreenfootImage("./images/thor.png");
@@ -45,5 +46,12 @@ public class Player extends Actor
     {
         if(Greenfoot.mousePressed(null))
         getWorld().addObject(new Projectile(), getX(), getY());
+    }
+    
+    public void youLose() {
+        if (isTouching(Elf.class)) {
+            getWorld().showText("You Lose ! You lasted " + (time / 60) + " seconds", getWorld().getWidth()/ 2, getWorld().getHeight() / 2);
+            Greenfoot.stop();
+        }
     }
 }
