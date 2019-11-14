@@ -11,7 +11,9 @@ public class Elf extends Actor
     int health = 2;
     private int rotation = 0;
     Player player;
-    public Elf(Player mainPlayer) {
+    Counter counter;
+    public Elf(Player mainPlayer, Counter counter) {
+        this.counter = counter;
         player = mainPlayer;
         setImage("elf.png");
         getImage().scale(80,80);
@@ -46,7 +48,8 @@ public class Elf extends Actor
         }
         
         if (health == 0) {
-            getWorld().removeObject(this);
+            counter.score++;
+           getWorld().removeObject(this);
         }
     }
 }

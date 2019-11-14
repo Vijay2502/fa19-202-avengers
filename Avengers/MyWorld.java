@@ -12,6 +12,7 @@ public class MyWorld extends World
     int spawnSpeed = 50;
     int randomSpawn;
     public Player mainPlayer = new Player();
+    Counter counter = new Counter();
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -23,6 +24,7 @@ public class MyWorld extends World
         this.setBackground( new GreenfootImage("./images/ThorSpaceImage.png"));
        
         addObject(mainPlayer, getWidth() / 2, getHeight() / 2);
+        addObject(counter, 100, 80);
        
     }
     
@@ -31,11 +33,11 @@ public class MyWorld extends World
         {
             randomSpawn = Greenfoot.getRandomNumber(5);
             switch (randomSpawn) {
-                case 0: addObject(new Elf(mainPlayer), getWidth(), 0); break;
-                case 1: addObject(new Elf(mainPlayer), getWidth(), getHeight() / 4); break;
-                case 2: addObject(new Elf(mainPlayer), getWidth(), getHeight() / 2); break;
-                case 3: addObject(new Elf(mainPlayer), getWidth(), 3 *getHeight() / 4); break;
-                case 4: addObject(new Elf(mainPlayer), getWidth(), getHeight()); break;
+                case 0: addObject(new Elf(mainPlayer, counter), getWidth(), 0); break;
+                case 1: addObject(new Elf(mainPlayer, counter), getWidth(), getHeight() / 4); break;
+                case 2: addObject(new Elf(mainPlayer, counter), getWidth(), getHeight() / 2); break;
+                case 3: addObject(new Elf(mainPlayer, counter), getWidth(), 3 *getHeight() / 4); break;
+                case 4: addObject(new Elf(mainPlayer, counter), getWidth(), getHeight()); break;
             }            
         }
     }
