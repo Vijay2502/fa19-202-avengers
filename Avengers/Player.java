@@ -40,6 +40,7 @@ public class Player extends Actor
            setLocation(getX(),getY()+3);
         }
         fireProjectile();
+        youLose();
         
     }    
     public void fireProjectile()

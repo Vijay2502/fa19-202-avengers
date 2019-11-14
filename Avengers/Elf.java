@@ -9,28 +9,32 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Elf extends Actor
 {
     int health = 2;
+    private int rotation = 0;
     Player player;
     public Elf(Player mainPlayer) {
         player = mainPlayer;
         setImage("elf.png");
         getImage().scale(80,80);
+        
     }
     
-    /**
-     * Act - do whatever the Elf wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+   
     public void act() 
     {
+        
         moveAround();
+       
         hitByProjectile();
     }    
     
     public void moveAround() {
-        move(1);
         turnTowards(player.getX(), player.getY());
-        //setRotation(0);
+        move(1);
+        setRotation(getRotation() - 180);
+        
     }
+    
+
     
     public void hitByProjectile() {
         Actor projectile = getOneIntersectingObject(Projectile.class);
