@@ -18,6 +18,7 @@ public class IronMan extends Actor
     }
     public void act() 
     {
+        time++;
         if(Greenfoot.isKeyDown("left"))
         { 
             move(-3);
@@ -52,5 +53,15 @@ public class IronMan extends Actor
             getWorld().showText("You Lose ! You lasted " + (time / 60) + " seconds", getWorld().getWidth()/ 2, getWorld().getHeight() / 2);
             Greenfoot.stop();
         }
+    }
+    
+    public boolean hitByEnemy() {
+        Actor elf = getOneObjectAtOffset(0,0, Elf.class);
+        if (elf != null) {
+            return true;
+        }
+        
+        else
+        return false;
     }
 }

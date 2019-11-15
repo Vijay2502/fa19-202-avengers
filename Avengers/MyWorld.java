@@ -13,6 +13,7 @@ public class MyWorld extends World
     int randomSpawn;
     public Player mainPlayer = new Player();
     Counter counter = new Counter();
+    HealthBar healthbar = new HealthBar();
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -25,9 +26,13 @@ public class MyWorld extends World
        
         addObject(mainPlayer, getWidth() / 2, getHeight() / 2);
         addObject(counter, 100, 80);
-       
+        addObject(healthbar, mainPlayer.getX()- 5, mainPlayer.getY() - 50);
     }
     
+    public Player getPlayer()
+    {
+        return mainPlayer;
+    }
     public void spawnEnemies () {
         if (count % spawnSpeed == 0)
         {
