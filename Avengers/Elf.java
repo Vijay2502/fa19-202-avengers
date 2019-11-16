@@ -40,11 +40,18 @@ public class Elf extends Actor
     
     public void hitByProjectile() {
         Actor projectile = getOneIntersectingObject(Projectile.class);
+        Actor superprojectile = getOneIntersectingObject(SuperProjectile.class);
         
         if(projectile != null)
         {
             health--;
             getWorld().removeObject(projectile);
+        }
+        if(superprojectile != null)
+        {
+            counter.score++;
+            getWorld().removeObject(superprojectile);
+            getWorld().removeObject(this);
         }
         
         if (health == 0) {

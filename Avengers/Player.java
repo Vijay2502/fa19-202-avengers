@@ -11,6 +11,7 @@ public class Player extends Actor
     // Need to set up oberver pattern for superpower.
     int time = 0;
     int supertimer = 0;
+    boolean firingsuperpower = false;
     Superpower superpower;
     public Player()
     {
@@ -49,26 +50,35 @@ public class Player extends Actor
         }
         fireProjectile();
         hitByEnemy();
-        
+        fireSuperpower();
     }    
     public void fireProjectile()
     {
         if(Greenfoot.mousePressed(null))
         getWorld().addObject(new Projectile(), getX(), getY());
+    } 
+    public void fireSuperpower()
+    {
+        if (!firingsuperpower)
+            return;
+        if (supertimer < 300)
+        {
+            if (supertimer % 10 == 0)
+            {
+                World world = getWorld();
+                world.addObject(new SuperProjectile(), Greenfoot.getRandomNumber(world.getWidth()), 0);
+            }
+            supertimer++;
+        }
+        else
+        {
+            supertimer = 0;
+            firingsuperpower = false;
+        }
     }
     public void superpowerUsed()
     {
-        if (supertimer < 30)
-        {
-            getWorld().addObject(new SuperProjectile(), getX() + (int)Math.random() * 200, getY() + (int)Math.random() * 200);
-            getWorld().addObject(new SuperProjectile(), getX() + (int)Math.random() * 200, getY() + (int)Math.random() * 200);
-            getWorld().addObject(new SuperProjectile(), getX() + (int)Math.random() * 200, getY() + (int)Math.random() * 200);
-            getWorld().addObject(new SuperProjectile(), getX() + (int)Math.random() * 200, getY() + (int)Math.random() * 200);
-            getWorld().addObject(new SuperProjectile(), getX() + (int)Math.random() * 200, getY() + (int)Math.random() * 200);
-            getWorld().addObject(new SuperProjectile(), getX() + (int)Math.random() * 200, getY() + (int)Math.random() * 200);
-            getWorld().addObject(new SuperProjectile(), getX(), getY());
-            supertimer++;
-        }
+        firingsuperpower = true;
     }
     public void youLose() {
         if (isTouching(Elf.class)) {

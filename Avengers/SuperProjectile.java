@@ -18,7 +18,7 @@ public class SuperProjectile extends Actor
     public void act() 
     {
         
-        move(1);
+        move(10);
         if (isAtEdge()) getWorld().removeObject(this);
     }      
 }
