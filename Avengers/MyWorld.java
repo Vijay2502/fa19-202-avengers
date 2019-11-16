@@ -11,17 +11,19 @@ public class MyWorld extends World
     int count = 0;
     int spawnSpeed = 50;
     int randomSpawn;
-    public Player mainPlayer = new Player();
+    public Player mainPlayer;
     Counter counter = new Counter();
     HealthBar healthbar = new HealthBar();
     /**
      * Constructor for objects of class MyWorld.
      * 
      */
-    public MyWorld()
-    {    
+    public MyWorld(Player player)
+    { 
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1200, 800, 1); 
+        
+        this.mainPlayer = player;
         this.setBackground( new GreenfootImage("./images/ThorSpaceImage.png"));
        
         addObject(mainPlayer, getWidth() / 2, getHeight() / 2);
