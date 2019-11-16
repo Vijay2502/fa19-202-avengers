@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class IronMan extends Actor
+public class IronMan extends Player
 {
     int time = 0;
     public IronMan()

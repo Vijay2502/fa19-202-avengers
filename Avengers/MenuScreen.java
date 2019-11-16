@@ -49,10 +49,37 @@ public class MenuScreen extends World
         ((Actor)blackWidowOption).setImage("images/MenuBlack.jpg");
         ((Actor)hulkOption).setImage("images/MenuHulk.jpg");
         ((Actor)hawkEyeOption).setImage("images/MenuHawk.jpg");
+        
         thorMenuOption.setCommand(thorCommand);
+        ironManOption.setCommand(ironManCommand);
+        capMenuOption.setCommand(capCommand);
+        blackWidowOption.setCommand(blackWidowCommand);
+        hulkOption.setCommand(hulkCommand);
+        hawkEyeOption.setCommand(hawkCommand);
+        
         thorCommand.setReceiver(() -> {
             //get world from factory
             // inside factory get player from another factory
+            Greenfoot.setWorld(new MyWorld(new Player()));
+        });
+        
+        ironManCommand.setReceiver(() -> {
+            Greenfoot.setWorld(new MyWorld(new IronMan()));
+        });
+        
+        capCommand.setReceiver(() -> {
+            Greenfoot.setWorld(new MyWorld(new Player()));
+        });
+        
+        blackWidowCommand.setReceiver(() -> {
+            Greenfoot.setWorld(new MyWorld(new Player()));
+        });
+        
+        hulkCommand.setReceiver(() -> {
+            Greenfoot.setWorld(new MyWorld(new Player()));
+        });
+        
+        hawkCommand.setReceiver(() -> {
             Greenfoot.setWorld(new MyWorld(new Player()));
         });
         
