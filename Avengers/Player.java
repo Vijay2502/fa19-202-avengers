@@ -8,13 +8,20 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Player extends Actor
 { 
+    // Need to set up oberver pattern for superpower.
     int time = 0;
+    int supertimer = 0;
+    Superpower superpower;
     public Player()
     {
         GreenfootImage up = new GreenfootImage("./images/thor.png");
         up.scale(150,150);
         setImage(up);
         //GreenfootImage down = new GreenfootImage("/Users/vijayghanshani/Downloads/cap marvel.png");
+    }
+    public void setSuperPower(Superpower superpower)
+    {
+        this.superpower = superpower;
     }
         
     /**
@@ -49,7 +56,20 @@ public class Player extends Actor
         if(Greenfoot.mousePressed(null))
         getWorld().addObject(new Projectile(), getX(), getY());
     }
-    
+    public void superpowerUsed()
+    {
+        if (supertimer < 30)
+        {
+            getWorld().addObject(new SuperProjectile(), getX() + (int)Math.random() * 200, getY() + (int)Math.random() * 200);
+            getWorld().addObject(new SuperProjectile(), getX() + (int)Math.random() * 200, getY() + (int)Math.random() * 200);
+            getWorld().addObject(new SuperProjectile(), getX() + (int)Math.random() * 200, getY() + (int)Math.random() * 200);
+            getWorld().addObject(new SuperProjectile(), getX() + (int)Math.random() * 200, getY() + (int)Math.random() * 200);
+            getWorld().addObject(new SuperProjectile(), getX() + (int)Math.random() * 200, getY() + (int)Math.random() * 200);
+            getWorld().addObject(new SuperProjectile(), getX() + (int)Math.random() * 200, getY() + (int)Math.random() * 200);
+            getWorld().addObject(new SuperProjectile(), getX(), getY());
+            supertimer++;
+        }
+    }
     public void youLose() {
         if (isTouching(Elf.class)) {
             getWorld().showText("You Lose ! You lasted " + (time / 60) + " seconds", getWorld().getWidth()/ 2, getWorld().getHeight() / 2);
