@@ -14,6 +14,7 @@ public class MyWorld extends World
     public Player mainPlayer;
     Counter counter = new Counter();
     HealthBar healthbar = new HealthBar();
+    Superpower superbar;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -24,11 +25,14 @@ public class MyWorld extends World
         super(1200, 800, 1); 
         
         this.mainPlayer = player;
+        this.mainPlayer.setSuperPower(superbar);
+        superbar = new Superpower(player);
         this.setBackground( new GreenfootImage("./images/ThorSpaceImage.png"));
        
         addObject(mainPlayer, 100, getHeight() / 2);
         addObject(counter, 100, 80);
         addObject(healthbar, mainPlayer.getX()- 5, mainPlayer.getY() - 50);
+        addObject(superbar, mainPlayer.getX()+ 10, mainPlayer.getY() - 80);
     }
     
     public Player getPlayer()
