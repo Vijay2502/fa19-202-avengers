@@ -26,7 +26,7 @@ public class MyWorld extends World
         this.mainPlayer = player;
         this.setBackground( new GreenfootImage("./images/ThorSpaceImage.png"));
        
-        addObject(mainPlayer, getWidth() / 2, getHeight() / 2);
+        addObject(mainPlayer, 100, getHeight() / 2);
         addObject(counter, 100, 80);
         addObject(healthbar, mainPlayer.getX()- 5, mainPlayer.getY() - 50);
     }
