@@ -1,13 +1,14 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
 /**
  * Write a description of class PlayerStateMachine here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class PlayerStateMachine  
+public class PlayerStateMachine extends Actor
 {
     // instance variables - replace the example below with your own
-    private Player player;
     private AnimationState current;
     private int timer = 0;
     private int animationtime = 0;
@@ -15,9 +16,10 @@ public class PlayerStateMachine
     /**
      * Constructor for objects of class PlayerStateMachine
      */
-    public PlayerStateMachine()
+    public PlayerStateMachine(Player player)
     {
-        current = new IdleState(player);
+        current = new IdleState(this, player);
+        current.initAnimation();
     }
     public void attack()
     {
@@ -34,14 +36,14 @@ public class PlayerStateMachine
     public void setAnimationState(AnimationState newstate)
     {
         current = newstate;
-        current.animationTime();
+        current.initAnimation();
     }
     public void setAnimationTime(int time){
         timerstart = true;
         timer = 0;
         animationtime = time;
     }
-    public void animationTimer()
+    private void animationTimer()
     {
         if (!timerstart)
             return;
@@ -53,6 +55,21 @@ public class PlayerStateMachine
         else
         {
             timer++;
+        }
+    }
+    public void act() 
+    {
+        if(Greenfoot.isKeyDown("space"))
+        { 
+           attack();
+        }
+        else if(Greenfoot.isKeyDown("x"))
+        { 
+           superPower();
+        }
+        else if(Greenfoot.isKeyDown("shift"))
+        { 
+           flipHorizontally();
         }
     }
 }

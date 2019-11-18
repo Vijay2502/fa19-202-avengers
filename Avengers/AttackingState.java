@@ -1,14 +1,14 @@
 /**
- * Write a description of class IdleState here.
+ * Write a description of class AttackingState here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class IdleState implements AnimationState
+public class AttackingState implements AnimationState
 {
     private PlayerStateMachine psm;
     private Player player;
-    public IdleState (PlayerStateMachine psm, Player player)
+    public AttackingState (PlayerStateMachine psm, Player player)
     {
         this.psm = psm;
         this.player = player;
@@ -27,8 +27,11 @@ public class IdleState implements AnimationState
     }
     public void initAnimation()
     {
+        player.fireProjectile();
+        psm.setAnimationTime(30);
     }
     public void autoStateChange()
     {
+        psm.setAnimationState(new IdleState(psm, player));
     }
 }
