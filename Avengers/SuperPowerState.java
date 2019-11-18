@@ -27,6 +27,7 @@ public class SuperPowerState implements AnimationState
     }
     public void initAnimation()
     {
+        player.setImage(player.getSuperPowerImage());
         player.fireSuperPower();
         psm.setAnimationTime(30);
     }

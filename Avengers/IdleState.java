@@ -27,6 +27,7 @@ public class IdleState implements AnimationState
     }
     public void initAnimation()
     {
+        player.setImage(player.getIdleImage());
     }
     public void autoStateChange()
     {

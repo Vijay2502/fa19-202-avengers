@@ -27,6 +27,7 @@ public class AttackingState implements AnimationState
     }
     public void initAnimation()
     {
+        player.setImage(player.getAttackingImage());
         player.fireProjectile();
         psm.setAnimationTime(30);
     }
