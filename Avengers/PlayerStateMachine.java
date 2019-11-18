@@ -9,7 +9,6 @@ public class PlayerStateMachine
     // instance variables - replace the example below with your own
     private Player player;
     private AnimationState current;
-    private AnimationState next;
     private int timer = 0;
     private int animationtime = 0;
     private boolean timerstart = false;
@@ -18,6 +17,7 @@ public class PlayerStateMachine
      */
     public PlayerStateMachine()
     {
+        current = new IdleState(player);
     }
     public void attack()
     {
@@ -31,11 +31,15 @@ public class PlayerStateMachine
     {
         current.superPower();
     }
-    public void setAnimationStateAfter(AnimationState newstate, int time)
+    public void setAnimationState(AnimationState newstate)
     {
-        next = newstate;
-        animationtime = time;
+        current = newstate;
+        current.animationTime();
+    }
+    public void setAnimationTime(int time){
         timerstart = true;
+        timer = 0;
+        animationtime = time;
     }
     public void animationTimer()
     {
@@ -43,8 +47,12 @@ public class PlayerStateMachine
             return;
         if (timer >= animationtime)
         {
-            current = next;
-            
+            current.autoStateChange();
+            timerstart = false;
+        }
+        else
+        {
+            timer++;
         }
     }
 }
