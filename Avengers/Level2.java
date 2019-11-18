@@ -1,13 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MyWorld here.
+ * Write a description of class Level2 here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class MyWorld extends World
-{ 
+public class Level2 extends World
+{
     int count = 0;
     int spawnSpeed = 50;
     int randomSpawn;
@@ -16,28 +16,30 @@ public class MyWorld extends World
     HealthBar healthbar = new HealthBar();
     Superpower superbar;
     /**
-     * Constructor for objects of class MyWorld.
+     * Constructor for objects of class Level2.
      * 
      */
-    public MyWorld(Player player)
-    { 
-        super(1200, 800, 1); 
-        
+    public Level2(Player player)
+    {    
+        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        super(1200, 800, 1);
+
         this.mainPlayer = player;
         this.mainPlayer.setSuperPower(superbar);
         superbar = new Superpower(player);
-        this.setBackground( new GreenfootImage("./images/ThorSpaceImage.png"));
-       
+        this.setBackground( new GreenfootImage("./images/SoulStoneLevel.png"));
+
         addObject(mainPlayer, 100, getHeight() / 2);
         addObject(counter, 100, 80);
         addObject(healthbar, mainPlayer.getX()- 5, mainPlayer.getY() - 50);
         addObject(superbar, mainPlayer.getX()+ 10, mainPlayer.getY() - 80);
     }
-    
+
     public Player getPlayer()
     {
         return mainPlayer;
     }
+
     public void spawnEnemies () {
         if (count % spawnSpeed == 0)
         {
@@ -52,15 +54,8 @@ public class MyWorld extends World
         }
     }
 
-    public void nextLevelProgressCheck(){
-        if(counter.score == 20){
-            Greenfoot.setWorld(new Level2(new Player()));
-        }
-    }
-    
     public void act() {
         count++;
         spawnEnemies();
-        nextLevelProgressCheck();
     }
 }
