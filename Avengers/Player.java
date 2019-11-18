@@ -15,10 +15,6 @@ public class Player extends Actor
     boolean superpowerReady = false;
     public Player()
     {
-        GreenfootImage up = new GreenfootImage("./images/thor.png");
-        up.scale(150,150);
-        setImage(up);
-        //GreenfootImage down = new GreenfootImage("/Users/vijayghanshani/Downloads/cap marvel.png");
     }
     public void superpowerReady()
     {
