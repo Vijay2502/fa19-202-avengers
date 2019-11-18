@@ -14,7 +14,8 @@ public class Level2 extends World
     public Player mainPlayer;
     Counter counter = new Counter();
     HealthBar healthbar = new HealthBar();
-    Superpower superbar;
+    SuperPowerBar superbar;
+    PlayerStateMachine psm;
     /**
      * Constructor for objects of class Level2.
      * 
@@ -25,11 +26,12 @@ public class Level2 extends World
         super(1200, 800, 1);
 
         this.mainPlayer = player;
-        this.mainPlayer.setSuperPower(superbar);
-        superbar = new Superpower(player);
+        superbar = new SuperPowerBar(player);
+        psm = new PlayerStateMachine(player);
         this.setBackground( new GreenfootImage("./images/SoulStoneLevel.png"));
 
         addObject(mainPlayer, 100, getHeight() / 2);
+        addObject(psm, 0, 0);
         addObject(counter, 100, 80);
         addObject(healthbar, mainPlayer.getX()- 5, mainPlayer.getY() - 50);
         addObject(superbar, mainPlayer.getX()+ 10, mainPlayer.getY() - 80);
