@@ -20,3 +20,14 @@ Work with the various character models (heroes and enemies) to be rendered in ga
 
 ## Blockers
 None 
+
+# 17th Nov
+
+## What tasks did I work on?
+Found character models for the game (heroes / enemies / boss). Various images were needed for animating the characters.
+
+## What am I Planning to work next?
+Work towards creating various enemy classes
+
+## Blockers
+Doubts related to enemy spawns for each level 
