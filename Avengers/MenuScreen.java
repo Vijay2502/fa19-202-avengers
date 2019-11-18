@@ -80,7 +80,7 @@ public class MenuScreen extends World
         });
         
         hawkCommand.setReceiver(() -> {
-            Greenfoot.setWorld(new MyWorld(new Player()));
+            Greenfoot.setWorld(new MyWorld(new Hawkeye()));
         });
         
         addObject((Actor)thorMenuOption, 111, 402);       

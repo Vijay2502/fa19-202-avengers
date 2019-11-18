@@ -1,19 +1,23 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class IronMan here.
+ * Write a description of class Hawkeye here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class IronMan extends Player
+public class Hawkeye extends Player
 {
-    public IronMan()
+    /**
+     * Act - do whatever the Hawkeye wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public Hawkeye() 
     {
-        GreenfootImage up = new GreenfootImage("./images/iron man.png");
+        GreenfootImage up = new GreenfootImage("./images/hawkeye.png");
         up.scale(150,150);
-        setImage(up);
-    }
+        setImage(up); 
+    }  
     public void act() 
     {
         super.act();
@@ -21,7 +25,7 @@ public class IronMan extends Player
     public void displayInfo() {
         String name = this.getClass().getName();
         getWorld().showText(name, 1100, 55);
-        GreenfootImage character = new GreenfootImage("./images/ironman_face.jpeg");
+        GreenfootImage character = new GreenfootImage("./images/hawkeye.png");
         GreenfootImage health = new GreenfootImage("./images/health.png");
         GreenfootImage superpower = new GreenfootImage("./images/power.png");
         character.scale(70,70);
