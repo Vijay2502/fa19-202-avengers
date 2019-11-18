@@ -1,8 +1,8 @@
 #BlueJ class context
-comment0.target=IdleState
-comment0.text=\n\ Write\ a\ description\ of\ class\ IdleState\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.target=AttackingState
+comment0.text=\n\ Write\ a\ description\ of\ class\ AttackingState\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=psm\ player
-comment1.target=IdleState(PlayerStateMachine,\ Player)
+comment1.target=AttackingState(PlayerStateMachine,\ Player)
 comment2.params=
 comment2.target=void\ attack()
 comment3.params=
