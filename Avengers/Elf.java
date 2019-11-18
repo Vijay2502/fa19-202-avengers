@@ -14,14 +14,8 @@ public class Elf extends Enemy
         
     }
     
-    public void setHitImage() {
-        super.setHitImage();
-        setImage("elf_hit.png");
-        getImage().scale(80,80);        
-    }
-    
-    public void setDefaultImage() {        
-        setImage("elf.png");
-        getImage().scale(80,80);
+    public void setScaling() {
+        GreenfootImage image = getImage();
+        image.scale(100, 108);
     }
 }

@@ -13,6 +13,8 @@ public class Enemy extends Actor
     protected Player player;
     protected Counter counter;
     protected int hitImageCounter = 0;
+    protected int defaultImageCounter = 1;
+    protected int imgNum = 0;
     
     public Enemy(Player mainPlayer, Counter counter) {
         this.counter = counter;
@@ -66,8 +68,19 @@ public class Enemy extends Actor
     
     public void setHitImage() {
         this.hitImageCounter = 50;
+        setImage("/enemy/" + this.getClass().getName().toLowerCase() + "/" + "hit.png");
+        setScaling(); 
     }
     
-    public void setDefaultImage() {
+    public void setDefaultImage() {  
+        defaultImageCounter--;
+        if (defaultImageCounter == 0) {
+            defaultImageCounter = 20;
+            imgNum =(imgNum + 1) % 2;
+            setImage("/enemy/" + this.getClass().getName().toLowerCase() + "/" + imgNum + ".png");
+        }
+        setScaling();
     }
+    
+    public void setScaling() {}
 }
