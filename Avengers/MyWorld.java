@@ -38,6 +38,7 @@ public class MyWorld extends World
     {
         return mainPlayer;
     }
+    
     public void spawnEnemies () {
         if (count % spawnSpeed == 0)
         {
