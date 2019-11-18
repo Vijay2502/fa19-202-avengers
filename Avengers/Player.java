@@ -12,7 +12,7 @@ public class Player extends Actor
     int time = 0;
     int supertimer = 0;
     boolean firingsuperpower = false;
-    Superpower superpower;
+    boolean superpowerReady = false;
     public Player()
     {
         GreenfootImage up = new GreenfootImage("./images/thor.png");
@@ -20,11 +20,14 @@ public class Player extends Actor
         setImage(up);
         //GreenfootImage down = new GreenfootImage("/Users/vijayghanshani/Downloads/cap marvel.png");
     }
-    public void setSuperPower(Superpower superpower)
+    public void superpowerReady()
     {
-        this.superpower = superpower;
+        superpowerReady = true;
     }
-        
+    public boolean isSuperPowerReady()
+    {
+        return superpowerReady;
+    }
     /**
      * Act - do whatever the Player wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -49,16 +52,19 @@ public class Player extends Actor
         { 
            setLocation(getX(),getY()+3);
         }
-        fireProjectile();
         hitByEnemy();
-        fireSuperpower();
-    }    
-    public void fireProjectile()
-    {
-        if(Greenfoot.mousePressed(null))
-        getWorld().addObject(new Projectile(), getX(), getY());
-    } 
-    public void fireSuperpower()
+        firingSuperpower();
+    }
+    public boolean hitByEnemy() {
+        Actor elf = getOneObjectAtOffset(0,0, Elf.class);
+        if (elf != null) {
+            return true;
+        }
+        
+        else
+        return false;
+    }
+    private void firingSuperpower()
     {
         if (!firingsuperpower)
             return;
@@ -77,9 +83,14 @@ public class Player extends Actor
             firingsuperpower = false;
         }
     }
-    public void superpowerUsed()
+    public void fireProjectile()
+    {
+        getWorld().addObject(new Projectile(), getX(), getY());
+    } 
+    public void fireSuperPower()
     {
         firingsuperpower = true;
+        superpowerReady = false;
     }
     public void youLose() {
         if (isTouching(Elf.class)) {
@@ -87,17 +98,6 @@ public class Player extends Actor
             Greenfoot.stop();
         }
     }
-    
-    public boolean hitByEnemy() {
-        Actor elf = getOneObjectAtOffset(0,0, Elf.class);
-        if (elf != null) {
-            return true;
-        }
-        
-        else
-        return false;
-    }
-    
     public void displayInfo() {
         String name = this.getClass().getName();
         getWorld().showText(name, 1100, 55);

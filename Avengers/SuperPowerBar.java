@@ -6,13 +6,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Superpower extends Actor
+public class SuperPowerBar extends Actor
 {
     final int SUPER_POWER_LIMIT = 100;
     final int SLOWDOWN = 20;
     int charge = 90 * SLOWDOWN;
     Player player;
-    public Superpower(Player player)
+    public SuperPowerBar(Player player)
     {
         setImage(new GreenfootImage(SUPER_POWER_LIMIT + 2,12));
         getImage().drawRect(0,0,SUPER_POWER_LIMIT + 1,11);
@@ -37,7 +37,7 @@ public class Superpower extends Actor
         if (charge > SUPER_POWER_LIMIT * SLOWDOWN)
         {
             charge = 0;
-            player.superpowerUsed();
+            player.superpowerReady();
         }
     }
 }

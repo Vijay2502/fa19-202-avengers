@@ -14,7 +14,7 @@ public class MyWorld extends World
     public Player mainPlayer;
     Counter counter = new Counter();
     HealthBar healthbar = new HealthBar();
-    Superpower superbar;
+    SuperPowerBar superbar;
     /**
      * Constructor for objects of class MyWorld.
      * 
