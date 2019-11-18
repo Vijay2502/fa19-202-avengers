@@ -25,3 +25,18 @@ To find audio themes for each avenger
 ## What tasks are blocked waiting on another team member
 
 None as of now
+
+# 17th Nov
+
+## What Tasks did I work on/complete
+
+Worked on multiple characters in the game
+
+## What am I planning to work on next
+
+To complete the code for all 6 heros 
+
+## What tasks are blocked waiting on another team member
+
+None as of now
+
