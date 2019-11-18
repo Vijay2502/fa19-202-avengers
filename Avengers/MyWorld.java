@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 { 
     int count = 0;
-    int spawnSpeed = 50;
+    int spawnSpeed = 125;
     int randomSpawn;
     public Player mainPlayer;
     Counter counter = new Counter();
