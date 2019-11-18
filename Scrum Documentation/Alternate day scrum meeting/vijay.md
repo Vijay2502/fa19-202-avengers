@@ -15,4 +15,10 @@ To work on Ad video for effects.
 ## Blockers
 Currently there are no blockers from my side.
 
-
+#17th Nov
+## What tasks did I work on?
+Refactored the code for displaying player's health bar at top of the screen
+## What am I planning to work next?
+I plan on Implementing the final level for the game and final level's enemy 
+## Blockers
+Currently there are no blockers from my side.
