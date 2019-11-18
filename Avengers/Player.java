@@ -32,6 +32,7 @@ public class Player extends Actor
     public void act() 
     {
         time++;
+        displayInfo();
         if(Greenfoot.isKeyDown("left"))
         { 
             move(-3);
@@ -95,5 +96,14 @@ public class Player extends Actor
         
         else
         return false;
+    }
+    
+    public void displayInfo() {
+        String name = this.getClass().getName();
+        getWorld().showText(name, 1100, 55);
+        GreenfootImage character = new GreenfootImage("./images/thor_face.jpeg");
+        character.scale(70,70);
+        getWorld().getBackground().drawImage(character, 950, 45 );
+        
     }
 }

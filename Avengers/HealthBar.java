@@ -13,24 +13,23 @@ public class HealthBar extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-    int health = 50;
+    int health = 100;
     double specificHealth = (double)health;
     public HealthBar()
     {
-        setImage(new GreenfootImage(52,12));
-        getImage().drawRect(0,0,51,11);
+        setImage(new GreenfootImage(100,12));
+        getImage().drawRect(0,0,99,11);
         getImage().setColor(Color.RED);
         getImage().fillRect(1,1,health,10);
     }
     public void act() 
     {
-        setImage(new GreenfootImage(52,12));
-        getImage().drawRect(0,0,51,11);
+        setImage(new GreenfootImage(100,12));
+        getImage().drawRect(0,0,99,11);
         getImage().setColor(Color.RED);
         getImage().fillRect(1,1,health,10);
         World world = getWorld();
-        MyWorld myWorld = (MyWorld)world;
-        setLocation(myWorld.getPlayer().getX() - 5, myWorld.getPlayer().getY() - 90);
+        MyWorld myWorld = (MyWorld)world;   
         loseHealth();
     }  
     
@@ -39,7 +38,7 @@ public class HealthBar extends Actor
         World world = getWorld();
         MyWorld myWorld = (MyWorld)world;
         if(myWorld.getPlayer().hitByEnemy())
-        health--;
+        health-=0.5;
         
         if(health<=0)
             {

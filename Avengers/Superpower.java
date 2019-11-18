@@ -28,7 +28,7 @@ public class Superpower extends Actor
         getImage().fillRect(1,1,charge / SLOWDOWN,10);
         World world = getWorld();
         MyWorld myWorld = (MyWorld)world;
-        setLocation(myWorld.getPlayer().getX() + 10, myWorld.getPlayer().getY() - 80);
+        setLocation(1100,95);
         useSuper();
     }   
     public void useSuper()

@@ -36,8 +36,10 @@ public class IronMan extends Player
            setLocation(getX(),getY()+3);
         }
         fireProjectile();
+        displayInfo();
+    }
         
-    }    
+       
     public void fireProjectile()
     {
         Projectile beam = new Projectile();
@@ -63,5 +65,13 @@ public class IronMan extends Player
         
         else
         return false;
+    }
+    public void displayInfo() {
+        String name = this.getClass().getName();
+        getWorld().showText(name, 1100, 55);
+        GreenfootImage character = new GreenfootImage("./images/ironman_face.jpeg");
+        character.scale(70,70);
+        getWorld().getBackground().drawImage(character, 950, 45 );
+        
     }
 }
