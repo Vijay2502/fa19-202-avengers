@@ -55,4 +55,9 @@ public class Level3 extends World
             }            
         }
     }
+    
+    public void act() {
+        count++;
+        spawnEnemies();
+    }
 }
