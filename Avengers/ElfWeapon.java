@@ -12,7 +12,7 @@ public class ElfWeapon extends Enemy
     public ElfWeapon(Player mainPlayer, Counter counter) {
         super(mainPlayer, counter);
         this.health = 2;
-        
+        this.damage = 10;
     }
     
     public void setScaling() {

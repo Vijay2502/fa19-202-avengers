@@ -15,6 +15,7 @@ public class Enemy extends Actor
     protected int hitImageCounter = 0;
     protected int defaultImageCounter = 1;
     protected int imgNum = 0;
+    protected int damage;
     
     public Enemy(Player mainPlayer, Counter counter) {
         this.counter = counter;
@@ -83,4 +84,8 @@ public class Enemy extends Actor
     }
     
     public void setScaling() {}
+    
+    public int getDamage() {
+        return this.damage;
+    }
 }

@@ -11,7 +11,7 @@ public class Elf extends Enemy
     public Elf(Player mainPlayer, Counter counter) {
         super(mainPlayer, counter);
         this.health = 2;
-        
+        this.damage = 5;
     }
     
     public void setScaling() {
