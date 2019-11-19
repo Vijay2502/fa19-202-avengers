@@ -8,20 +8,22 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Projectile extends Actor
 {
+    int speed = 0;
     /**
      * Act - do whatever the Projectile wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public Projectile()
+    public Projectile(String projectileImage, int speed)
     {
-        GreenfootImage up = new GreenfootImage("./images/thor hammer.png");
+        GreenfootImage up = new GreenfootImage("./images/" + projectileImage + ".png");
+        this.speed = speed;
         up.scale(40,40);
         setImage(up);
     }
     public void act() 
     {
         
-        move(10);
+        move(speed);
         if (isAtEdge()) getWorld().removeObject(this);
     }    
 }

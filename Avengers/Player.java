@@ -14,6 +14,9 @@ public class Player extends Actor implements IScoreBoardHealthSubject
     boolean firingsuperpower = false;
     boolean superpowerReady = false;
     private IScoreBoardHealthObserver observer;
+    protected String projectileImage = "thor_hammer";
+    protected int projSpeed = 10;
+    
     public Player()
     {
     }
@@ -53,10 +56,9 @@ public class Player extends Actor implements IScoreBoardHealthSubject
         firingSuperpower();
     }
     public void hitByEnemy() {
-        Actor enemy = getOneObjectAtOffset(0,0, Enemy.class);
+        Enemy enemy = (Enemy) getOneObjectAtOffset(0,0, Enemy.class);
         if (enemy != null) {
-            //notifyScoreBoardForHealthUpdate(enemy.getDamage());
-            notifyScoreBoardForHealthUpdate(1);
+            notifyScoreBoardForHealthUpdate(enemy.getDamage());
             getWorld().removeObject(enemy);
         }
         
@@ -82,7 +84,7 @@ public class Player extends Actor implements IScoreBoardHealthSubject
     }
     public void fireProjectile()
     {
-        getWorld().addObject(new Projectile(), getX(), getY());
+        getWorld().addObject(new Projectile(projectileImage, projSpeed), getX(), getY());
     } 
     public void fireSuperPower()
     {

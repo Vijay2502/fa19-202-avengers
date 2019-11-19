@@ -16,6 +16,6 @@ public class GreenGoblin extends Enemy
     
     public void setScaling() {
         GreenfootImage image = getImage();
-        image.scale(121, 125);
+        image.scale(140, 145);
     }  
 }
