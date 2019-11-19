@@ -72,7 +72,7 @@ public class MenuScreen extends World
         });
         
         blackWidowCommand.setReceiver(() -> {
-            Greenfoot.setWorld(new MyWorld(new Player()));
+            Greenfoot.setWorld(new MyWorld(new DocStrange()));
         });
         
         hulkCommand.setReceiver(() -> {
