@@ -24,6 +24,7 @@ public class MyWorld extends World
     { 
         super(1200, 800, 1); 
         this.mainPlayer = player;
+        mainPlayer.registerScoreBoardHealthObserver(healthbar);
         superbar = new SuperPowerBar(player);
         psm = new PlayerStateMachine(player);
         this.setBackground( new GreenfootImage("./images/ThorSpaceImage.png"));

@@ -6,13 +6,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class HealthBar extends Actor
+public class HealthBar extends Actor implements IScoreBoardHealthObserver
 {
-    /**
-     * Act - do whatever the HealthBar wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    
     int health = 100;
     double specificHealth = (double)health;
     public HealthBar()
@@ -30,20 +25,23 @@ public class HealthBar extends Actor
         getImage().fillRect(1,1,health,10);
         World world = getWorld();
         MyWorld myWorld = (MyWorld)world;   
-        loseHealth();
     }  
     
-    public void loseHealth()
+    public void loseHealth(int damage)
     {
         World world = getWorld();
         MyWorld myWorld = (MyWorld)world;
-        if(myWorld.getPlayer().hitByEnemy())
-        health-=0.5;
+        health-= damage;
         
         if(health<=0)
             {
                getWorld().showText("You Lose! \n You survived for " + (myWorld.getPlayer().time/60) + " seconds", getWorld().getWidth()/2, getWorld().getHeight()/2);
             Greenfoot.stop();
         }
+    }
+    
+    public void updateScoreBoardHealth(int damage)
+    {
+        loseHealth(damage);
     }
 }

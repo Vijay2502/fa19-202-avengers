@@ -6,13 +6,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Player extends Actor
+public class Player extends Actor implements IScoreBoardHealthSubject
 { 
     // Need to set up oberver pattern for superpower.
     int time = 0;
     int supertimer = 0;
     boolean firingsuperpower = false;
     boolean superpowerReady = false;
+    private IScoreBoardHealthObserver observer;
     public Player()
     {
     }
@@ -51,14 +52,14 @@ public class Player extends Actor
         hitByEnemy();
         firingSuperpower();
     }
-    public boolean hitByEnemy() {
-        Actor elf = getOneObjectAtOffset(0,0, Elf.class);
-        if (elf != null) {
-            return true;
+    public void hitByEnemy() {
+        Actor enemy = getOneObjectAtOffset(0,0, Enemy.class);
+        if (enemy != null) {
+            //notifyScoreBoardForHealthUpdate(enemy.getDamage());
+            notifyScoreBoardForHealthUpdate(1);
+            getWorld().removeObject(enemy);
         }
         
-        else
-        return false;
     }
     private void firingSuperpower()
     {
@@ -125,5 +126,17 @@ public class Player extends Actor
         GreenfootImage idleimage = new GreenfootImage("./images/thor.png");
         idleimage.scale(150,150);
         return idleimage;
+    }
+    
+    public void registerScoreBoardHealthObserver(IScoreBoardHealthObserver observer){
+        this.observer = observer;
+    }
+    
+    public void unregisterScoreBoardHealthObserver(IScoreBoardHealthObserver observer){
+        
+    }
+    
+    public void notifyScoreBoardForHealthUpdate(int damage){
+        observer.updateScoreBoardHealth(damage);
     }
 }
