@@ -10,7 +10,7 @@ public class Elf extends Enemy
 {
     public Elf(Player mainPlayer, Counter counter) {
         super(mainPlayer, counter);
-        this.health = 2;
+        this.health = 10;
         this.damage = 5;
     }
     

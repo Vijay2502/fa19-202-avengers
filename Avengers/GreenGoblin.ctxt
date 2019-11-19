@@ -5,4 +5,6 @@ comment1.params=mainPlayer\ counter
 comment1.target=GreenGoblin(Player,\ Counter)
 comment2.params=
 comment2.target=void\ setScaling()
-numComments=3
+comment3.params=
+comment3.target=void\ createProjectile()
+numComments=4

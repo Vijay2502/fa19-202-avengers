@@ -1,3 +1,5 @@
+
+
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
@@ -18,4 +20,8 @@ public class GreenGoblin extends Enemy
         GreenfootImage image = getImage();
         image.scale(140, 145);
     }  
+    
+    public void createProjectile() {        
+        getWorld().addObject(new Projectile("proj", 20, 15), getX(), getY());
+    }
 }

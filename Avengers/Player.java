@@ -16,7 +16,7 @@ public class Player extends Actor implements IScoreBoardHealthSubject
     private IScoreBoardHealthObserver observer;
     protected String projectileImage = "thor_hammer";
     protected int projSpeed = 10;
-    
+    protected int projDamage = 10;
     public Player()
     {
     }
@@ -84,7 +84,7 @@ public class Player extends Actor implements IScoreBoardHealthSubject
     }
     public void fireProjectile()
     {
-        getWorld().addObject(new Projectile(projectileImage, projSpeed), getX(), getY());
+        getWorld().addObject(new HeroProjectile(projectileImage, projSpeed, projDamage), getX(), getY());
     } 
     public void fireSuperPower()
     {

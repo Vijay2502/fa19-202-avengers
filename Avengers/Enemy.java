@@ -16,6 +16,8 @@ public class Enemy extends Actor
     protected int defaultImageCounter = 1;
     protected int imgNum = 0;
     protected int damage;
+    protected int projSpeed;
+    protected int projDamage;
     
     public Enemy(Player mainPlayer, Counter counter) {
         this.counter = counter;
@@ -29,8 +31,8 @@ public class Enemy extends Actor
     public void act() 
     {
         moveAround();
-       
-        hitByProjectile();        
+       fireProjectile();
+       hitByProjectile();        
     }    
     
     public void moveAround() {
@@ -44,12 +46,12 @@ public class Enemy extends Actor
     } 
     
     public void hitByProjectile() {
-        Actor projectile = getOneIntersectingObject(Projectile.class);
+        HeroProjectile projectile = (HeroProjectile) getOneIntersectingObject(HeroProjectile.class);
         Actor superprojectile = getOneIntersectingObject(SuperProjectile.class);
         
         if(projectile != null)
         {
-            health--;
+            health -= projectile.getDamage();
             setHitImage();
             getWorld().removeObject(projectile);
         }
@@ -60,7 +62,7 @@ public class Enemy extends Actor
             getWorld().removeObject(this);
         }
         
-        if (health == 0) {
+        if (health <= 0) {
             counter.score++;
            getWorld().removeObject(this);
         }
@@ -88,4 +90,8 @@ public class Enemy extends Actor
     public int getDamage() {
         return this.damage;
     }
+    
+    public void fireProjectile()
+    {
+    } 
 }

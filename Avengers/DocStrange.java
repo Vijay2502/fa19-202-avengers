@@ -17,7 +17,8 @@ public class DocStrange extends Player
         GreenfootImage up = new GreenfootImage("./images/doc. strange.png");
         up.scale(150,150);
         setImage(up);
-        
+        this.projSpeed = 10;
+        this.projDamage = 10;
     }
     public void act() 
     {

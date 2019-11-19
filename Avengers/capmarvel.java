@@ -17,7 +17,8 @@ public class capmarvel extends Player
         GreenfootImage up = new GreenfootImage("./images/cap marvel.png");
         up.scale(150,150);
         setImage(up);
-        
+        this.projSpeed = 10;
+        this.projDamage = 20;        
     }
     public void act() 
     {

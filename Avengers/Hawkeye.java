@@ -17,6 +17,8 @@ public class Hawkeye extends Player
         GreenfootImage up = new GreenfootImage("./images/hawkeye.png");
         up.scale(150,150);
         setImage(up); 
+        this.projSpeed = 10;
+        this.projDamage = 5;
     }  
     public void act() 
     {
