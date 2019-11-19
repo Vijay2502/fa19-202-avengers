@@ -28,7 +28,7 @@ public class Level3 extends World
         this.mainPlayer = player;
         superbar = new SuperPowerBar(player);
         psm = new PlayerStateMachine(player);
-        this.setBackground( new GreenfootImage("./images/SoulStoneLevel.png"));
+        this.setBackground( new GreenfootImage("./images/TimeStoneLevel.jpeg"));
 
         addObject(mainPlayer, 100, getHeight() / 2);
         addObject(psm, 0, 0);
