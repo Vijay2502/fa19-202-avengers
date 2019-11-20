@@ -11,5 +11,10 @@ public class EnemyProjectile extends Projectile
     public EnemyProjectile(String projectileImage, int speed, int damage)
     {
         super(projectileImage, speed, damage);
-    }   
+    }  
+    public void act() 
+    {
+        move(-1 * speed);
+        if (isAtEdge()) getWorld().removeObject(this);
+    } 
 }

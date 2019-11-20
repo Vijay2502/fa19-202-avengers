@@ -21,7 +21,7 @@ public class GreenGoblin extends Enemy
         image.scale(140, 145);
     }  
     
-    public void createProjectile() {        
-        getWorld().addObject(new Projectile("proj", 20, 15), getX(), getY());
+    public void fireProjectile() {        
+        getWorld().addObject(new EnemyProjectile("proj", 200, 15), getX(), getY());
     }
 }

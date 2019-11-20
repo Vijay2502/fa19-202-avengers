@@ -18,7 +18,7 @@ public class Enemy extends Actor
     protected int damage;
     protected int projSpeed;
     protected int projDamage;
-    
+    protected int shootTime = 200;
     public Enemy(Player mainPlayer, Counter counter) {
         this.counter = counter;
         player = mainPlayer;        
@@ -30,8 +30,12 @@ public class Enemy extends Actor
     */
     public void act() 
     {
+       shootTime--;
         moveAround();
-       fireProjectile();
+       if (shootTime == 0) {
+           fireProjectile();
+           shootTime = 200;
+       }
        hitByProjectile();        
     }    
     
