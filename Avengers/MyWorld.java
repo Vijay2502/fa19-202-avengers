@@ -47,8 +47,8 @@ public class MyWorld extends World
             randomSpawn = Greenfoot.getRandomNumber(5);
             switch (randomSpawn) {
                 case 0: addObject(new Elf(mainPlayer, counter), getWidth(), 0); break;
-                case 1: addObject(new ElfWeapon(mainPlayer, counter), getWidth(), getHeight() / 4); break;
-                case 2: addObject(new ElfWeapon(mainPlayer, counter), getWidth(), getHeight() / 2); break;
+                case 1: addObject(new Ultron(mainPlayer, counter), getWidth(), getHeight() / 4); break;
+                case 2: addObject(new Ultron(mainPlayer, counter), getWidth(), getHeight() / 2); break;
                 case 3: addObject(new GreenGoblin(mainPlayer, counter), getWidth(), 3 *getHeight() / 4); break;
                 case 4: addObject(new Elf(mainPlayer, counter), getWidth(), getHeight()); break;
             }            
