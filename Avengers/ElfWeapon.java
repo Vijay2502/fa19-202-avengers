@@ -17,6 +17,6 @@ public class ElfWeapon extends Enemy
     
     public void setScaling() {
         GreenfootImage image = getImage();
-        image.scale(120, 120);
+        image.scale(110, 110);
     }  
 }

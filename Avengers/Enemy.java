@@ -42,7 +42,7 @@ public class Enemy extends Actor
             setDefaultImage();
         turnTowards(player.getX(), player.getY());
         move(1);
-        setRotation(getRotation() - 180);
+        setRotation(0);
     } 
     
     public void hitByProjectile() {
@@ -80,7 +80,10 @@ public class Enemy extends Actor
         if (defaultImageCounter == 0) {
             defaultImageCounter = 20;
             imgNum =(imgNum + 1) % 2;
+            
             setImage("/enemy/" + this.getClass().getName().toLowerCase() + "/" + imgNum + ".png");
+            if (getX() < player.getX())
+                getImage().mirrorHorizontally();
         }
         setScaling();
     }
