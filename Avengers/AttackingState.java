@@ -15,7 +15,7 @@ public class AttackingState implements AnimationState
     }
     public void attack()
     {
-        psm.setAnimationState(new AttackingState(psm, player));
+        //psm.setAnimationState(new AttackingState(psm, player));
     }
     public void flipHorizontally()
     {

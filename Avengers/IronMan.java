@@ -54,4 +54,23 @@ public class IronMan extends Player implements IPlayer
     {
         getWorld().addObject(new BeamProjectile(), getX(), getY());
     }
+    private void firingSuperpower()
+    {
+        if (!firingsuperpower)
+            return;
+        if (supertimer < 300)
+        {
+            if (supertimer % 10 == 0)
+            {
+                World world = getWorld();
+                world.addObject(new SuperProjectile(), Greenfoot.getRandomNumber(world.getWidth()), 0);
+            }
+            supertimer++;
+        }
+        else
+        {
+            supertimer = 0;
+            firingsuperpower = false;
+        }
+    }
 }
