@@ -76,7 +76,7 @@ public class MenuScreen extends World
         });
         
         hulkCommand.setReceiver(() -> {
-            Greenfoot.setWorld(new MyWorld(new Player()));
+            Greenfoot.setWorld(new MyWorld(new spiderman()));
         });
         
         hawkCommand.setReceiver(() -> {
