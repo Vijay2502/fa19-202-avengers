@@ -8,12 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MagicSpellProjectile extends HeroProjectile
 {
-    /**
-     * Act - do whatever the MagicSpellProjectile wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
+    public MagicSpellProjectile() 
     {
-        // Add your action code here.
-    }    
+        GreenfootImage up = new GreenfootImage("./images/spell.png");
+        this.speed = 5;
+        this.damage = 20;
+        up.scale(60,60);
+        setImage(up);
+    }   
 }

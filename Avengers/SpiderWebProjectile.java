@@ -8,12 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class SpiderWebProjectile extends HeroProjectile
 {
-    public void act() 
+    public SpiderWebProjectile() 
     {
-        GreenfootImage up = new GreenfootImage("./images/thor_hammer.png");
-        this.speed = 5;
-        this.damage = 20;
-        up.scale(40,40);
+        GreenfootImage up = new GreenfootImage("./images/web.png");
+        this.speed = 7;
+        this.damage = 15;
+        up.scale(100,40);
         setImage(up);
-    }   
+    }    
 }

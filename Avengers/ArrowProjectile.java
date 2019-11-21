@@ -10,12 +10,12 @@ public class ArrowProjectile extends HeroProjectile
 {
     
     
-    public void act() 
+    public ArrowProjectile() 
     {
-        GreenfootImage up = new GreenfootImage("./images/thor_hammer.png");
-        this.speed = 5;
-        this.damage = 20;
-        up.scale(40,40);
+        GreenfootImage up = new GreenfootImage("./images/arrow.png");
+        this.speed = 6;
+        this.damage = 10;
+        up.scale(80,40);
         setImage(up);
     }   
         

@@ -56,4 +56,8 @@ public class DocStrange extends Player
         idleimage.scale(150,150);
         return idleimage;
     }
+    public void fireProjectile()
+    {
+        getWorld().addObject(new MagicSpellProjectile(), getX(), getY());
+    }
 }
