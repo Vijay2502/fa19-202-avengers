@@ -38,4 +38,22 @@ public class spiderman extends Player
         getWorld().getBackground().drawImage(superpower, 1020, 95 );
         
     }
+    public GreenfootImage getSuperPowerImage()
+    {
+        GreenfootImage spimage = new GreenfootImage("./images/thor.png");
+        spimage.scale(150,150);
+        return spimage;
+    }
+    public GreenfootImage getAttackingImage()
+    {
+        GreenfootImage attimage = new GreenfootImage("./images/thor.png");
+        attimage.scale(150,150);
+        return attimage;
+    }
+    public GreenfootImage getIdleImage()
+    {
+        GreenfootImage idleimage = new GreenfootImage("./images/thor.png");
+        idleimage.scale(150,150);
+        return idleimage;
+    }
 }
