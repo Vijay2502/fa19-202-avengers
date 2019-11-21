@@ -6,5 +6,5 @@ comment1.target=void\ execute()
 comment1.text=Execute\ the\ Command
 comment2.params=target
 comment2.target=void\ setReceiver(IMenuReceiver)
-comment2.text=\ \n\ Configure\ the\ Receiver\ for\ the\ Command\n\ @param\ target\ Receiver\n
+comment2.text=\ \r\n\ Configure\ the\ Receiver\ for\ the\ Command\r\n\ @param\ target\ Receiver\r\n
 numComments=3

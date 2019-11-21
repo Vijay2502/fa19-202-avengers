@@ -12,7 +12,7 @@ public class GreenGoblin extends Enemy
 {
     public GreenGoblin(Player mainPlayer, Counter counter) {
         super(mainPlayer, counter);
-        this.health = 3;
+        this.health = 30;
         this.damage = 15;
     }  
     
@@ -22,6 +22,6 @@ public class GreenGoblin extends Enemy
     }  
     
     public void fireProjectile() {        
-        getWorld().addObject(new EnemyProjectile("proj", 200, 15), getX(), getY());
+        getWorld().addObject(new BombProjectile(), getX(), getY());
     }
 }

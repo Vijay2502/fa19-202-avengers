@@ -10,12 +10,16 @@ public class Loki extends Enemy
 {
      public Loki(Player mainPlayer, Counter counter) {
         super(mainPlayer, counter);
-        this.health = 15;
-        this.damage = 10;
+        this.health = 40;
+        this.damage = 25;
     }
     
     public void setScaling() {
         GreenfootImage image = getImage();
-        image.scale(100, 108);
+        image.scale(140, 140);
+    } 
+    
+    public void fireProjectile() {        
+        getWorld().addObject(new KnifeProjectile(), getX(), getY());
     }
 }

@@ -8,9 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class KnifeProjectile extends EnemyProjectile
 {
-    public KnifeProjectile(String projectileImage, int speed, int damage)
+    public KnifeProjectile()
     {
-        super(projectileImage, speed, damage);
+        GreenfootImage up = new GreenfootImage("./images/knife.png");
+        this.speed = 7;
+        this.damage = 15;
+        up.scale(40,40);
+        setImage(up);
     }
      
 }
