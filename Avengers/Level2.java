@@ -6,10 +6,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Level2 extends World
+public class Level2 extends MyWorld
 {
     int count = 0;
-    int spawnSpeed = 50;
+    int spawnSpeed = 125;
     int randomSpawn;
     public Player mainPlayer;
     Counter counter = new Counter();
@@ -23,41 +23,51 @@ public class Level2 extends World
     public Level2(Player player)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1200, 800, 1);
-
+        super(new Player()); 
         this.mainPlayer = player;
+        mainPlayer.registerScoreBoardHealthObserver(healthbar);
         superbar = new SuperPowerBar(player);
         psm = new PlayerStateMachine(player);
         this.setBackground( new GreenfootImage("./images/SoulStoneLevel.png"));
-
+       
         addObject(mainPlayer, 100, getHeight() / 2);
         addObject(psm, 0, 0);
         addObject(counter, 100, 80);
-        addObject(healthbar, mainPlayer.getX()- 5, mainPlayer.getY() - 50);
-        addObject(superbar, mainPlayer.getX()+ 10, mainPlayer.getY() - 80);
-    }
+        addObject(healthbar, 1100, 80);
+        addObject(superbar, 1000,90);
+        
 
+    }
+    
     public Player getPlayer()
     {
         return mainPlayer;
     }
-
+    
     public void spawnEnemies () {
         if (count % spawnSpeed == 0)
         {
             randomSpawn = Greenfoot.getRandomNumber(5);
             switch (randomSpawn) {
                 case 0: addObject(new Elf(mainPlayer, counter), getWidth(), 0); break;
-                case 1: addObject(new Elf(mainPlayer, counter), getWidth(), getHeight() / 4); break;
-                case 2: addObject(new Elf(mainPlayer, counter), getWidth(), getHeight() / 2); break;
-                case 3: addObject(new Elf(mainPlayer, counter), getWidth(), 3 *getHeight() / 4); break;
+                case 1: addObject(new Ultron(mainPlayer, counter), getWidth(), getHeight() / 4); break;
+                case 2: addObject(new Loki(mainPlayer, counter), getWidth(), getHeight() / 2); break;
+                case 3: addObject(new GreenGoblin(mainPlayer, counter), getWidth(), 3 *getHeight() / 4); break;
                 case 4: addObject(new Elf(mainPlayer, counter), getWidth(), getHeight()); break;
             }            
         }
     }
-
+    
+    public void nextLevelProgressCheck(){
+        if(counter.score == 20){
+            // Need to change subsequent levels when world class is changed.
+            //Greenfoot.setWorld(new Level2(new Player()));
+        }
+    }
+    
     public void act() {
         count++;
         spawnEnemies();
+        nextLevelProgressCheck();
     }
 }
