@@ -52,4 +52,8 @@ public class IronMan extends Player
         idleimage.scale(150,150);
         return idleimage;
     }
+    public void fireProjectile()
+    {
+        getWorld().addObject(new BeamProjectile(), getX(), getY());
+    }
 }

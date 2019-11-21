@@ -8,12 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class BeamProjectile extends HeroProjectile
 {
-    public void act() 
+    public BeamProjectile() 
     {
-        GreenfootImage up = new GreenfootImage("./images/thor_hammer.png");
-        this.speed = 5;
-        this.damage = 20;
-        up.scale(40,40);
+        GreenfootImage up = new GreenfootImage("./images/beam.png");
+        this.speed = 7;
+        this.damage = 18;
+        up.scale(60,40);
         setImage(up);
     }   
 }

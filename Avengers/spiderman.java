@@ -56,4 +56,8 @@ public class spiderman extends Player
         idleimage.scale(150,150);
         return idleimage;
     }
+    public void fireProjectile()
+    {
+        getWorld().addObject(new SpiderWebProjectile(), getX(), getY());
+    }
 }

@@ -56,4 +56,8 @@ public class Hawkeye extends Player
         idleimage.scale(150,150);
         return idleimage;
     }
+    public void fireProjectile()
+    {
+        getWorld().addObject(new ArrowProjectile(), getX(), getY());
+    } 
 }
