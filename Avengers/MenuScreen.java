@@ -36,6 +36,8 @@ public class MenuScreen extends World
         hulkOption = new MenuOption();
         hawkEyeOption = new MenuOption();
 
+        PlayerFactory playerFactory = new PlayerFactory();
+
         thorCommand = new MenuCommand();
         ironManCommand = new MenuCommand();
         capCommand = new MenuCommand();
@@ -60,27 +62,27 @@ public class MenuScreen extends World
         thorCommand.setReceiver(() -> {
             //get world from factory
             // inside factory get player from another factory
-            Greenfoot.setWorld(new MyWorld(new Player()));
+            Greenfoot.setWorld(new MyWorld(playerFactory.getPlayer("THOR")));
         });
         
         ironManCommand.setReceiver(() -> {
-            Greenfoot.setWorld(new MyWorld(new IronMan()));
+            Greenfoot.setWorld(new MyWorld(playerFactory.getPlayer("IRONMAN")));
         });
         
         capCommand.setReceiver(() -> {
-            Greenfoot.setWorld(new MyWorld(new capamerica()));
+            Greenfoot.setWorld(new MyWorld(playerFactory.getPlayer("CAPTAINAMERICA")));
         });
         
         blackWidowCommand.setReceiver(() -> {
-            Greenfoot.setWorld(new MyWorld(new DocStrange()));
+            Greenfoot.setWorld(new MyWorld(playerFactory.getPlayer("DrStrange")));
         });
         
         hulkCommand.setReceiver(() -> {
-            Greenfoot.setWorld(new MyWorld(new spiderman()));
+            Greenfoot.setWorld(new MyWorld(playerFactory.getPlayer("SPIDERMAN")));
         });
         
         hawkCommand.setReceiver(() -> {
-            Greenfoot.setWorld(new MyWorld(new Hawkeye()));
+            Greenfoot.setWorld(new MyWorld(playerFactory.getPlayer("HAWKEYE")));
         });
         
         GreenfootImage health = new GreenfootImage("./images/health.png");

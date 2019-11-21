@@ -1,33 +1,33 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Hawkeye here.
+ * Write a description of class SpiderMan here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Hawkeye extends Player
+public class SpiderMan extends Player implements IPlayer
 {
     /**
-     * Act - do whatever the Hawkeye wants to do. This method is called whenever
+     * Act - do whatever the SpiderMan wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public Hawkeye() 
+    public SpiderMan()
     {
-        GreenfootImage up = new GreenfootImage("./images/hawkeye.png");
+        GreenfootImage up = new GreenfootImage("./images/SpiderMan.png");
         up.scale(150,150);
-        setImage(up); 
+        setImage(up);
         this.projSpeed = 10;
-        this.projDamage = 5;
-    }  
+        this.projDamage = 10;  
+    }
     public void act() 
     {
         super.act();
-    }
+    } 
     public void displayInfo() {
         String name = this.getClass().getName();
         getWorld().showText(name, 1100, 55);
-        GreenfootImage character = new GreenfootImage("./images/hawkeye.png");
+        GreenfootImage character = new GreenfootImage("./images/SpiderMan.png");
         GreenfootImage health = new GreenfootImage("./images/health.png");
         GreenfootImage superpower = new GreenfootImage("./images/power.png");
         character.scale(70,70);
@@ -58,6 +58,6 @@ public class Hawkeye extends Player
     }
     public void fireProjectile()
     {
-        getWorld().addObject(new ArrowProjectile(), getX(), getY());
-    } 
+        getWorld().addObject(new SpiderWebProjectile(), getX(), getY());
+    }
 }

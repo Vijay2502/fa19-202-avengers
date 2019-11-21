@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class DocStrange extends Player
+public class DocStrange extends Player implements IPlayer
 {
     /**
      * Act - do whatever the DocStrange wants to do. This method is called whenever
