@@ -68,7 +68,7 @@ public class MenuScreen extends World
         });
         
         capCommand.setReceiver(() -> {
-            Greenfoot.setWorld(new MyWorld(new capmarvel()));
+            Greenfoot.setWorld(new MyWorld(new capamerica()));
         });
         
         blackWidowCommand.setReceiver(() -> {
