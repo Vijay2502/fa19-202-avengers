@@ -17,8 +17,6 @@ public class capamerica extends Player
       GreenfootImage up = new GreenfootImage("./images/cap.jpg");
         up.scale(150,150);
         setImage(up);
-        this.projSpeed = 10;
-        this.projDamage = 10;  
     }
     public void act() 
     {
@@ -40,20 +38,20 @@ public class capamerica extends Player
     }
     public GreenfootImage getSuperPowerImage()
     {
-        GreenfootImage spimage = new GreenfootImage("./images/thor.png");
-        spimage.scale(150,150);
+        GreenfootImage spimage = new GreenfootImage("./images/hero/capamerica/super.png");
+        spimage.scale(130,130);
         return spimage;
     }
     public GreenfootImage getAttackingImage()
     {
-        GreenfootImage attimage = new GreenfootImage("./images/thor.png");
-        attimage.scale(150,150);
+        GreenfootImage attimage = new GreenfootImage("./images/hero/capamerica/shoot.png");
+        attimage.scale(130,130);
         return attimage;
     }
     public GreenfootImage getIdleImage()
     {
-        GreenfootImage idleimage = new GreenfootImage("./images/thor.png");
-        idleimage.scale(150,150);
+        GreenfootImage idleimage = new GreenfootImage("./images/hero/capamerica/idle.png");
+        idleimage.scale(130,130);
         return idleimage;
     }
     public void fireProjectile()

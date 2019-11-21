@@ -13,8 +13,6 @@ public class IronMan extends Player
         GreenfootImage up = new GreenfootImage("./images/iron man.png");
         up.scale(150,150);
         setImage(up);
-        this.projSpeed = 10;
-        this.projDamage = 10;
     }
     public void act() 
     {
@@ -36,20 +34,20 @@ public class IronMan extends Player
     }
     public GreenfootImage getSuperPowerImage()
     {
-        GreenfootImage spimage = new GreenfootImage("./images/thor.png");
+        GreenfootImage spimage = new GreenfootImage("./images/hero/ironman/super.png");
         spimage.scale(150,150);
         return spimage;
     }
     public GreenfootImage getAttackingImage()
     {
-        GreenfootImage attimage = new GreenfootImage("./images/thor.png");
+        GreenfootImage attimage = new GreenfootImage("./images/hero/ironman/shoot.png");
         attimage.scale(150,150);
         return attimage;
     }
     public GreenfootImage getIdleImage()
     {
-        GreenfootImage idleimage = new GreenfootImage("./images/thor.png");
-        idleimage.scale(150,150);
+        GreenfootImage idleimage = new GreenfootImage("./images/hero/ironman/idle.png");
+        idleimage.scale(100,150);
         return idleimage;
     }
     public void fireProjectile()

@@ -17,8 +17,6 @@ public class DocStrange extends Player
         GreenfootImage up = new GreenfootImage("./images/doc. strange.png");
         up.scale(150,150);
         setImage(up);
-        this.projSpeed = 10;
-        this.projDamage = 10;
     }
     public void act() 
     {
@@ -40,20 +38,20 @@ public class DocStrange extends Player
     }
     public GreenfootImage getSuperPowerImage()
     {
-        GreenfootImage spimage = new GreenfootImage("./images/thor.png");
+        GreenfootImage spimage = new GreenfootImage("./images/hero/drstrange/super.png");
         spimage.scale(150,150);
         return spimage;
     }
     public GreenfootImage getAttackingImage()
     {
-        GreenfootImage attimage = new GreenfootImage("./images/thor.png");
-        attimage.scale(150,150);
+        GreenfootImage attimage = new GreenfootImage("./images/hero/drstrange/shoot.png");
+        attimage.scale(160,150);
         return attimage;
     }
     public GreenfootImage getIdleImage()
     {
-        GreenfootImage idleimage = new GreenfootImage("./images/thor.png");
-        idleimage.scale(150,150);
+        GreenfootImage idleimage = new GreenfootImage("./images/hero/drstrange/idle.png");
+        idleimage.scale(140,160);
         return idleimage;
     }
     public void fireProjectile()
