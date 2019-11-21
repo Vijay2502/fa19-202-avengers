@@ -16,9 +16,7 @@ public class HawkEye extends Player implements IPlayer
     {
         GreenfootImage up = new GreenfootImage("./images/hawkeye.png");
         up.scale(150,150);
-        setImage(up); 
-        this.projSpeed = 10;
-        this.projDamage = 5;
+        setImage(up);
     }  
     public void act() 
     {
@@ -40,20 +38,20 @@ public class HawkEye extends Player implements IPlayer
     }
     public GreenfootImage getSuperPowerImage()
     {
-        GreenfootImage spimage = new GreenfootImage("./images/thor.png");
-        spimage.scale(150,150);
+        GreenfootImage spimage = new GreenfootImage("./images/hero/hawkeye/super.png");
+        spimage.scale(130,130);
         return spimage;
     }
     public GreenfootImage getAttackingImage()
     {
-        GreenfootImage attimage = new GreenfootImage("./images/thor.png");
-        attimage.scale(150,150);
+        GreenfootImage attimage = new GreenfootImage("./images/hero/hawkeye/shoot.png");
+        attimage.scale(130,130);
         return attimage;
     }
     public GreenfootImage getIdleImage()
     {
-        GreenfootImage idleimage = new GreenfootImage("./images/thor.png");
-        idleimage.scale(150,150);
+        GreenfootImage idleimage = new GreenfootImage("./images/hero/hawkeye/idle.png");
+        idleimage.scale(160,130);
         return idleimage;
     }
     public void fireProjectile()

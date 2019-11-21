@@ -59,6 +59,7 @@ public class PlayerStateMachine extends Actor
     }
     public void act() 
     {
+        animationTimer();
         if(Greenfoot.isKeyDown("space"))
         { 
            attack();

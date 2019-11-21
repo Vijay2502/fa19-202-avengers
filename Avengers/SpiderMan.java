@@ -16,9 +16,7 @@ public class SpiderMan extends Player implements IPlayer
     {
         GreenfootImage up = new GreenfootImage("./images/SpiderMan.png");
         up.scale(150,150);
-        setImage(up);
-        this.projSpeed = 10;
-        this.projDamage = 10;  
+        setImage(up); 
     }
     public void act() 
     {
@@ -40,20 +38,20 @@ public class SpiderMan extends Player implements IPlayer
     }
     public GreenfootImage getSuperPowerImage()
     {
-        GreenfootImage spimage = new GreenfootImage("./images/thor.png");
+        GreenfootImage spimage = new GreenfootImage("./images/hero/spiderman/super.png");
         spimage.scale(150,150);
         return spimage;
     }
     public GreenfootImage getAttackingImage()
     {
-        GreenfootImage attimage = new GreenfootImage("./images/thor.png");
-        attimage.scale(150,150);
+        GreenfootImage attimage = new GreenfootImage("./images/hero/spiderman/shoot.png");
+        attimage.scale(130,130);
         return attimage;
     }
     public GreenfootImage getIdleImage()
     {
-        GreenfootImage idleimage = new GreenfootImage("./images/thor.png");
-        idleimage.scale(150,150);
+        GreenfootImage idleimage = new GreenfootImage("./images/hero/spiderman/idle.png");
+        idleimage.scale(150,130);
         return idleimage;
     }
     public void fireProjectile()

@@ -15,8 +15,6 @@ public class Player extends Actor implements IScoreBoardHealthSubject
     boolean superpowerReady = false;
     private IScoreBoardHealthObserver observer;
     protected String projectileImage = "thor_hammer";
-    protected int projSpeed = 10;
-    protected int projDamage = 10;
     public Player()
     {
     }
@@ -106,7 +104,7 @@ public class Player extends Actor implements IScoreBoardHealthSubject
         superpowerReady = false;
     }
     public void youLose() {
-        if (isTouching(Elf.class)) {
+        if (isTouching(Enemy.class)) {
             getWorld().showText("You Lose ! You lasted " + (time / 60) + " seconds", getWorld().getWidth()/ 2, getWorld().getHeight() / 2);
             Greenfoot.stop();
         }
@@ -127,20 +125,20 @@ public class Player extends Actor implements IScoreBoardHealthSubject
     }
     public GreenfootImage getSuperPowerImage()
     {
-        GreenfootImage spimage = new GreenfootImage("./images/thor.png");
-        spimage.scale(150,150);
+        GreenfootImage spimage = new GreenfootImage("./images/hero/thor/super.png");
+        spimage.scale(150,175);
         return spimage;
     }
     public GreenfootImage getAttackingImage()
     {
-        GreenfootImage attimage = new GreenfootImage("./images/thor.png");
-        attimage.scale(150,150);
+        GreenfootImage attimage = new GreenfootImage("./images/hero/thor/shoot.png");
+        attimage.scale(130,130);
         return attimage;
     }
     public GreenfootImage getIdleImage()
     {
-        GreenfootImage idleimage = new GreenfootImage("./images/thor.png");
-        idleimage.scale(150,150);
+        GreenfootImage idleimage = new GreenfootImage("./images/hero/thor/idle.png");
+        idleimage.scale(130,130);
         return idleimage;
     }
     
