@@ -6,15 +6,20 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class EnemyProjectile extends Projectile
+public class EnemyProjectile extends Actor
 {
-    public EnemyProjectile(String projectileImage, int speed, int damage)
+    protected int speed = 0;
+    protected int damage = 0;
+    public EnemyProjectile()
     {
-        super(projectileImage, speed, damage);
     }  
     public void act() 
     {
         move(-1 * speed);
         if (isAtEdge()) getWorld().removeObject(this);
     } 
+    
+    public int getDamage() {
+        return this.damage;
+    }
 }

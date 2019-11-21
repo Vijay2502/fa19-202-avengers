@@ -8,9 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class BombProjectile extends EnemyProjectile
 {
-    public BombProjectile(String projectileImage, int speed, int damage)
+    public BombProjectile()
     {
-        super(projectileImage, speed, damage);
+        GreenfootImage up = new GreenfootImage("./images/bomb.png");
+        this.speed = 5;
+        this.damage = 20;
+        up.scale(40,40);
+        setImage(up);
     }
      
 }

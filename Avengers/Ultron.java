@@ -11,7 +11,7 @@ public class Ultron extends Enemy
     
     public Ultron(Player mainPlayer, Counter counter) {
         super(mainPlayer, counter);
-        this.health = 300;
+        this.health = 50;
         this.damage = 10;
     }
     

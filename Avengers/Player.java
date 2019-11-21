@@ -84,7 +84,7 @@ public class Player extends Actor implements IScoreBoardHealthSubject
     }
     public void fireProjectile()
     {
-        getWorld().addObject(new HeroProjectile(projectileImage, projSpeed, projDamage), getX(), getY());
+        getWorld().addObject(new HeroProjectile(), getX(), getY());
     } 
     public void fireSuperPower()
     {
