@@ -43,14 +43,21 @@ public class Player extends Actor implements IScoreBoardHealthSubject
         if(Greenfoot.isKeyDown("right"))
         { 
             move(3);
+            
         }
         if(Greenfoot.isKeyDown("up"))
-        { 
-          setLocation(getX(),getY()-3);
+        {
+            if(getY() <= 73)
+                setLocation(getX(),getY());
+            else
+                setLocation(getX(),getY()-3);
         }
         if(Greenfoot.isKeyDown("down"))
         { 
-           setLocation(getX(),getY()+3);
+            if(getY() >= 727)
+                setLocation(getX(),getY());
+            else
+            setLocation(getX(),getY()+3);
         }
         hitByEnemy();
         firingSuperpower();
