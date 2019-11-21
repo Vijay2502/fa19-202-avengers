@@ -38,12 +38,19 @@ public class Player extends Actor implements IScoreBoardHealthSubject
         displayInfo();
         if(Greenfoot.isKeyDown("left"))
         { 
-            move(-3);
+            if(getX() <= 75){
+
+            }
+            else
+                move(-3);
         }
         if(Greenfoot.isKeyDown("right"))
         { 
-            move(3);
-            
+            if(getX() >= 1135){
+
+            }
+            else
+                move(3);
         }
         if(Greenfoot.isKeyDown("up"))
         {
