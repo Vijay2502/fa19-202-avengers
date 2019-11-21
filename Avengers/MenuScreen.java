@@ -83,11 +83,28 @@ public class MenuScreen extends World
             Greenfoot.setWorld(new MyWorld(new Hawkeye()));
         });
         
+        GreenfootImage health = new GreenfootImage("./images/health.png");
+        GreenfootImage superpower = new GreenfootImage("./images/power.png");
+        health.scale(30,30);
+        superpower.scale(30,30);
+        ((Actor)thorMenuOption).getImage().drawImage(health, 30, 545 );
+        ((Actor)thorMenuOption).getImage().drawImage(superpower, 30, 585 );
+        ((Actor)thorMenuOption).getImage().drawRect(60,555,99,11);
+        ((Actor)thorMenuOption).getImage().setColor(Color.RED);
+        ((Actor)thorMenuOption).getImage().fillRect(60,555,100,10);
+        
+        ((Actor)thorMenuOption).getImage().drawRect(60,585,99,11);
+        ((Actor)thorMenuOption).getImage().setColor(Color.BLUE);
+        ((Actor)thorMenuOption).getImage().fillRect(60,585,100,13);
+       
+        
         addObject((Actor)thorMenuOption, 111, 402);       
         addObject((Actor)ironManOption, 337, 402); 
         addObject((Actor)capMenuOption, 565, 402); 
         addObject((Actor)blackWidowOption, 767, 402); 
         addObject((Actor)hulkOption, 939, 402); 
         addObject((Actor)hawkEyeOption, 1118, 402); 
+        
+        
     }
 }
