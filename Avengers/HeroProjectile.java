@@ -16,7 +16,7 @@ public class HeroProjectile extends Actor
     
     public void act() 
     {
-        move(-1 * speed);
+        move(speed);
         if (isAtEdge()) getWorld().removeObject(this);
     } 
     
