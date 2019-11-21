@@ -17,6 +17,7 @@ public class Player extends Actor implements IScoreBoardHealthSubject
     protected String projectileImage = "thor_hammer";
     public Player()
     {
+        Greenfoot.playSound("ThorSong.mp3");
     }
     public void superpowerReady()
     {
