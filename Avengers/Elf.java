@@ -25,8 +25,9 @@ public class Elf extends Enemy
     
     public void act(){
         this.sinusoidalMovementStrategy.moveActor();
-        this.actorOnEdgeAction();
         this.hitByProjectile();
+        this.actorOnEdgeAction();
+        
     }
     
     public void actorOnEdgeAction(){
