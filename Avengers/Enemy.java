@@ -31,7 +31,7 @@ public class Enemy extends Actor
     public void act() 
     {
        shootTime--;
-        moveAround();
+       moveAround();
        if (shootTime == 0) {
            fireProjectile();
            shootTime = 200;
