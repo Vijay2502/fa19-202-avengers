@@ -53,7 +53,7 @@ public class Thanos extends Actor
     }
     
     public void fireProjectile() {        
-        getWorld().addObject(new ThanosProjectile(player, this,getX() < player.getX()), getX(), getY());
+        getWorld().addObject(new ThanosProjectile(player, this.getX(),getX() < player.getX()), getX(), getY());
     }
     
     public void hitByProjectile() {
@@ -106,9 +106,9 @@ public class Thanos extends Actor
         {
             randomX = Greenfoot.getRandomNumber(1100);
             randomY = Greenfoot.getRandomNumber(700);
-            if(randomX == player.getX() && randomY == player.getY())
+            if(randomX <= player.getX() - 50 || randomX == player.getX() + 50)
             {
-                randomX += 200;
+                randomX += 300;
             }
             this.setLocation(randomX, randomY);
             
