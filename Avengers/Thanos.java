@@ -16,16 +16,20 @@ public class Thanos extends Actor
     protected int defaultImageCounter = 1;
     protected int imgNum = 0;
     int randomX, randomY;
-    int timer = 0;
+    int timer = 0, spaceStoneTimer = 0;
     int shootTime = 500;
+    Boolean flag = true;
     public Thanos(Player mainPlayer, Counter counter) {
         this.counter = counter;
-        this.player = mainPlayer; 
+        this.player = mainPlayer;
+        
     }
     
     public void act(){
         
         timer++;
+        spaceStoneTimer++;
+        //spaceStone();
         changeLocation();
         shootTime--;
         if (shootTime == 0) {
@@ -42,7 +46,13 @@ public class Thanos extends Actor
         if (this.hitImageCounter > 0)
             this.hitImageCounter--;
         else 
-            setDefaultImage();
+            {
+                 if(spaceStoneTimer >= 400 && spaceStoneTimer <= 500)
+                    setImage("/enemy/thanos/t.png");
+                    
+                else
+                setDefaultImage();
+            }
         
         setRotation(0);
     } 
@@ -84,6 +94,7 @@ public class Thanos extends Actor
     public void setHitImage() {
         this.hitImageCounter = 50;
         setImage("/enemy/" + this.getClass().getName().toLowerCase() + "/" + "hit.png");
+        getImage().mirrorHorizontally();
         setScaling(); 
     }
     
@@ -102,6 +113,7 @@ public class Thanos extends Actor
     
     public void changeLocation()
     {
+        
         if(timer % 500 == 0)
         {
             randomX = Greenfoot.getRandomNumber(1100);
@@ -110,8 +122,12 @@ public class Thanos extends Actor
             {
                 randomX += 300;
             }
+            
             this.setLocation(randomX, randomY);
+            spaceStoneTimer = 0;
             
         }
     }
+    
+    
 }
