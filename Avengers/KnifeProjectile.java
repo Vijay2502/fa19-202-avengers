@@ -13,7 +13,7 @@ public class KnifeProjectile extends EnemyProjectile
         GreenfootImage up = new GreenfootImage("./images/knife.png");
         this.speed = 7;
         this.damage = 15;
-        up.scale(40,40);
+        up.scale(80,40);
         setImage(up);
     }
      

@@ -8,14 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Level2 extends MyWorld
 {
-    int count = 0;
-    int spawnSpeed = 125;
-    int randomSpawn;
-    public Player mainPlayer;
-    Counter counter = new Counter();
-    HealthBar healthbar = new HealthBar();
-    SuperPowerBar superbar;
-    PlayerStateMachine psm;
     /**
      * Constructor for objects of class Level2.
      * 

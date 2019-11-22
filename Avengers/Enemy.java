@@ -86,7 +86,7 @@ public class Enemy extends Actor
             imgNum =(imgNum + 1) % 2;
             
             setImage("/enemy/" + this.getClass().getName().toLowerCase() + "/" + imgNum + ".png");
-            if (getX() < player.getX())
+             if (getX() < player.getX())
                 getImage().mirrorHorizontally();
         }
         setScaling();

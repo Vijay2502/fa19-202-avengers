@@ -71,9 +71,16 @@ abstract class Player extends Actor implements IScoreBoardHealthSubject
     }
     public void hitByEnemy() {
         Enemy enemy = (Enemy) getOneObjectAtOffset(0,0, Enemy.class);
+        EnemyProjectile projectile = (EnemyProjectile) getOneObjectAtOffset(0,0, EnemyProjectile.class); 
+        
         if (enemy != null) {
             notifyScoreBoardForHealthUpdate(enemy.getDamage());
             getWorld().removeObject(enemy);
+        }
+        
+        if (projectile != null) {
+            notifyScoreBoardForHealthUpdate(projectile.getDamage());
+            getWorld().removeObject(projectile);
         }
         
     }
