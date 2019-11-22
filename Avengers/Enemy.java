@@ -32,11 +32,12 @@ public class Enemy extends Actor
     {
        shootTime--;
        if(getY() <= 73){
+           setLocation(getX(),73);
             }
        else if(getY() > 727){
-            }
-       else    
-            moveAround();
+            setLocation(getX(),727);
+            }   
+       moveAround();
        if (shootTime == 0) {
            fireProjectile();
            shootTime = 200;
