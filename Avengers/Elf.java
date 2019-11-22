@@ -18,4 +18,6 @@ public class Elf extends Enemy
         GreenfootImage image = getImage();
         image.scale(100, 108);
     }
+    
+    public void fireProjectile() {}
 }
