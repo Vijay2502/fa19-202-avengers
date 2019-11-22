@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Starter_Screen extends World
 {
-
+    Counter counter = new Counter();
     /**
      * Constructor for objects of class Starter_Screen.
      * 
@@ -16,7 +16,8 @@ public class Starter_Screen extends World
     public Starter_Screen()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1200, 800, 1); 
+        super(1200, 800, 1);
+        counter.score = 0;
         this.setBackground( new GreenfootImage("./images/Starter_Screen.jpg"));
         prepare();
     }
