@@ -16,6 +16,7 @@ abstract class Player extends Actor implements IScoreBoardHealthSubject
     int facing = 1;
     private IScoreBoardHealthObserver observer;
     protected String projectileImage = "thor_hammer";
+    protected int superDuration = 100;
     public Player()
     {
         Greenfoot.playSound("ThorSong.mp3");
@@ -74,12 +75,12 @@ abstract class Player extends Actor implements IScoreBoardHealthSubject
         EnemyProjectile projectile = (EnemyProjectile) getOneObjectAtOffset(0,0, EnemyProjectile.class); 
         
         if (enemy != null) {
-            notifyScoreBoardForHealthUpdate(enemy.getDamage());
+            notifyScoreBoardForHealthUpdate(firingsuperpower ? 0 : enemy.getDamage());
             getWorld().removeObject(enemy);
         }
         
         if (projectile != null) {
-            notifyScoreBoardForHealthUpdate(projectile.getDamage());
+            notifyScoreBoardForHealthUpdate(firingsuperpower ? 0 : projectile.getDamage());
             getWorld().removeObject(projectile);
         }
         
@@ -116,5 +117,9 @@ abstract class Player extends Actor implements IScoreBoardHealthSubject
     
     public void notifyScoreBoardForHealthUpdate(int damage){
         observer.updateScoreBoardHealth(damage);
+    }
+    
+    public int getSuperDuration() {
+        return this.superDuration;
     }
 }

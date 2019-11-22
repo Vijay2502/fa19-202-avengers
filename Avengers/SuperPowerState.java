@@ -29,7 +29,7 @@ public class SuperPowerState implements AnimationState
     {
         player.setImage(player.getSuperPowerImage());
         player.fireSuperPower();
-        psm.setAnimationTime(30);
+        psm.setAnimationTime(player.getSuperDuration());
     }
     public void autoStateChange()
     {

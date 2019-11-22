@@ -14,6 +14,7 @@ public class CapAmerica extends Player
      */
     public CapAmerica()
     {
+        this.superDuration = 500;
     }
     public void act() 
     {
@@ -66,13 +67,9 @@ public class CapAmerica extends Player
         if (!firingsuperpower)
             return;
         SuperPowerProjectileFactory spfactory = new SuperPowerProjectileFactory();
-        if (supertimer < 300)
+        if (supertimer < 500)
         {
-            if (supertimer % 10 == 0)
-            {
-                World world = getWorld();
-                world.addObject(spfactory.getSuperProjectile(""), Greenfoot.getRandomNumber(world.getWidth()), 0);
-            }
+            firingsuperpower = true;
             supertimer++;
         }
         else
