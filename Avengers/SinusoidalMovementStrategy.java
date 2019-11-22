@@ -13,7 +13,7 @@ public class SinusoidalMovementStrategy implements IMoveStrategy
     private Actor actor;
 
     public SinusoidalMovementStrategy(){
-        this.Speed = 0-getRandomNumber(2,6);
+        this.Speed = 0-getRandomNumber(4,6);
     }
     
 

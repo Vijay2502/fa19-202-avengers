@@ -13,6 +13,7 @@ public class EnemyProjectile extends Actor
     public EnemyProjectile()
     {
     }  
+    
     public void act() 
     {
         move(-1 * speed);
