@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Thanos
+comment0.text=\n\ Write\ a\ description\ of\ class\ Thanos\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=mainPlayer\ counter
+comment1.target=Thanos(Player,\ Counter)
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ moveAround()
+comment4.params=
+comment4.target=void\ setScaling()
+comment5.params=
+comment5.target=void\ fireProjectile()
+comment6.params=
+comment6.target=void\ hitByProjectile()
+comment7.params=
+comment7.target=void\ setHitImage()
+comment8.params=
+comment8.target=void\ setDefaultImage()
+comment9.params=
+comment9.target=void\ changeLocation()
+numComments=10
