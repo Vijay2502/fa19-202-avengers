@@ -60,12 +60,13 @@ public class Thor extends Player
     {
         if (!firingsuperpower)
             return;
+        SuperPowerProjectileFactory spfactory = new SuperPowerProjectileFactory();
         if (supertimer < 300)
         {
             if (supertimer % 10 == 0)
             {
                 World world = getWorld();
-                world.addObject(new SuperProjectile(), Greenfoot.getRandomNumber(world.getWidth()), 0);
+                world.addObject(spfactory.getSuperProjectile("LIGHTNING"), Greenfoot.getRandomNumber(world.getWidth()), 0);
             }
             supertimer++;
         }
@@ -74,5 +75,5 @@ public class Thor extends Player
             supertimer = 0;
             firingsuperpower = false;
         }
-    }   
+    }
 }

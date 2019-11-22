@@ -68,12 +68,13 @@ public class HawkEye extends Player implements IPlayer
     {
         if (!firingsuperpower)
             return;
+        SuperPowerProjectileFactory spfactory = new SuperPowerProjectileFactory();
         if (supertimer < 300)
         {
             if (supertimer % 10 == 0)
             {
                 World world = getWorld();
-                world.addObject(new SuperProjectile(), Greenfoot.getRandomNumber(world.getWidth()), 0);
+                world.addObject(spfactory.getSuperProjectile("ARROW"), Greenfoot.getRandomNumber(world.getWidth()), 0);
             }
             supertimer++;
         }
