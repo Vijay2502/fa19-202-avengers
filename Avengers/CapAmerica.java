@@ -64,7 +64,7 @@ public class CapAmerica extends Player
     {
         getWorld().addObject(new ShieldProjectile(facing), getX(), getY());
     }
-    private void firingSuperpower()
+    protected void firingSuperpower()
     {
         if (!firingsuperpower)
             return;

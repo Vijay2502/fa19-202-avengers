@@ -64,7 +64,7 @@ public class SpiderMan extends Player implements IPlayer
     {
         getWorld().addObject(new SpiderWebProjectile(facing), getX(), getY());
     }
-    private void firingSuperpower()
+    protected void firingSuperpower()
     {
         if (!firingsuperpower)
             return;

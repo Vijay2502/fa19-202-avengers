@@ -64,7 +64,7 @@ public class HawkEye extends Player implements IPlayer
     {
         getWorld().addObject(new ArrowProjectile(facing), getX(), getY());
     } 
-    private void firingSuperpower()
+    protected void firingSuperpower()
     {
         if (!firingsuperpower)
             return;

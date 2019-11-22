@@ -60,7 +60,7 @@ public class IronMan extends Player implements IPlayer
     {
         getWorld().addObject(new BeamProjectile(facing), getX(), getY());
     }
-    private void firingSuperpower()
+    protected void firingSuperpower()
     {
         if (!firingsuperpower)
             return;

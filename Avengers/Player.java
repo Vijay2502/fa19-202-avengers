@@ -6,8 +6,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Player extends Actor implements IScoreBoardHealthSubject
-{ 
+abstract class Player extends Actor implements IScoreBoardHealthSubject
+{
     // Need to set up oberver pattern for superpower.
     int time = 0;
     int supertimer = 0;
@@ -77,29 +77,8 @@ public class Player extends Actor implements IScoreBoardHealthSubject
         }
         
     }
-    private void firingSuperpower()
-    {
-        if (!firingsuperpower)
-            return;
-        if (supertimer < 300)
-        {
-            if (supertimer % 10 == 0)
-            {
-                World world = getWorld();
-                world.addObject(new SuperProjectile(), Greenfoot.getRandomNumber(world.getWidth()), 0);
-            }
-            supertimer++;
-        }
-        else
-        {
-            supertimer = 0;
-            firingsuperpower = false;
-        }
-    }
-    public void fireProjectile()
-    {
-        getWorld().addObject(new HammerProjectile(facing), getX(), getY());
-    } 
+    abstract void firingSuperpower();
+    abstract void fireProjectile();
     public void fireSuperPower()
     {
         firingsuperpower = true;
@@ -111,38 +90,10 @@ public class Player extends Actor implements IScoreBoardHealthSubject
             Greenfoot.stop();
         }
     }
-    public void displayInfo() {
-        String name = this.getClass().getName();
-        getWorld().showText(name, 1100, 55);
-        GreenfootImage character = new GreenfootImage("./images/thor_face.jpeg");
-        GreenfootImage health = new GreenfootImage("./images/health.png");
-        GreenfootImage superpower = new GreenfootImage("./images/power.png");
-        character.scale(70,70);
-        health.scale(30,30);
-        superpower.scale(30,30);
-        getWorld().getBackground().drawImage(character, 950, 45 );
-        getWorld().getBackground().drawImage(health, 1020, 65 );
-        getWorld().getBackground().drawImage(superpower, 1020, 95 );
-        
-    }
-    public GreenfootImage getSuperPowerImage()
-    {
-        GreenfootImage spimage = new GreenfootImage("./images/hero/thor/super.png");
-        spimage.scale(150,175);
-        return spimage;
-    }
-    public GreenfootImage getAttackingImage()
-    {
-        GreenfootImage attimage = new GreenfootImage("./images/hero/thor/shoot.png");
-        attimage.scale(130,130);
-        return attimage;
-    }
-    public GreenfootImage getIdleImage()
-    {
-        GreenfootImage idleimage = new GreenfootImage("./images/hero/thor/idle.png");
-        idleimage.scale(130,130);
-        return idleimage;
-    }
+    abstract void displayInfo();
+    abstract GreenfootImage getSuperPowerImage();
+    abstract GreenfootImage getAttackingImage();
+    abstract GreenfootImage getIdleImage();
     public void flipOrientation ()
     {
         facing *= -1;

@@ -23,27 +23,9 @@ public class Level2 extends MyWorld
     public Level2(Player player)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(new Player()); 
-        this.mainPlayer = player;
-        mainPlayer.registerScoreBoardHealthObserver(healthbar);
-        superbar = new SuperPowerBar(player);
-        psm = new PlayerStateMachine(player);
+        super(player);
         this.setBackground( new GreenfootImage("./images/SoulStoneLevel.png"));
-       
-        addObject(mainPlayer, 100, getHeight() / 2);
-        addObject(psm, 0, 0);
-        addObject(counter, 100, 80);
-        addObject(healthbar, 1100, 80);
-        addObject(superbar, 1000,90);
-        
-
     }
-    
-    public Player getPlayer()
-    {
-        return mainPlayer;
-    }
-    
     public void spawnEnemies () {
         if (count % spawnSpeed == 0)
         {
@@ -61,7 +43,7 @@ public class Level2 extends MyWorld
     public void nextLevelProgressCheck(){
         if(counter.score == 10){
             // Need to change subsequent levels when world class is changed.
-            Greenfoot.setWorld(new Level3(new Player()));
+            Greenfoot.setWorld(new Level3(mainPlayer));
         }
     }
     

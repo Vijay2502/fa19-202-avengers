@@ -19,7 +19,7 @@ public class PlayerFactory
             return null;
          }		
          if(playerName.equalsIgnoreCase("THOR")){
-            return new Player();
+            return new Thor();
             
          } else if(playerName.equalsIgnoreCase("IRONMAN")){
             return new IronMan();
