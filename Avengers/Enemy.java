@@ -50,6 +50,8 @@ public class Enemy extends Actor
     } 
     
     public void hitByProjectile() {
+        
+            
         HeroProjectile projectile = (HeroProjectile) getOneIntersectingObject(HeroProjectile.class);
         Actor superprojectile = getOneIntersectingObject(SuperProjectile.class);
         
@@ -70,6 +72,9 @@ public class Enemy extends Actor
             counter.score++;
            getWorld().removeObject(this);
         }
+        
+      
+        
     }
     
     
