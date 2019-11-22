@@ -14,7 +14,7 @@ public class SinusoidalMovementStrategy implements IMoveStrategy
     private Boolean isReverse;
 
     public SinusoidalMovementStrategy(Boolean isReverse){
-        this.speed = 0-getRandomNumber(4,6);
+        this.speed = 0-getRandomNumber(3,4);
         this.isReverse = isReverse;
     }
     
