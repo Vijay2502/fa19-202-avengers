@@ -31,7 +31,12 @@ public class Enemy extends Actor
     public void act() 
     {
        shootTime--;
-       moveAround();
+       if(getY() <= 73){
+            }
+       else if(getY() > 727){
+            }
+       else    
+            moveAround();
        if (shootTime == 0) {
            fireProjectile();
            shootTime = 200;
@@ -89,7 +94,6 @@ public class Enemy extends Actor
         if (defaultImageCounter == 0) {
             defaultImageCounter = 20;
             imgNum =(imgNum + 1) % 2;
-            
             setImage("/enemy/" + this.getClass().getName().toLowerCase() + "/" + imgNum + ".png");
              if (getX() < player.getX())
                 getImage().mirrorHorizontally();
