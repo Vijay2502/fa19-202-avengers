@@ -33,7 +33,7 @@ public class Level2 extends MyWorld
     }
     
     public void nextLevelProgressCheck(){
-        if(counter.score == 10){
+        if(counter.score == 20){
             // Need to change subsequent levels when world class is changed.
             Greenfoot.setWorld(new Level3(mainPlayer));
         }
