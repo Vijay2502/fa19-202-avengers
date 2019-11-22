@@ -17,6 +17,8 @@ public class GreenGoblin extends Enemy
         this.damage = 15;
         this.ReflectiveMovementStrategy = new ReflectiveMovementStrategy();
         this.ReflectiveMovementStrategy.setActor(this);
+        int rotation = Greenfoot.getRandomNumber(45);
+        this.setRotation(30 + rotation);
     }  
     
     public void setScaling() {
