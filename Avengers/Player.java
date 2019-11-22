@@ -73,7 +73,7 @@ abstract class Player extends Actor implements IScoreBoardHealthSubject
     public void hitByEnemy() {
         Enemy enemy = (Enemy) getOneObjectAtOffset(0,0, Enemy.class);
         EnemyProjectile projectile = (EnemyProjectile) getOneObjectAtOffset(0,0, EnemyProjectile.class); 
-        
+        ThanosProjectile tprojectile = (ThanosProjectile) getOneObjectAtOffset(0,0, ThanosProjectile.class); 
         if (enemy != null) {
             notifyScoreBoardForHealthUpdate(firingsuperpower ? 0 : enemy.getDamage());
             getWorld().removeObject(enemy);
@@ -82,6 +82,10 @@ abstract class Player extends Actor implements IScoreBoardHealthSubject
         if (projectile != null) {
             notifyScoreBoardForHealthUpdate(firingsuperpower ? 0 : projectile.getDamage());
             getWorld().removeObject(projectile);
+        }
+        if (tprojectile != null) {
+            notifyScoreBoardForHealthUpdate(firingsuperpower ? 0 : tprojectile.getDamage());
+            getWorld().removeObject(tprojectile);
         }
         
     }
