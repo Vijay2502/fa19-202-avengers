@@ -22,6 +22,6 @@ public class GreenGoblin extends Enemy
     }  
     
     public void fireProjectile() {        
-        getWorld().addObject(new BombProjectile(), getX(), getY());
+        getWorld().addObject(new BombProjectile(getX() < player.getX()), getX(), getY());
     }
 }

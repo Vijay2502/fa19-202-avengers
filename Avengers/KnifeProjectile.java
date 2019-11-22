@@ -9,14 +9,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class KnifeProjectile extends EnemyProjectile
 {
     IMoveStrategy movementStrategy;
-    public KnifeProjectile()
+    public KnifeProjectile(Boolean isReverse)
     {
         GreenfootImage up = new GreenfootImage("./images/knife.png");
         this.speed = 7;
         this.damage = 15;
         up.scale(80,40);
         setImage(up);
-        this.movementStrategy = new StraightMovementStrategy();
+        if (isReverse)
+            getImage().mirrorHorizontally();
+        this.movementStrategy = new StraightMovementStrategy(isReverse);
         this.movementStrategy.setActor(this);
     }
     
@@ -26,7 +28,7 @@ public class KnifeProjectile extends EnemyProjectile
     }
 
      public boolean actorOnEdgeAction(){
-        if ( this.isAtEdge() && getX() ==0){
+        if ( this.isAtEdge()){
             getWorld().removeObject(this);
             return true;
         }

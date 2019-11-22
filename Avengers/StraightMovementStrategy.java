@@ -6,11 +6,12 @@ import greenfoot.*;
  */
 public class StraightMovementStrategy implements IMoveStrategy 
 {
-    private int Speed;
+    private int speed;
     private Actor actor;
-  
-    public StraightMovementStrategy(){
-        this.Speed = 0-getRandomNumber(2,6);
+    private Boolean isReverse;
+    public StraightMovementStrategy(Boolean isReverse){
+        this.speed = 0-getRandomNumber(2,6);
+        this.isReverse = isReverse;
     }
     
     public void setActor(Actor actor){
@@ -18,7 +19,8 @@ public class StraightMovementStrategy implements IMoveStrategy
     }
     
     public void moveActor(){
-        this.actor.move(this.Speed);
+        int direction = isReverse ? -1 : 1;
+        this.actor.move(direction * this.speed);
     }
     
     public void rotateActor(){
@@ -26,7 +28,7 @@ public class StraightMovementStrategy implements IMoveStrategy
     }
     
     public void changeSpeed(int speed){
-        this.Speed = speed;
+        this.speed = speed;
     }
     
     private int getRandomNumber(int s,int e)

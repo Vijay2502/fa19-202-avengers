@@ -20,6 +20,6 @@ public class Loki extends Enemy
     } 
     
     public void fireProjectile() {        
-        getWorld().addObject(new KnifeProjectile(), getX(), getY());
+        getWorld().addObject(new KnifeProjectile(getX() < player.getX()), getX(), getY());
     }
 }

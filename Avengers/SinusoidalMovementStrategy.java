@@ -9,11 +9,13 @@ public class SinusoidalMovementStrategy implements IMoveStrategy
     private int changemovementafterstep =50;
     private int step =1;
     private int toggler =1;
-    private int Speed;
+    private int speed;
     private Actor actor;
+    private Boolean isReverse;
 
-    public SinusoidalMovementStrategy(){
-        this.Speed = 0-getRandomNumber(4,6);
+    public SinusoidalMovementStrategy(Boolean isReverse){
+        this.speed = 0-getRandomNumber(4,6);
+        this.isReverse = isReverse;
     }
     
 
@@ -24,7 +26,8 @@ public class SinusoidalMovementStrategy implements IMoveStrategy
     
 
     public void moveActor(){
-        this.actor.move(this.Speed);
+        int direction = isReverse ? -1 : 1;
+        this.actor.move(direction * this.speed);
         rotateActor();
     }
     
@@ -41,7 +44,7 @@ public class SinusoidalMovementStrategy implements IMoveStrategy
      * chages the moving speed of actor
      */
     public void changeSpeed(int speed){
-        this.Speed = speed;
+        this.speed = speed;
     }
     
     private int getRandomNumber(int s,int e)
