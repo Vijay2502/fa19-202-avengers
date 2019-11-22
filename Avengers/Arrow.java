@@ -1,14 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class SuperProjectile here.
+ * Write a description of class Arrow here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class SuperProjectile extends Actor
+public class Arrow extends SuperProjectile
 {
-    public SuperProjectile()
+    public Arrow()
     {
         GreenfootImage up = new GreenfootImage("./images/lightning.png");
         up.scale(40,40);
@@ -17,7 +17,6 @@ public class SuperProjectile extends Actor
     }
     public void act() 
     {
-        
         move(10);
         if (isAtEdge()) getWorld().removeObject(this);
     }
