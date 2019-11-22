@@ -18,7 +18,7 @@ public class IronMan extends Player implements IPlayer
     public void displayInfo() {
         String name = this.getClass().getName();
         getWorld().showText(name, 1100, 55);
-        GreenfootImage character = new GreenfootImage("./images/ironman_face.jpeg");
+        GreenfootImage character = new GreenfootImage("./images/iron man.png");
         GreenfootImage health = new GreenfootImage("./images/health.png");
         GreenfootImage superpower = new GreenfootImage("./images/power.png");
         character.scale(70,70);

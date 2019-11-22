@@ -23,7 +23,7 @@ public class CapAmerica extends Player
     public void displayInfo() {
         String name = this.getClass().getName();
         getWorld().showText(name, 1100, 55);
-        GreenfootImage character = new GreenfootImage("./images/cap.jpg");
+        GreenfootImage character = new GreenfootImage("./images/cap.png");
         GreenfootImage health = new GreenfootImage("./images/health.png");
         GreenfootImage superpower = new GreenfootImage("./images/power.png");
         character.scale(70,70);

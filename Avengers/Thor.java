@@ -17,7 +17,7 @@ public class Thor extends Player
     public void displayInfo() {
         String name = this.getClass().getName();
         getWorld().showText(name, 1100, 55);
-        GreenfootImage character = new GreenfootImage("./images/thor_face.jpeg");
+        GreenfootImage character = new GreenfootImage("./images/thor.png");
         GreenfootImage health = new GreenfootImage("./images/health.png");
         GreenfootImage superpower = new GreenfootImage("./images/power.png");
         character.scale(70,70);
