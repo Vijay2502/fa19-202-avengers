@@ -13,6 +13,7 @@ public class PlayerStateMachine extends Actor
     private int timer = 0;
     private int animationtime = 0;
     private boolean timerstart = false;
+    private boolean shiftwasdown = false;
     /**
      * Constructor for objects of class PlayerStateMachine
      */
@@ -68,9 +69,15 @@ public class PlayerStateMachine extends Actor
         { 
            superPower();
         }
-        else if(Greenfoot.isKeyDown("shift"))
-        { 
-           flipHorizontally();
+        else if (Greenfoot.isKeyDown("shift")){
+            if(!shiftwasdown)
+            {
+               flipHorizontally();
+               shiftwasdown = true;
+            }
+        }
+        else {
+            shiftwasdown = false;
         }
     }
 }

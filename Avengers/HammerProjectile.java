@@ -9,11 +9,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class HammerProjectile extends HeroProjectile
 {
     
-    public HammerProjectile() 
+    public HammerProjectile(int facing) 
     {
         GreenfootImage up = new GreenfootImage("./images/thor_hammer.png");
         this.speed = 4;
         this.damage = 25;
+        this.facing = facing;
         up.scale(40,40);
         setImage(up);
     }    

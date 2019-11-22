@@ -13,6 +13,7 @@ public class Player extends Actor implements IScoreBoardHealthSubject
     int supertimer = 0;
     boolean firingsuperpower = false;
     boolean superpowerReady = false;
+    int facing = 1;
     private IScoreBoardHealthObserver observer;
     protected String projectileImage = "thor_hammer";
     public Player()
@@ -97,7 +98,7 @@ public class Player extends Actor implements IScoreBoardHealthSubject
     }
     public void fireProjectile()
     {
-        getWorld().addObject(new HammerProjectile(), getX(), getY());
+        getWorld().addObject(new HammerProjectile(facing), getX(), getY());
     } 
     public void fireSuperPower()
     {
@@ -141,6 +142,11 @@ public class Player extends Actor implements IScoreBoardHealthSubject
         GreenfootImage idleimage = new GreenfootImage("./images/hero/thor/idle.png");
         idleimage.scale(130,130);
         return idleimage;
+    }
+    public void flipOrientation ()
+    {
+        facing *= -1;
+        getImage().mirrorHorizontally();
     }
     
     public void registerScoreBoardHealthObserver(IScoreBoardHealthObserver observer){

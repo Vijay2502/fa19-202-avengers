@@ -8,11 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MagicSpellProjectile extends HeroProjectile
 {
-    public MagicSpellProjectile() 
+    public MagicSpellProjectile(int facing) 
     {
         GreenfootImage up = new GreenfootImage("./images/spell.png");
         this.speed = 5;
         this.damage = 20;
+        this.facing = facing;
         up.scale(60,60);
         setImage(up);
     }   

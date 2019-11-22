@@ -56,7 +56,7 @@ public class DocStrange extends Player implements IPlayer
     }
     public void fireProjectile()
     {
-        getWorld().addObject(new MagicSpellProjectile(), getX(), getY());
+        getWorld().addObject(new MagicSpellProjectile(facing), getX(), getY());
     }
     private void firingSuperpower()
     {

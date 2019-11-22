@@ -19,6 +19,7 @@ public class IdleState implements AnimationState
     }
     public void flipHorizontally()
     {
+        player.flipOrientation ();
     }
     public void superPower()
     {

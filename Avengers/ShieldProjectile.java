@@ -8,11 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class ShieldProjectile extends HeroProjectile
 {
-    public ShieldProjectile() 
+    public ShieldProjectile(int facing) 
     {
         GreenfootImage up = new GreenfootImage("./images/shield.png");
         this.speed = 5;
         this.damage = 13;
+        this.facing = facing;
         up.scale(80,80);
         setImage(up);
     }   

@@ -10,13 +10,14 @@ public class HeroProjectile extends Actor
 {
     protected int speed = 10;
     protected int damage = 10;
+    protected int facing = 1;
     public HeroProjectile()
     {
     }    
     
     public void act() 
     {
-        move(speed);
+        move(facing * speed);
         if (isAtEdge()) getWorld().removeObject(this);
     } 
     
