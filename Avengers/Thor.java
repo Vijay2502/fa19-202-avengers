@@ -47,7 +47,7 @@ public class Thor extends Player
     public GreenfootImage getIdleImage()
     {
         GreenfootImage idleimage = new GreenfootImage("./images/hero/thor/idle.png");
-        idleimage.scale(100,150);
+        idleimage.scale(120,150);
         if (facing == -1)
             idleimage.mirrorHorizontally();
         return idleimage;

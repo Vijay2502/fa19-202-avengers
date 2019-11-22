@@ -1,5 +1,6 @@
 .class
 .ctxt
+.DS_Store
 /Avengers/ArrowProjectile.ctxt
 /Avengers/AttackingState.ctxt
 /Avengers/BeamProjectile.ctxt
@@ -60,3 +61,9 @@
 /Avengers/Level2.class
 /Avengers/Level3.class
 /Avengers/MyWorld.class
+/Avengers/Thor.class
+/Avengers/Level4.class
+/Avengers/Level4.ctxt
+/Avengers/project.greenfoot
+/Avengers/StraightMovementStrategy.ctxt
+/Avengers/StraightMovementStrategy.ctxt
