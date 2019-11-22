@@ -16,7 +16,7 @@ public class Level4 extends MyWorld
     public Level4(Player player)
     {
         super(player);
-        this.setBackground( new GreenfootImage("./images/SoulStoneLevel.png"));
+        this.setBackground( new GreenfootImage("./images/PowerStoneLevel.jpg"));
     }
     
     public void spawnEnemies () {

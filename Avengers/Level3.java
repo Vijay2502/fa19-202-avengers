@@ -15,7 +15,7 @@ public class Level3 extends MyWorld
     public Level3(Player player)
     {    
         super(player);
-        this.setBackground( new GreenfootImage("./images/SoulStoneLevel.png"));
+        this.setBackground( new GreenfootImage("./images/TimeStoneLevel.jpeg"));
     }
     public void spawnEnemies () {
         if (count % spawnSpeed == 0)
