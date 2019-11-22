@@ -7,9 +7,18 @@ Kapil Mulchandani
 Nirmit Jasapara  
 Vijay Ghanshani
 
-##Click the  link given below to check the the advertisement video for our game 
+## Click the  link given below to check the the advertisement video for our game 
 
 https://www.youtube.com/watch?v=wgCFhfREaq8   
+
+# GamePlay Images
+
+## Start Screen
+
+![Screen Shot 2019-11-22 at 2 27 48 PM](https://user-images.githubusercontent.com/33183783/69464883-7b851080-0d34-11ea-86f1-e4c8dedb1fc5.png)
+
+
+
 
 
 Game Description :  
