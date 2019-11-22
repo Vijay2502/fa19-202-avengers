@@ -17,16 +17,25 @@ public class Thanos extends Actor
     protected int imgNum = 0;
     int randomX, randomY;
     int timer = 0;
+    int shootTime = 500;
     public Thanos(Player mainPlayer, Counter counter) {
         this.counter = counter;
         this.player = mainPlayer; 
     }
     
     public void act(){
+        
         timer++;
         changeLocation();
+        shootTime--;
+        if (shootTime == 0) {
+           fireProjectile();
+           shootTime = 500;
+       }
         moveAround();
         hitByProjectile();
+        
+        
     }  
     
     public void moveAround() {
@@ -44,7 +53,7 @@ public class Thanos extends Actor
     }
     
     public void fireProjectile() {        
-        getWorld().addObject(new KnifeProjectile(), getX(), getY());
+        getWorld().addObject(new ThanosProjectile(player, this,getX() < player.getX()), getX(), getY());
     }
     
     public void hitByProjectile() {
@@ -95,8 +104,12 @@ public class Thanos extends Actor
     {
         if(timer % 500 == 0)
         {
-            randomX = Greenfoot.getRandomNumber(1200);
-            randomY = Greenfoot.getRandomNumber(800);
+            randomX = Greenfoot.getRandomNumber(1100);
+            randomY = Greenfoot.getRandomNumber(700);
+            if(randomX == player.getX() && randomY == player.getY())
+            {
+                randomX += 200;
+            }
             this.setLocation(randomX, randomY);
             
         }
