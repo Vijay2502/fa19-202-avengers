@@ -19,9 +19,12 @@ public class Thanos extends Actor
     int timer = 0, spaceStoneTimer = 0;
     int shootTime = 500;
     Boolean flag = true;
+    GreenfootImage wormhole = new GreenfootImage("./images/enemy/thanos/wormhole.jpg");
+    
     public Thanos(Player mainPlayer, Counter counter) {
         this.counter = counter;
         this.player = mainPlayer;
+         wormhole.scale(170,120);
         
     }
     
@@ -29,7 +32,6 @@ public class Thanos extends Actor
         
         timer++;
         spaceStoneTimer++;
-        //spaceStone();
         changeLocation();
         shootTime--;
         if (shootTime == 0) {
@@ -48,7 +50,10 @@ public class Thanos extends Actor
         else 
             {
                  if(spaceStoneTimer >= 400 && spaceStoneTimer <= 500)
-                    setImage("/enemy/thanos/t.png");
+                    {
+                        setImage("/enemy/thanos/t.png");
+                        getWorld().getBackground().drawImage(wormhole, getX() - 80, getY() + 100);
+                    }
                     
                 else
                 setDefaultImage();
@@ -125,6 +130,7 @@ public class Thanos extends Actor
             
             this.setLocation(randomX, randomY);
             spaceStoneTimer = 0;
+            getWorld().setBackground("./images/ThorSpaceImage.png");
             
         }
     }
