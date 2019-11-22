@@ -20,6 +20,7 @@ public class IdleState implements AnimationState
     public void flipHorizontally()
     {
         player.flipOrientation ();
+        psm.setAnimationState(new IdleState(psm, player));
     }
     public void superPower()
     {

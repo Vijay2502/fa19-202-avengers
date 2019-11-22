@@ -146,7 +146,6 @@ public class Player extends Actor implements IScoreBoardHealthSubject
     public void flipOrientation ()
     {
         facing *= -1;
-        getImage().mirrorHorizontally();
     }
     
     public void registerScoreBoardHealthObserver(IScoreBoardHealthObserver observer){

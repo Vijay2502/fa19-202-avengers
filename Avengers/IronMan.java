@@ -36,18 +36,24 @@ public class IronMan extends Player implements IPlayer
     {
         GreenfootImage spimage = new GreenfootImage("./images/hero/ironman/super.png");
         spimage.scale(150,150);
+        if (facing == -1)
+            spimage.mirrorHorizontally();
         return spimage;
     }
     public GreenfootImage getAttackingImage()
     {
         GreenfootImage attimage = new GreenfootImage("./images/hero/ironman/shoot.png");
         attimage.scale(150,150);
+        if (facing == -1)
+            attimage.mirrorHorizontally();
         return attimage;
     }
     public GreenfootImage getIdleImage()
     {
         GreenfootImage idleimage = new GreenfootImage("./images/hero/ironman/idle.png");
         idleimage.scale(100,150);
+        if (facing == -1)
+            idleimage.mirrorHorizontally();
         return idleimage;
     }
     public void fireProjectile()

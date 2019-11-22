@@ -40,18 +40,24 @@ public class DocStrange extends Player implements IPlayer
     {
         GreenfootImage spimage = new GreenfootImage("./images/hero/drstrange/super.png");
         spimage.scale(150,150);
+        if (facing == -1)
+            spimage.mirrorHorizontally();
         return spimage;
     }
     public GreenfootImage getAttackingImage()
     {
         GreenfootImage attimage = new GreenfootImage("./images/hero/drstrange/shoot.png");
         attimage.scale(160,150);
+        if (facing == -1)
+            attimage.mirrorHorizontally();
         return attimage;
     }
     public GreenfootImage getIdleImage()
     {
         GreenfootImage idleimage = new GreenfootImage("./images/hero/drstrange/idle.png");
         idleimage.scale(140,160);
+        if (facing == -1)
+            idleimage.mirrorHorizontally();
         return idleimage;
     }
     public void fireProjectile()
