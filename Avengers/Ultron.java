@@ -19,4 +19,6 @@ public class Ultron extends Enemy
         GreenfootImage image = getImage();
         image.scale(120, 120);
     }  
+    
+    public void fireProjectile() {}
 }
