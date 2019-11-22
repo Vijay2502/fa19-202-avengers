@@ -10,7 +10,7 @@ public class SpaceCrack extends SuperProjectile
 {
     public SpaceCrack()
     {
-        GreenfootImage up = new GreenfootImage("./images/lightning.png");
+        GreenfootImage up = new GreenfootImage("./images/magicball.png");
         up.scale(40,40);
         setImage(up);
         setRotation(90);
