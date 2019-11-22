@@ -86,12 +86,12 @@ public class MenuScreen extends World
             Greenfoot.setWorld(new MyWorld(playerFactory.getPlayer("HAWKEYE")));
         });
         
-        displayStats(((Actor)thorMenuOption), 100,1); // Thor
-        displayStats(((Actor)ironManOption), 100,1); // ironman
-        displayStats(((Actor)capMenuOption), 100,1); //cap
-        displayStats(((Actor)blackWidowOption), 100,1); //
-        displayStats(((Actor)hulkOption), 100,1); //
-        displayStats(((Actor)hawkEyeOption), 100,1); //
+        displayStats(((Actor)thorMenuOption), "Thor", 100,1); // Thor
+        displayStats(((Actor)ironManOption), "IronMan",100,1); // ironman
+        displayStats(((Actor)capMenuOption), "Captain America", 100,1); //cap
+        displayStats(((Actor)blackWidowOption), "SpiderMan", 100,1); //
+        displayStats(((Actor)hulkOption),"Doctor Strangr", 100,1); //
+        displayStats(((Actor)hawkEyeOption),"HawkEye", 100,1); //
         
         
         addObject((Actor)thorMenuOption, 111, 402);       
@@ -104,8 +104,9 @@ public class MenuScreen extends World
         
     }
     
-    public void displayStats(Actor actor, int herohealth, int projectileDamage)
+    public void displayStats(Actor actor, String name, int herohealth, int projectileDamage)
     {
+        
         GreenfootImage health = new GreenfootImage("./images/health.png");
         GreenfootImage superpower = new GreenfootImage("./images/power.png");
         health.scale(30,30);
@@ -121,6 +122,8 @@ public class MenuScreen extends World
         actor.getImage().drawRect(60, 590,99,11);
         actor.getImage().setColor(Color.BLUE);
         actor.getImage().fillRect(60,590,100,13);
+        GreenfootImage temp = new GreenfootImage(name, 30, Color.BLACK, new Color(0,0,0,0));
+        actor.getImage().drawImage(temp, 20 ,50);
         
     }
 }
