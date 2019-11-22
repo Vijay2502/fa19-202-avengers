@@ -8,8 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class TrackingMissile extends SuperProjectile
 {
-    public TrackingMissile()
+    private Enemy target;
+    public TrackingMissile(Enemy target)
     {
+        this.target = target;
         GreenfootImage up = new GreenfootImage("./images/lightning.png");
         up.scale(40,40);
         setImage(up);
@@ -17,6 +19,8 @@ public class TrackingMissile extends SuperProjectile
     }
     public void act() 
     {
+        if (target != null)
+            turnTowards(target.getX(), target.getY());
         move(10);
         if (isAtEdge()) getWorld().removeObject(this);
     }

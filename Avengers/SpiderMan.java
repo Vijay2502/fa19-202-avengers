@@ -61,24 +61,19 @@ public class SpiderMan extends Player implements IPlayer
     {
         getWorld().addObject(new SpiderWebProjectile(facing), getX(), getY());
     }
+    public void fireSuperPower()
+    {
+        SuperPowerProjectileFactory spfactory = new SuperPowerProjectileFactory();
+        World world = getWorld();
+        for (Enemy enemy : world.getObjects(Enemy.class))
+        {
+            world.addObject(
+                spfactory.getSuperProjectile("WEB", enemy), 
+                getX(), getY());
+        }
+        superpowerReady = false;
+    }
     protected void firingSuperpower()
     {
-        if (!firingsuperpower)
-            return;
-        SuperPowerProjectileFactory spfactory = new SuperPowerProjectileFactory();
-        if (supertimer < 300)
-        {
-            if (supertimer % 10 == 0)
-            {
-                World world = getWorld();
-                world.addObject(spfactory.getSuperProjectile("WEB"), Greenfoot.getRandomNumber(world.getWidth()), 0);
-            }
-            supertimer++;
-        }
-        else
-        {
-            supertimer = 0;
-            firingsuperpower = false;
-        }
     }
 }
