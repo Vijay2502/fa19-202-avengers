@@ -10,9 +10,6 @@ public class IronMan extends Player implements IPlayer
 {
     public IronMan()
     {
-        GreenfootImage up = new GreenfootImage("./images/iron man.png");
-        up.scale(150,150);
-        setImage(up);
     }
     public void act() 
     {

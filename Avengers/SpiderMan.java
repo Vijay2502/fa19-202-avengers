@@ -14,9 +14,6 @@ public class SpiderMan extends Player implements IPlayer
      */
     public SpiderMan()
     {
-        GreenfootImage up = new GreenfootImage("./images/SpiderMan.png");
-        up.scale(150,150);
-        setImage(up); 
     }
     public void act() 
     {
@@ -25,7 +22,7 @@ public class SpiderMan extends Player implements IPlayer
     public void displayInfo() {
         String name = this.getClass().getName();
         getWorld().showText(name, 1100, 55);
-        GreenfootImage character = new GreenfootImage("./images/SpiderMan.png");
+        GreenfootImage character = new GreenfootImage("./images/spiderman.png");
         GreenfootImage health = new GreenfootImage("./images/health.png");
         GreenfootImage superpower = new GreenfootImage("./images/power.png");
         character.scale(70,70);

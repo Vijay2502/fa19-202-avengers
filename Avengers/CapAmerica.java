@@ -14,9 +14,6 @@ public class CapAmerica extends Player
      */
     public CapAmerica()
     {
-      GreenfootImage up = new GreenfootImage("./images/cap.jpg");
-        up.scale(150,150);
-        setImage(up);
     }
     public void act() 
     {

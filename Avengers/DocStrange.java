@@ -14,9 +14,6 @@ public class DocStrange extends Player implements IPlayer
      */
     public DocStrange()
     {
-        GreenfootImage up = new GreenfootImage("./images/doc. strange.png");
-        up.scale(150,150);
-        setImage(up);
     }
     public void act() 
     {

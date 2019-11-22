@@ -14,9 +14,6 @@ public class HawkEye extends Player implements IPlayer
      */
     public HawkEye() 
     {
-        GreenfootImage up = new GreenfootImage("./images/hawkeye.png");
-        up.scale(150,150);
-        setImage(up);
     }  
     public void act() 
     {
