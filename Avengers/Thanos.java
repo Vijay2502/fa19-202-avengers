@@ -16,7 +16,7 @@ public class Thanos extends Actor
     protected int defaultImageCounter = 1;
     protected int imgNum = 0;
     int randomX, randomY;
-    int timer = 0, spaceStoneTimer = 0;
+    int timer = 0, spaceStoneTimer = 0,warmholeTimer = 0;
     int shootTime = 500;
     Boolean flag = true;
     GreenfootImage wormhole = new GreenfootImage("./images/enemy/thanos/wormhole.jpg");
@@ -31,6 +31,7 @@ public class Thanos extends Actor
     public void act(){
         
         timer++;
+        warmholeTimer++;
         spaceStoneTimer++;
         changeLocation();
         shootTime--;
@@ -52,7 +53,12 @@ public class Thanos extends Actor
                  if(spaceStoneTimer >= 400 && spaceStoneTimer <= 500)
                     {
                         setImage("/enemy/thanos/t.png");
-                        getWorld().getBackground().drawImage(wormhole, getX() - 80, getY() + 100);
+                        
+                        if(warmholeTimer >= 450 && warmholeTimer <= 500)
+                        {
+                            getWorld().getBackground().drawImage(wormhole, getX() - 80, getY() + 100);
+                            warmholeTimer = 0;
+                        }
                     }
                     
                 else
