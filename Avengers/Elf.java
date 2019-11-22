@@ -20,20 +20,23 @@ public class Elf extends Enemy
     public void setScaling() {
         GreenfootImage image = getImage();
         image.scale(100, 108);
+        
     }
     
     
     public void act(){
         this.sinusoidalMovementStrategy.moveActor();
-        this.hitByProjectile();
-        this.actorOnEdgeAction();
-        
+        if(!this.actorOnEdgeAction()){
+            this.hitByProjectile();
+        }
     }
     
-    public void actorOnEdgeAction(){
-        if (this.isAtEdge() && getX() ==0){
+    public boolean actorOnEdgeAction(){
+        if ( this.isAtEdge() && getX() ==0){
             getWorld().removeObject(this);
+            return true;
         }
+        return false;
     }
     
 }
