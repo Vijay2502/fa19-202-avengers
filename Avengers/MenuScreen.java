@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MenuScreen extends World
 {
+
     IMenuInvoker thorMenuOption;
     IMenuInvoker ironManOption;
     IMenuInvoker capMenuOption ;
@@ -84,35 +85,13 @@ public class MenuScreen extends World
         hawkCommand.setReceiver(() -> {
             Greenfoot.setWorld(new MyWorld(playerFactory.getPlayer("HAWKEYE")));
         });
-        // Thor
-        GreenfootImage health = new GreenfootImage("./images/health.png");
-        GreenfootImage superpower = new GreenfootImage("./images/power.png");
-        health.scale(30,30);
-        superpower.scale(30,30);
-        ((Actor)thorMenuOption).getImage().drawImage(health, 30, 545 );
-        ((Actor)thorMenuOption).getImage().drawImage(superpower, 30, 585 );
-        ((Actor)thorMenuOption).getImage().drawRect(60,555,99,11);
-        ((Actor)thorMenuOption).getImage().setColor(Color.RED);
-        ((Actor)thorMenuOption).getImage().fillRect(60,555,100,10);
         
-        ((Actor)thorMenuOption).getImage().drawRect(60,585,99,11);
-        ((Actor)thorMenuOption).getImage().setColor(Color.BLUE);
-        ((Actor)thorMenuOption).getImage().fillRect(60,585,100,13);
-        // IronMan
-        //GreenfootImage healthIronMan = new GreenfootImage("./images/health.png");
-        //GreenfootImage superpowerIronMan = new GreenfootImage("./images/power.png");
-        health.scale(30,30);
-        superpower.scale(30,30);
-        ((Actor)ironManOption).getImage().drawImage(health, 30, 545 );
-        ((Actor)ironManOption).getImage().drawImage(superpower, 30, 585 );
-        ((Actor)ironManOption).getImage().drawRect(60,555,99,11);
-        ((Actor)ironManOption).getImage().setColor(Color.RED);
-        ((Actor)ironManOption).getImage().fillRect(60,555,100,10);
-        
-        ((Actor)ironManOption).getImage().drawRect(60,585,99,11);
-        ((Actor)ironManOption).getImage().setColor(Color.BLUE);
-        ((Actor)ironManOption).getImage().fillRect(60,585,100,13);
-        
+        displayStats(((Actor)thorMenuOption), 100,1); // Thor
+        displayStats(((Actor)ironManOption), 100,1); // ironman
+        displayStats(((Actor)capMenuOption), 100,1); //cap
+        displayStats(((Actor)blackWidowOption), 100,1); //
+        displayStats(((Actor)hulkOption), 100,1); //
+        displayStats(((Actor)hawkEyeOption), 100,1); //
         
         
         addObject((Actor)thorMenuOption, 111, 402);       
@@ -122,6 +101,26 @@ public class MenuScreen extends World
         addObject((Actor)hulkOption, 939, 402); 
         addObject((Actor)hawkEyeOption, 1118, 402); 
         
+        
+    }
+    
+    public void displayStats(Actor actor, int herohealth, int projectileDamage)
+    {
+        GreenfootImage health = new GreenfootImage("./images/health.png");
+        GreenfootImage superpower = new GreenfootImage("./images/power.png");
+        health.scale(30,30);
+        superpower.scale(30,30);
+        actor.getImage().drawImage(health, 30, 545 );
+        actor.getImage().drawImage(superpower, 30, 585 );
+        
+        
+        actor.getImage().drawRect(60,555,99,11);
+        actor.getImage().setColor(Color.RED);
+        actor.getImage().fillRect(60,555,100,10);
+        
+        actor.getImage().drawRect(60, 590,99,11);
+        actor.getImage().setColor(Color.BLUE);
+        actor.getImage().fillRect(60,590,100,13);
         
     }
 }
