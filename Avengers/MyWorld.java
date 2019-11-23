@@ -65,8 +65,6 @@ public class MyWorld extends World
         if(counter.score == 10){
             // Need to change subsequent levels when world class is changed.
             mainPlayer.levelComplete(1);
-            //Greenfoot.delay(200);
-            //nextLevelTransition();
             
         }
     }
