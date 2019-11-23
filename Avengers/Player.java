@@ -25,6 +25,7 @@ abstract class Player extends Actor implements IScoreBoardHealthSubject
     }
     public void superpowerUsed()
     {
+        SoundManager.getInstance().playStaticSound(this.getClass().getName() + "super.mp3");
         superpowerReady = false;
     }
     public boolean isSuperPowerReady()

@@ -1,3 +1,5 @@
+import greenfoot.*;
+
 public class InvincibleStrategy implements ISuperPowerStrategy
 {
     private int supertimer = 0;

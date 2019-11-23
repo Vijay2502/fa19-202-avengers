@@ -18,10 +18,10 @@ public class Starter_Screen extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1200, 800, 1);
         SoundManager manager = SoundManager.getInstance();
-        manager.getSound().stop();
+        manager.stopSound();
         manager.setNewSound("title");
         
-        manager.getSound().play();
+        manager.playSound();
         counter.score = 0;
         this.setBackground( new GreenfootImage("./images/Starter_Screen.jpg"));
         prepare();

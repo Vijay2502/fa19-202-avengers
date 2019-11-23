@@ -31,9 +31,9 @@ public class MyWorld extends World
         this.setBackground( new GreenfootImage("./images/ThorSpaceImage.png"));
         
         SoundManager manager = SoundManager.getInstance();
-        manager.getSound().stop();
+        manager.stopSound();
         manager.setNewSound("lvl1");
-        manager.getSound().play();
+        manager.playSound();
        
         addObject(mainPlayer, 100, getHeight() / 2);
         addObject(psm, 0, 0);
