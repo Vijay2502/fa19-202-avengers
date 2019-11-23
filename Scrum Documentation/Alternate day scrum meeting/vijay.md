@@ -22,3 +22,22 @@ Refactored the code for displaying player's health bar at top of the screen
 I plan on Implementing the final level for the game and final level's enemy 
 ## Blockers
 Currently there are no blockers from my side.
+
+
+#19th Nov
+## What tasks did I work on?
+Implemented final level of the game and the enemy for final level 
+## What am I planning to work next?
+I plan on Implementing the observer pattern for final level's enemy's health bar
+## Blockers
+Currently there are no blockers from my side.
+
+
+
+#21th Nov
+## What tasks did I work on?
+Implemented observer pattern for final level's enemy's health
+## What am I planning to work next?
+I plan on refactoring the code for menu screen to display the stats for each character, and bug fixes in final level
+## Blockers
+Currently there are no blockers from my side.
