@@ -10,7 +10,6 @@ abstract class Player extends Actor implements IScoreBoardHealthSubject
 {
     // Need to set up oberver pattern for superpower.
     int time = 0;
-    int supertimer = 0;
     boolean firingsuperpower = false;
     boolean superpowerReady = false;
     int facing = 1;
@@ -89,23 +88,6 @@ abstract class Player extends Actor implements IScoreBoardHealthSubject
         }
         
     }
-    abstract void firingSuperpower();
-    abstract void fireProjectile();
-    public void fireSuperPower()
-    {
-        firingsuperpower = true;
-        superpowerReady = false;
-    }
-    public void youLose() {
-        if (isTouching(Enemy.class)) {
-            getWorld().showText("You Lose ! You lasted " + (time / 60) + " seconds", getWorld().getWidth()/ 2, getWorld().getHeight() / 2);
-            Greenfoot.stop();
-        }
-    }
-    abstract void displayInfo();
-    abstract GreenfootImage getSuperPowerImage();
-    abstract GreenfootImage getAttackingImage();
-    abstract GreenfootImage getIdleImage();
     public void flipOrientation ()
     {
         facing *= -1;
@@ -126,4 +108,17 @@ abstract class Player extends Actor implements IScoreBoardHealthSubject
     public int getSuperDuration() {
         return this.superDuration;
     }
+    public void youLose() {
+        if (isTouching(Enemy.class)) {
+            getWorld().showText("You Lose ! You lasted " + (time / 60) + " seconds", getWorld().getWidth()/ 2, getWorld().getHeight() / 2);
+            Greenfoot.stop();
+        }
+    }
+    abstract void firingSuperpower();
+    abstract void fireProjectile();
+    abstract void fireSuperPower();
+    abstract void displayInfo();
+    abstract GreenfootImage getSuperPowerImage();
+    abstract GreenfootImage getAttackingImage();
+    abstract GreenfootImage getIdleImage();
 }

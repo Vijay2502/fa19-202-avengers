@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Thor extends Player
 {
+    int supertimer = 0;
     public Thor(){
     }
     public void act() 
@@ -56,6 +57,11 @@ public class Thor extends Player
     {
         getWorld().addObject(new HammerProjectile(facing), getX(), getY());
     }
+    public void fireSuperPower()
+    {
+        firingsuperpower = true;
+        superpowerReady = false;
+    }
     protected void firingSuperpower()
     {
         if (!firingsuperpower)
@@ -66,7 +72,7 @@ public class Thor extends Player
             if (supertimer % 10 == 0)
             {
                 World world = getWorld();
-                world.addObject(spfactory.getSuperProjectile("LIGHTNING"), Greenfoot.getRandomNumber(world.getWidth()), 0);
+                world.addObject(spfactory.getSuperProjectile("LIGHTNING", null), Greenfoot.getRandomNumber(world.getWidth()), 0);
             }
             supertimer++;
         }

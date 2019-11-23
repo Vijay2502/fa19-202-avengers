@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class CapAmerica extends Player
 {
+    int supertimer = 0;
     /**
      * Act - do whatever the CapAmerica wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -61,6 +62,11 @@ public class CapAmerica extends Player
     public void fireProjectile()
     {
         getWorld().addObject(new ShieldProjectile(facing), getX(), getY());
+    }
+    public void fireSuperPower()
+    {
+        firingsuperpower = true;
+        superpowerReady = false;
     }
     protected void firingSuperpower()
     {
