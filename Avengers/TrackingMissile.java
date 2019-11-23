@@ -19,7 +19,7 @@ public class TrackingMissile extends SuperProjectile
     }
     public void act() 
     {
-        if (target != null)
+        if (target.getWorld() != null)
             turnTowards(target.getX(), target.getY());
         move(10);
         if (isAtEdge()) getWorld().removeObject(this);
