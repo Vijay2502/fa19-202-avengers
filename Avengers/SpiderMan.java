@@ -14,6 +14,7 @@ public class SpiderMan extends Player implements IPlayer
      */
     public SpiderMan()
     {
+        superpowerstrategy = new TrackingProjectilesStrategy(this, "WEB");
     }
     public void act() 
     {
@@ -60,20 +61,5 @@ public class SpiderMan extends Player implements IPlayer
     public void fireProjectile()
     {
         getWorld().addObject(new SpiderWebProjectile(facing), getX(), getY());
-    }
-    public void fireSuperPower()
-    {
-        SuperPowerProjectileFactory spfactory = new SuperPowerProjectileFactory();
-        World world = getWorld();
-        for (Enemy enemy : world.getObjects(Enemy.class))
-        {
-            world.addObject(
-                spfactory.getSuperProjectile("WEB", enemy), 
-                getX(), getY());
-        }
-        superpowerReady = false;
-    }
-    protected void firingSuperpower()
-    {
     }
 }

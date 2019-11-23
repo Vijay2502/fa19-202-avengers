@@ -8,13 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class DocStrange extends Player implements IPlayer
 {
-    int supertimer = 0;
     /**
      * Act - do whatever the DocStrange wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public DocStrange()
     {
+        superpowerstrategy = new AttackRainStrategy(this, "LIGHTNING");
     }
     public void act() 
     {
@@ -61,31 +61,5 @@ public class DocStrange extends Player implements IPlayer
     public void fireProjectile()
     {
         getWorld().addObject(new MagicSpellProjectile(facing), getX(), getY());
-    }
-    public void fireSuperPower()
-    {
-        firingsuperpower = true;
-        superpowerReady = false;
-    }
-    
-    protected void firingSuperpower()
-    {
-        if (!firingsuperpower)
-            return;
-        SuperPowerProjectileFactory spfactory = new SuperPowerProjectileFactory();
-        if (supertimer < 300)
-        {
-            if (supertimer % 10 == 0)
-            {
-                World world = getWorld();
-                world.addObject(spfactory.getSuperProjectile("CRACK", null), Greenfoot.getRandomNumber(world.getWidth()), 0);
-            }
-            supertimer++;
-        }
-        else
-        {
-            supertimer = 0;
-            firingsuperpower = false;
-        }
     }
 }

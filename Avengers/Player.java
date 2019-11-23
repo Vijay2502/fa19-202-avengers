@@ -10,10 +10,10 @@ abstract class Player extends Actor implements IScoreBoardHealthSubject
 {
     // Need to set up oberver pattern for superpower.
     int time = 0;
-    boolean firingsuperpower = false;
     boolean superpowerReady = false;
     int facing = 1;
     private IScoreBoardHealthObserver observer;
+    protected ISuperPowerStrategy superpowerstrategy;
     protected String projectileImage = "thor_hammer";
     protected int superDuration = 100;
     public Player()
@@ -23,6 +23,10 @@ abstract class Player extends Actor implements IScoreBoardHealthSubject
     public void superpowerReady()
     {
         superpowerReady = true;
+    }
+    public void superpowerUsed()
+    {
+        superpowerReady = false;
     }
     public boolean isSuperPowerReady()
     {
@@ -69,24 +73,31 @@ abstract class Player extends Actor implements IScoreBoardHealthSubject
         hitByEnemy();
         firingSuperpower();
     }
-    public void hitByEnemy() {
+    private void hitByEnemy() {
         Enemy enemy = (Enemy) getOneObjectAtOffset(0,0, Enemy.class);
         EnemyProjectile projectile = (EnemyProjectile) getOneObjectAtOffset(0,0, EnemyProjectile.class); 
         ThanosProjectile tprojectile = (ThanosProjectile) getOneObjectAtOffset(0,0, ThanosProjectile.class); 
         if (enemy != null) {
-            notifyScoreBoardForHealthUpdate(firingsuperpower ? 0 : enemy.getDamage());
+            notifyScoreBoardForHealthUpdate(
+            superpowerstrategy.isfiringSuperPower() ? 0 : enemy.getDamage());
             getWorld().removeObject(enemy);
         }
         
         if (projectile != null) {
-            notifyScoreBoardForHealthUpdate(firingsuperpower ? 0 : projectile.getDamage());
+            notifyScoreBoardForHealthUpdate(
+            superpowerstrategy.isfiringSuperPower() ? 0 : projectile.getDamage());
             getWorld().removeObject(projectile);
         }
         if (tprojectile != null) {
-            notifyScoreBoardForHealthUpdate(firingsuperpower ? 0 : tprojectile.getDamage());
+            notifyScoreBoardForHealthUpdate(
+            superpowerstrategy.isfiringSuperPower() ? 0 : tprojectile.getDamage());
             getWorld().removeObject(tprojectile);
         }
         
+    }
+    private void firingSuperpower()
+    {
+        superpowerstrategy.firingSuperpower();
     }
     public void flipOrientation ()
     {
@@ -114,9 +125,11 @@ abstract class Player extends Actor implements IScoreBoardHealthSubject
             Greenfoot.stop();
         }
     }
-    abstract void firingSuperpower();
+    public void fireSuperPower()
+    {
+        superpowerstrategy.fireSuperPower();
+    }
     abstract void fireProjectile();
-    abstract void fireSuperPower();
     abstract void displayInfo();
     abstract GreenfootImage getSuperPowerImage();
     abstract GreenfootImage getAttackingImage();
