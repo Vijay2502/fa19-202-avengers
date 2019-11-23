@@ -8,15 +8,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Arrow extends SuperProjectile
 {
-    public Arrow()
+    private Enemy target;
+    public Arrow(Enemy target)
     {
+        this.target = target;
         GreenfootImage up = new GreenfootImage("./images/arrow.png");
-        up.scale(40,40);
+        up.scale(80,40);
+        setRotation(0);
         setImage(up);
-        setRotation(90);
     }
     public void act() 
     {
+        if (target.getWorld() != null)
+            turnTowards(target.getX(), target.getY());
         move(10);
         if (isAtEdge()) getWorld().removeObject(this);
     }

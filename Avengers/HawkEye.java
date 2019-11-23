@@ -14,7 +14,7 @@ public class HawkEye extends Player implements IPlayer
      */
     public HawkEye() 
     {
-        superpowerstrategy = new AttackRainStrategy(this, "LIGHTNING");
+        superpowerstrategy = new TrackingProjectilesStrategy(this, "ARROW");
         this.health = 100;
     }  
     public void act() 

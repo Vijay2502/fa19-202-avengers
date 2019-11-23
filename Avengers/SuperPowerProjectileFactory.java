@@ -25,7 +25,7 @@ public class SuperPowerProjectileFactory
             case "WEB" : returnproj = new TrackingWeb (target); break;
             case "MISSILE" : returnproj = new TrackingMissile (target); break;
             case "LIGHTNING" : returnproj = new LightningBall (); break;
-            case "ARROW" : returnproj = new Arrow (); break;
+            case "ARROW" : returnproj = new Arrow (target); break;
             case "CRACK" : returnproj = new SpaceCrack (); break;
         }
         return returnproj;
