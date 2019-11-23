@@ -21,7 +21,6 @@ public class Thanos extends Actor implements IScoreBoardHealthSubject
     Boolean flag = false;
     GreenfootImage wormhole = new GreenfootImage("./images/enemy/thanos/wormhole.png");
     private IScoreBoardHealthObserver observer;
-    GifImage gifImage = new GifImage("./images/2.gif");
     public Thanos(Player mainPlayer, Counter counter) {
         this.counter = counter;
         this.player = mainPlayer;
