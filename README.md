@@ -17,6 +17,9 @@ https://www.youtube.com/watch?v=wgCFhfREaq8
 
 ![Screen Shot 2019-11-22 at 2 27 48 PM](https://user-images.githubusercontent.com/33183783/69464883-7b851080-0d34-11ea-86f1-e4c8dedb1fc5.png)
 
+## Menu Screen
+
+![image](https://user-images.githubusercontent.com/33183783/69478493-f9ceca80-0da7-11ea-92c7-ac54f79a43c1.png)
 
 ## Level 1
 ![L1](https://user-images.githubusercontent.com/33183783/69469019-83987c80-0d43-11ea-9e28-66c74ef016e3.png)
@@ -29,7 +32,6 @@ https://www.youtube.com/watch?v=wgCFhfREaq8
 
 ## Level 4
 ![Screen Shot 2019-11-23 at 4 12 28 AM](https://user-images.githubusercontent.com/33183783/69478472-90e75280-0da7-11ea-9bb3-154b74d29952.png)
-
 
 # Activity Diagram
 
