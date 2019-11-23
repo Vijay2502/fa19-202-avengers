@@ -19,7 +19,7 @@ public class Thanos extends Actor implements IScoreBoardHealthSubject
     int timer = 0, spaceStoneTimer = 0,warmholeTimer = 0;
     int shootTime = 100;
     Boolean flag = false;
-    GreenfootImage wormhole = new GreenfootImage("./images/enemy/thanos/wormhole.jpg");
+    GreenfootImage wormhole = new GreenfootImage("./images/enemy/thanos/wormhole.png");
     private IScoreBoardHealthObserver observer;
     GifImage gifImage = new GifImage("./images/2.gif");
     public Thanos(Player mainPlayer, Counter counter) {
@@ -63,7 +63,7 @@ public class Thanos extends Actor implements IScoreBoardHealthSubject
                         getImage().scale(200, 250);
                         if(warmholeTimer >= 250 && warmholeTimer <= 300)
                         {
-                            getWorld().getBackground().drawImage(wormhole, getX() - 80, getY() + 100);
+                            getWorld().getBackground().drawImage(wormhole, getX() - 80, getY() + 60);
                             warmholeTimer = 0;
                         }
 
