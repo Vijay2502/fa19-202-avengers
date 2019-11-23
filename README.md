@@ -27,6 +27,9 @@ https://www.youtube.com/watch?v=wgCFhfREaq8
 ## Level 3
 ![L3](https://user-images.githubusercontent.com/33183783/69469067-b93d6580-0d43-11ea-92e2-aefa46123503.png)
 
+# Activity Diagram
+
+![AvengersActivity Diagram](https://user-images.githubusercontent.com/33183783/69478401-cb042480-0da6-11ea-963d-4d4af180b829.png)
 
 Game Description :  
 A Superhero game with the option to the user to select from a number of superheroes. The game has 6 levels, after successfully completing a level, the user gets an infinity stone. When the user has all 6 of the infinity stones, the user moves on to the final level where he encounters Thanos (The Final Level). Once he defeats Thanos, the game is completed.
