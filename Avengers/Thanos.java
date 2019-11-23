@@ -139,7 +139,7 @@ public class Thanos extends Actor implements IScoreBoardHealthSubject
             
             this.setLocation(randomX, randomY);
             spaceStoneTimer = 0;
-            getWorld().setBackground("./images/ThorSpaceImage.png");
+            getWorld().setBackground("../images/PowerStoneLevel.jpg");
             setRandomImage();
         }
     }

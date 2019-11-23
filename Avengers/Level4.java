@@ -9,18 +9,20 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Level4 extends MyWorld
 {
     int currentLevel = 4;
-    /**
-     * Constructor for objects of class Level4.
-     * 
-     */
+    Thanos thanos;
+    ThanosHealthBar thealthbar = new ThanosHealthBar();
     public Level4(Player player)
     {
+        
         super(player);
-        this.setBackground( new GreenfootImage("./images/PowerStoneLevel.jpg"));
+        thanos = new Thanos(player, counter);
+        setBackground( new GreenfootImage("./images/PowerStoneLevel.jpg"));
+        thanos.registerScoreBoardHealthObserver(thealthbar);
+
     }
     
     public void spawnEnemies () {
-        addObject(new Thanos(mainPlayer, counter), getWidth(), getHeight() / 2);
+        addObject(thanos, getWidth() / 4, getHeight() / 4);
     }
 
     public void nextLevelProgressCheck(){
