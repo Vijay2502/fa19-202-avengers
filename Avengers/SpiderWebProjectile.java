@@ -10,10 +10,12 @@ public class SpiderWebProjectile extends HeroProjectile
 {
     public SpiderWebProjectile(int facing) 
     {
+        super (facing);
         GreenfootImage up = new GreenfootImage("./images/web.png");
+        if (facing == -1)
+            up.mirrorHorizontally();
         this.speed = 7;
         this.damage = 15;
-        this.facing = facing;
         up.scale(100,40);
         setImage(up);
     }    

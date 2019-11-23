@@ -12,8 +12,8 @@ public class TrackingWeb extends SuperProjectile
     public TrackingWeb(Enemy target)
     {
         this.target = target;
-        GreenfootImage up = new GreenfootImage("./images/lightning.png");
-        up.scale(40,40);
+        GreenfootImage up = new GreenfootImage("./images/trackweb.png");
+        up.scale(80,80);
         setImage(up);
         setRotation(90);
     }

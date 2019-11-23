@@ -11,8 +11,9 @@ public class Projectile extends Actor
     public int speed;
     protected int damage;
     protected int facing;
-    public Projectile()
+    public Projectile(int facing)
     {
+        this.facing = facing;
     }    
     
     public void act() 

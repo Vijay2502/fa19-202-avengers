@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Level2 extends MyWorld
 {
+    int currentLevel = 2;
     /**
      * Constructor for objects of class Level2.
      * 
@@ -21,13 +22,16 @@ public class Level2 extends MyWorld
     public void spawnEnemies () {
         if (count % spawnSpeed == 0)
         {
-            randomSpawn = Greenfoot.getRandomNumber(5);
+            randomSpawn = Greenfoot.getRandomNumber(8);
             switch (randomSpawn) {
                 case 0: addObject(new Elf(mainPlayer, counter), getWidth(), 0); break;
                 case 1: addObject(new GreenGoblin(mainPlayer, counter), getWidth(), getHeight() / 4); break;
                 case 2: addObject(new Ultron(mainPlayer, counter), getWidth(), getHeight() / 2); break;
                 case 3: addObject(new GreenGoblin(mainPlayer, counter), getWidth(), 3 *getHeight() / 4); break;
                 case 4: addObject(new Elf(mainPlayer, counter), getWidth(), getHeight()); break;
+                case 5: addObject(new Ultron(mainPlayer, counter), 0, getHeight() / 2); break;
+                case 6: addObject(new GreenGoblin(mainPlayer, counter), 0, 3 *getHeight() / 4); break;
+                case 7: addObject(new Elf(mainPlayer, counter), 0, 0); break;
             }            
         }
     }
@@ -35,6 +39,7 @@ public class Level2 extends MyWorld
     public void nextLevelProgressCheck(){
         if(counter.score == 20){
             // Need to change subsequent levels when world class is changed.
+            mainPlayer.levelComplete(2);
             Greenfoot.setWorld(new Level3(mainPlayer));
         }
     }

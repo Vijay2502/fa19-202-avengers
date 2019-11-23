@@ -10,10 +10,10 @@ public class BeamProjectile extends HeroProjectile
 {
     public BeamProjectile(int facing) 
     {
+        super (facing);
         GreenfootImage up = new GreenfootImage("./images/beam.png");
         this.speed = 7;
         this.damage = 18;
-        this.facing = facing;
         up.scale(60,40);
         setImage(up);
     }   

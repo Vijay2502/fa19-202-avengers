@@ -12,10 +12,10 @@ public class TrackingMissile extends SuperProjectile
     public TrackingMissile(Enemy target)
     {
         this.target = target;
-        GreenfootImage up = new GreenfootImage("./images/lightning.png");
-        up.scale(40,40);
+        GreenfootImage up = new GreenfootImage("./images/rocket.png");
+        up.scale(80,80);
+        setRotation(0);
         setImage(up);
-        setRotation(90);
     }
     public void act() 
     {
