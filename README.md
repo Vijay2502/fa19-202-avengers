@@ -42,7 +42,7 @@ A Superhero game with the option to the user to select from a number of superher
 
 # Class Diagrams
 
-## Stratergy Pattern
+## Strategy Pattern
 
 ![image](https://user-images.githubusercontent.com/33183783/69478522-57fbad80-0da8-11ea-9a6c-0906a0fa6aeb.png)
 
@@ -63,7 +63,7 @@ A Superhero game with the option to the user to select from a number of superher
 ![image](https://user-images.githubusercontent.com/33183783/69478710-54692600-0daa-11ea-8573-ee7a9df8e0f5.png)
 
 
-## Stratergy Pattern
+## Strategy Pattern
 
 ![image](https://user-images.githubusercontent.com/33183783/69478714-62b74200-0daa-11ea-8d07-f7da79b937d5.png)
 
