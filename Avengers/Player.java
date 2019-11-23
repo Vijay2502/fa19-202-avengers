@@ -127,27 +127,29 @@ abstract class Player extends Actor implements IScoreBoardHealthSubject, IPlayer
     
     public void levelComplete(int currentLevel){
         superpowerstrategy.stopFiringSuperpower();
+        World world = getWorld();
+        world.removeObjects(world.getObjects(Projectile.class));
         NextLevel nextLevel = new NextLevel();
         switch(currentLevel){
             case 1: 
             //getWorld().getBackground().drawImage(new GreenfootImage("./images/InfinityStone1.jpeg"), 600, 200); 
-                    getWorld().showText("Go to level 2", 600, 100);
-                    getWorld().addObject(nextLevel, 600, 700);
+                    world.showText("Go to level 2", 600, 100);
+                    world.addObject(nextLevel, 600, 700);
                     break;
             case 2: 
             //getWorld().getBackground().drawImage(new GreenfootImage("./images/InfinityStone2.jpeg"), 600, 200);
-                    getWorld().showText("Go to level 3", 600, 100);
-                    getWorld().addObject(nextLevel, 600, 700);
+                    world.showText("Go to level 3", 600, 100);
+                    world.addObject(nextLevel, 600, 700);
                     break;
                     
             case 3: 
             //getWorld().getBackground().drawImage(new GreenfootImage("./images/InfinityStone3.jpeg"), 600, 200);
-                    getWorld().showText("Go to level 4", 600, 100);
-                    getWorld().addObject(nextLevel, 600, 700);
+                    world.showText("Go to level 4", 600, 100);
+                    world.addObject(nextLevel, 600, 700);
                     break;
             
             case 4: 
-            //getWorld().getBackground().drawImage(new GreenfootImage("./images/TimeStone.jpg"), 100, 100); 
+            //world.getBackground().drawImage(new GreenfootImage("./images/TimeStone.jpg"), 100, 100); 
                 break;
         }
     }
