@@ -8,15 +8,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Level4 extends MyWorld
 {
-
-    /**
-     * Constructor for objects of class Level4.
-     * 
-     */
+    int currentLevel = 4;
+    Thanos thanos;
+    ThanosHealthBar thealthbar = new ThanosHealthBar();
     public Level4(Player player)
     {
+        
         super(player);
-        this.setBackground( new GreenfootImage("./images/PowerStoneLevel.jpg"));
+        thanos = new Thanos(player, counter);
+        setBackground( new GreenfootImage("./images/PowerStoneLevel.jpg"));
+        thanos.registerScoreBoardHealthObserver(thealthbar);
+
         SoundManager manager = SoundManager.getInstance();
         manager.getSound().stop();
         manager.setNewSound("lvl4");
@@ -24,23 +26,14 @@ public class Level4 extends MyWorld
     }
     
     public void spawnEnemies () {
-        if (count % spawnSpeed == 0)
-        {
-            randomSpawn = Greenfoot.getRandomNumber(5);
-            switch (randomSpawn) {
-                case 0: addObject(new Elf(mainPlayer, counter), getWidth(), 0); break;
-                case 1: addObject(new Ultron(mainPlayer, counter), getWidth(), getHeight() / 4); break;
-                case 2: addObject(new Loki(mainPlayer, counter), getWidth(), getHeight() / 2); break;
-                case 3: addObject(new GreenGoblin(mainPlayer, counter), getWidth(), 3 *getHeight() / 4); break;
-                case 4: addObject(new Loki(mainPlayer, counter), getWidth(), getHeight()); break;
-            }            
-        }
+        addObject(thanos, getWidth() / 4, getHeight() / 4);
     }
 
     public void nextLevelProgressCheck(){
         if(counter.score == 10){
             // Need to change subsequent levels when world class is changed.
             // Greenfoot.setWorld(new Level3(mainPlayer));
+            mainPlayer.levelComplete(4);
         }
     }
     
