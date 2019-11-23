@@ -31,3 +31,28 @@ Work towards creating various enemy classes
 
 ## Blockers
 Doubts related to enemy spawns for each level 
+
+
+# 19th Nov
+
+## What tasks did I work on?
+Worked on enemy class implementation (animation, movement, damage, etc)
+
+## What am I Planning to work next?
+Work towards creating various projectile classes
+
+## Blockers
+none
+
+
+
+# 21st Nov
+
+## What tasks did I work on?
+Created various projectile classes for heroes and enemies. Created sound manager class for playing audio files throughout the game.
+
+## What am I Planning to work next?
+Creating one of the strategies for projectile's motion
+
+## Blockers
+None
