@@ -12,16 +12,16 @@ public class MenuScreen extends World
     IMenuInvoker thorMenuOption;
     IMenuInvoker ironManOption;
     IMenuInvoker capMenuOption ;
-    IMenuInvoker blackWidowOption ;
-    IMenuInvoker hulkOption ;
+    IMenuInvoker drStrangeOption ;
+    IMenuInvoker spiderManOption ;
     IMenuInvoker hawkEyeOption ;
     PlayerFactory playerFactory;
     
     IMenuCommand thorCommand;
     IMenuCommand ironManCommand;
     IMenuCommand capCommand;
-    IMenuCommand blackWidowCommand;
-    IMenuCommand hulkCommand;
+    IMenuCommand drStrangeCommand;
+    IMenuCommand spiderManCommand;
     IMenuCommand hawkCommand;
     
      /* Constructor for objects of class MenuScreen.
@@ -34,8 +34,8 @@ public class MenuScreen extends World
         thorMenuOption = new MenuOption();
         ironManOption = new MenuOption();
         capMenuOption = new MenuOption();
-        blackWidowOption = new MenuOption();
-        hulkOption = new MenuOption();
+        drStrangeOption = new MenuOption();
+        spiderManOption = new MenuOption();
         hawkEyeOption = new MenuOption();
 
         playerFactory = new PlayerFactory();
@@ -43,22 +43,22 @@ public class MenuScreen extends World
         thorCommand = new MenuCommand();
         ironManCommand = new MenuCommand();
         capCommand = new MenuCommand();
-        blackWidowCommand = new MenuCommand();
-        hulkCommand = new MenuCommand();
+        drStrangeCommand = new MenuCommand();
+        spiderManCommand = new MenuCommand();
         hawkCommand = new MenuCommand();
 
         ((Actor)thorMenuOption).setImage("images/MenuThor.jpg");
         ((Actor)ironManOption).setImage("images/MenuIron.jpg");
         ((Actor)capMenuOption).setImage("images/MenuCap.jpg");
-        ((Actor)hulkOption).setImage("images/MenuBlack.jpg");
-        ((Actor)blackWidowOption).setImage("images/MenuHulk.jpg");
+        ((Actor)spiderManOption).setImage("images/MenuBlack.jpg");
+        ((Actor)drStrangeOption).setImage("images/MenuHulk.jpg");
         ((Actor)hawkEyeOption).setImage("images/MenuHawk.jpg");
         
         thorMenuOption.setCommand(thorCommand);
         ironManOption.setCommand(ironManCommand);
         capMenuOption.setCommand(capCommand);
-        blackWidowOption.setCommand(blackWidowCommand);
-        hulkOption.setCommand(hulkCommand);
+        drStrangeOption.setCommand(drStrangeCommand);
+        spiderManOption.setCommand(spiderManCommand);
         hawkEyeOption.setCommand(hawkCommand);
         
         thorCommand.setReceiver(() -> {
@@ -75,11 +75,11 @@ public class MenuScreen extends World
             Greenfoot.setWorld(new MyWorld((Player)playerFactory.getPlayer("CAPTAINAMERICA")));
         });
         
-        blackWidowCommand.setReceiver(() -> {
+        drStrangeCommand.setReceiver(() -> {
             Greenfoot.setWorld(new MyWorld((Player)playerFactory.getPlayer("DrStrange")));
         });
         
-        hulkCommand.setReceiver(() -> {
+        spiderManCommand.setReceiver(() -> {
             Greenfoot.setWorld(new MyWorld((Player)playerFactory.getPlayer("SPIDERMAN")));
         });
         
@@ -90,16 +90,16 @@ public class MenuScreen extends World
         displayStats(((Actor)thorMenuOption), "Thor", 100,1); // Thor
         displayStats(((Actor)ironManOption), "IronMan",100,1); // ironman
         displayStats(((Actor)capMenuOption), "Captain America", 100,1); //cap
-        displayStats(((Actor)blackWidowOption), "Dr Strange", 100,1); //
-        displayStats(((Actor)hulkOption),"Spiderman", 100,1); //
+        displayStats(((Actor)drStrangeOption), "Dr Strange", 100,1); //
+        displayStats(((Actor)spiderManOption),"Spiderman", 100,1); //
         displayStats(((Actor)hawkEyeOption),"HawkEye", 100,1); //
         
         
         addObject((Actor)thorMenuOption, 111, 402);       
         addObject((Actor)ironManOption, 337, 402); 
         addObject((Actor)capMenuOption, 565, 402); 
-        addObject((Actor)blackWidowOption, 767, 402); 
-        addObject((Actor)hulkOption, 939, 402); 
+        addObject((Actor)drStrangeOption, 767, 402); 
+        addObject((Actor)spiderManOption, 939, 402); 
         addObject((Actor)hawkEyeOption, 1118, 402); 
         
         
