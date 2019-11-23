@@ -11,9 +11,9 @@ public class SinusoidalMovementStrategy implements IProjectileMoveStrategy
     private int toggler =1;
     private int speed;
     private Projectile projectile;
-    private Boolean isReverse;
+    private int isReverse;
 
-    public SinusoidalMovementStrategy(Boolean isReverse){
+    public SinusoidalMovementStrategy(int isReverse){
         this.speed = 0-getRandomNumber(3,4);
         this.isReverse = isReverse;
     }
@@ -26,8 +26,7 @@ public class SinusoidalMovementStrategy implements IProjectileMoveStrategy
     
 
     public void moveProjectile(){
-        int direction = isReverse ? -1 : 1;
-        this.projectile.move(direction * this.speed);
+        this.projectile.move(isReverse * this.speed);
         rotateProjectile();
     }
     

@@ -8,8 +8,8 @@ public class StraightMovementStrategy implements IProjectileMoveStrategy
 {
     private int speed;
     private Projectile projectile;
-    private Boolean isReverse;
-    public StraightMovementStrategy(Boolean isReverse){
+    private int isReverse;
+    public StraightMovementStrategy(int isReverse){
         this.speed = 0-getRandomNumber(2,6);
         this.isReverse = isReverse;
     }
@@ -19,8 +19,7 @@ public class StraightMovementStrategy implements IProjectileMoveStrategy
     }
     
     public void moveProjectile(){
-        int direction = isReverse ? -1 : 1;
-        this.projectile.move(direction * this.speed);
+        this.projectile.move(isReverse * this.speed);
     }
     
     public void rotateProjectile(){

@@ -5,10 +5,10 @@ public class RotatingMovementStrategy implements IProjectileMoveStrategy
 {
     private int speed;
     private Projectile projectile;
-    private Boolean isReverse;
+    private int isReverse;
     private int angle = 0;
     
-    public RotatingMovementStrategy(Boolean isReverse){
+    public RotatingMovementStrategy(int isReverse){
         this.isReverse = isReverse;
     }
     
@@ -17,9 +17,8 @@ public class RotatingMovementStrategy implements IProjectileMoveStrategy
     }
     
     public void moveProjectile(){
-        int direction = isReverse ? -1 : 1;
         this.projectile.setRotation(0);
-        this.projectile.move(direction * this.projectile.getSpeed());
+        this.projectile.move(isReverse * this.projectile.getSpeed());
         this.projectile.setRotation(angle%360 +20);
         angle+=10;
     }
