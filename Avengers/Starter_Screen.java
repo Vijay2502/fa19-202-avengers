@@ -20,13 +20,19 @@ public class Starter_Screen extends World
         counter.score = 0;
         this.setBackground( new GreenfootImage("./images/Starter_Screen.jpg"));
         prepare();
+        help();
     }
     
     public void prepare(){
         StarterScreenTitle titleScreen = new StarterScreenTitle();
+        HelpScreenTitle helpScreen = new HelpScreenTitle();
         addObject(titleScreen, 543, 284);
+        addObject(helpScreen, 543, 420);
     }
-    
+    public void help()
+    {
+        
+    }
     public void act(){
     }
     
