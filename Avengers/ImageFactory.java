@@ -38,12 +38,12 @@ public class ImageFactory
         GreenfootImage returnimage = null;
         switch (imagename.toUpperCase())
         {
-            case "CAP" : returnimage = new GreenfootImage("./images/cap.png"); break;
-            case "DOC" : returnimage = new GreenfootImage("./images/doc. strange.png"); break;
-            case "HAWKEYE" : returnimage = new GreenfootImage("./images/hawkeye.png"); break;
-            case "IRONMAN" : returnimage = new GreenfootImage("./images/iron man.png"); break;
-            case "SPIDERMAN" : returnimage = new GreenfootImage("./images/spiderman.png"); break;
-            case "THOR" : returnimage = new GreenfootImage("./images/thor.png"); break;
+            case "CAP" : returnimage = new GreenfootImage("./images/hero/capamerica/shoot.png"); break;
+            case "DOC" : returnimage = new GreenfootImage("./images/hero/drstrange/shoot.png"); break;
+            case "HAWKEYE" : returnimage = new GreenfootImage("./images/hero/hawkeye/shoot.png"); break;
+            case "IRONMAN" : returnimage = new GreenfootImage("./images/hero/ironman/shoot.png"); break;
+            case "SPIDERMAN" : returnimage = new GreenfootImage("./images/hero/spiderman/shoot.png"); break;
+            case "THOR" : returnimage = new GreenfootImage("./images/hero/thor/shoot.png"); break;
         }
         return returnimage;
     }
@@ -54,12 +54,12 @@ public class ImageFactory
         GreenfootImage returnimage = null;
         switch (imagename.toUpperCase())
         {
-            case "CAP" : returnimage = new GreenfootImage("./images/cap.png"); break;
-            case "DOC" : returnimage = new GreenfootImage("./images/doc. strange.png"); break;
-            case "HAWKEYE" : returnimage = new GreenfootImage("./images/hawkeye.png"); break;
-            case "IRONMAN" : returnimage = new GreenfootImage("./images/iron man.png"); break;
-            case "SPIDERMAN" : returnimage = new GreenfootImage("./images/spiderman.png"); break;
-            case "THOR" : returnimage = new GreenfootImage("./images/thor.png"); break;
+            case "CAP" : returnimage = new GreenfootImage("./images/hero/capamerica/shoot.png"); break;
+            case "DOC" : returnimage = new GreenfootImage("./images/hero/drstrange/shoot.png"); break;
+            case "HAWKEYE" : returnimage = new GreenfootImage("./images/hero/hawkeye/shoot.png"); break;
+            case "IRONMAN" : returnimage = new GreenfootImage("./images/hero/ironman/shoot.png"); break;
+            case "SPIDERMAN" : returnimage = new GreenfootImage("./images/hero/spiderman/shoot.png"); break;
+            case "THOR" : returnimage = new GreenfootImage("./images/hero/thor/shoot.png"); break;
         }
         return returnimage;
     }
