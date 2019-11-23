@@ -18,9 +18,9 @@ public class Level3 extends MyWorld
         super(player);
         this.setBackground( new GreenfootImage("./images/TimeStoneLevel.jpg"));
         SoundManager manager = SoundManager.getInstance();
-        manager.getSound().stop();
+        manager.stopSound();
         manager.setNewSound("lvl3");
-        manager.getSound().play();
+        manager.playSound();
     }
     public void spawnEnemies () {
         if (count % spawnSpeed == 0)

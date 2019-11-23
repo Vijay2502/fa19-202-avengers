@@ -32,5 +32,18 @@ public class SoundManager
         return sound;
     }
     
+    public void playSound() {
+        sound.play();
+        sound.setVolume(40);
+    }
+    
+    public void stopSound() {
+        sound.stop();
+    }
+    
+    public void playStaticSound(String str) {
+        Greenfoot.playSound(str);
+    }
+    
     
 }

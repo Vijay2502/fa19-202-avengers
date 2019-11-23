@@ -20,9 +20,9 @@ public class Level4 extends MyWorld
         thanos.registerScoreBoardHealthObserver(thealthbar);
         addObject(thealthbar, 600, 780);
         SoundManager manager = SoundManager.getInstance();
-        manager.getSound().stop();
+        manager.stopSound();
         manager.setNewSound("lvl4");
-        manager.getSound().play();
+        manager.playSound();
     }
     
     public void spawnEnemies () {
