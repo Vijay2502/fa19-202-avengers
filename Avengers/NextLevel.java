@@ -22,7 +22,11 @@ public class NextLevel extends Actor
     
     public void click(){
         if(Greenfoot.mouseClicked(this)){
-            clicked = true;
+            //clicked = true;
+            //getWorld()
+            //Player mainPlayer = (Player)getWorld().getObject(Player.class);
+            MyWorld my = (MyWorld)getWorld();
+            my.nextLevelTransition();
         }
     }
 }
