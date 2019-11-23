@@ -1,16 +1,14 @@
 import greenfoot.*;
-/**
- * Straight movement strategy.
- * 
- * @author Atharva Munshi
- */
-public class StraightMovementStrategy implements IProjectileMoveStrategy 
+
+
+public class RotatingMovementStrategy implements IProjectileMoveStrategy 
 {
     private int speed;
     private Projectile projectile;
     private Boolean isReverse;
-    public StraightMovementStrategy(Boolean isReverse){
-        this.speed = 0-getRandomNumber(2,6);
+    private int angle = 0;
+    
+    public RotatingMovementStrategy(Boolean isReverse){
         this.isReverse = isReverse;
     }
     
@@ -20,7 +18,10 @@ public class StraightMovementStrategy implements IProjectileMoveStrategy
     
     public void moveProjectile(){
         int direction = isReverse ? -1 : 1;
-        this.projectile.move(direction * this.speed);
+        this.projectile.setRotation(0);
+        this.projectile.move(direction * this.projectile.getSpeed());
+        this.projectile.setRotation(angle%360 +20);
+        angle+=10;
     }
     
     public void rotateProjectile(){
@@ -28,12 +29,10 @@ public class StraightMovementStrategy implements IProjectileMoveStrategy
     }
     
     public void changeSpeed(int speed){
-        this.speed = speed;
     }
     
     private int getRandomNumber(int s,int e)
     {
-       int n = Greenfoot.getRandomNumber(e-s+1);
-       return n+s;
+       return 0;
     }
 }

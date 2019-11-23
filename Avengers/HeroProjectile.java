@@ -6,22 +6,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class HeroProjectile extends Actor
+public class HeroProjectile extends Projectile
 {
-    protected int speed = 10;
-    protected int damage = 10;
-    protected int facing = 1;
     public HeroProjectile()
     {
-    }    
-    
-    public void act() 
-    {
-        move(facing * speed);
-        if (isAtEdge()) getWorld().removeObject(this);
-    } 
-    
-    public int getDamage() {
-        return this.damage;
+        facing = 1;
     }
 }

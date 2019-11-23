@@ -4,13 +4,13 @@ import greenfoot.*;
  * 
  * @author Atharva Munshi
  */
-public class SinusoidalMovementStrategy implements IMoveStrategy 
+public class SinusoidalMovementStrategy implements IProjectileMoveStrategy 
 {
     private int changemovementafterstep =50;
     private int step =1;
     private int toggler =1;
     private int speed;
-    private Actor actor;
+    private Projectile projectile;
     private Boolean isReverse;
 
     public SinusoidalMovementStrategy(Boolean isReverse){
@@ -19,22 +19,22 @@ public class SinusoidalMovementStrategy implements IMoveStrategy
     }
     
 
-    public void setActor(Actor actor){
-        this.actor = actor;
-        this.actor.setRotation(-45);
+    public void setProjectile(Projectile projectile){
+        this.projectile = projectile;
+        this.projectile.setRotation(-45);
     }
     
 
-    public void moveActor(){
+    public void moveProjectile(){
         int direction = isReverse ? -1 : 1;
-        this.actor.move(direction * this.speed);
-        rotateActor();
+        this.projectile.move(direction * this.speed);
+        rotateProjectile();
     }
     
 
-    public void rotateActor(){
+    public void rotateProjectile(){
         if(step % changemovementafterstep ==0){
-            this.actor.turn(90*toggler);
+            this.projectile.turn(90*toggler);
             toggler *= -1;
         }
         step++;

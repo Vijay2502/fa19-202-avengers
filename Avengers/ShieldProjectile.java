@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class ShieldProjectile extends HeroProjectile
 {
+    private IProjectileMoveStrategy movementStrategy;
     public ShieldProjectile(int facing) 
     {
         GreenfootImage up = new GreenfootImage("./images/shield.png");
@@ -16,5 +17,20 @@ public class ShieldProjectile extends HeroProjectile
         this.facing = facing;
         up.scale(80,80);
         setImage(up);
-    }   
+        this.movementStrategy = new RotatingMovementStrategy(facing == -1);
+        this.movementStrategy.setProjectile(this);
+    } 
+
+    public void act(){
+        this.movementStrategy.moveProjectile();
+        this.actorOnEdgeAction();
+    }
+
+     public boolean actorOnEdgeAction(){
+        if ( this.isAtEdge()){
+            getWorld().removeObject(this);
+            return true;
+        }
+        return false;
+    }  
 }

@@ -86,3 +86,13 @@
 /Avengers/TrackingMissile.ctxt
 /Avengers/TrackingWeb.ctxt
 /Avengers/Ultron.class
+/Avengers/EnemyProjectile.class
+/Avengers/HeroProjectile.class
+/Avengers/IProjectileMoveStrategy.class
+/Avengers/IProjectileMoveStrategy.ctxt
+/Avengers/Projectile.class
+/Avengers/Projectile.ctxt
+/Avengers/RotatingMovementStrategy.class
+/Avengers/RotatingMovementStrategy.ctxt
+/Avengers/ShieldProjectile.class
+/Avengers/Starter_Screen.class

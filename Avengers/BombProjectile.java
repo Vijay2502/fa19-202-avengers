@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class BombProjectile extends EnemyProjectile
 {
-    private IMoveStrategy movementStrategy;
+    private IProjectileMoveStrategy movementStrategy;
     public BombProjectile(Boolean isReverse)
     {
         GreenfootImage up = new GreenfootImage("./images/bomb.png");
@@ -17,11 +17,11 @@ public class BombProjectile extends EnemyProjectile
         up.scale(40,40);
         setImage(up);
         this.movementStrategy = new SinusoidalMovementStrategy(isReverse);
-        this.movementStrategy.setActor(this);
+        this.movementStrategy.setProjectile(this);
     }
 
     public void act(){
-        this.movementStrategy.moveActor();
+        this.movementStrategy.moveProjectile();
         this.actorOnEdgeAction();
     }
 
