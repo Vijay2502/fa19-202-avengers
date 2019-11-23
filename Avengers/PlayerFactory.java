@@ -14,7 +14,7 @@ public class PlayerFactory
     {
     }
 
-    public Player getPlayer(String playerName){
+    public IPlayer getPlayer(String playerName){
         if(playerName == null){
             return null;
          }		

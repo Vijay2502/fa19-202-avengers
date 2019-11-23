@@ -15,7 +15,8 @@ public class MenuScreen extends World
     IMenuInvoker blackWidowOption ;
     IMenuInvoker hulkOption ;
     IMenuInvoker hawkEyeOption ;
-
+    PlayerFactory playerFactory;
+    
     IMenuCommand thorCommand;
     IMenuCommand ironManCommand;
     IMenuCommand capCommand;
@@ -37,7 +38,7 @@ public class MenuScreen extends World
         hulkOption = new MenuOption();
         hawkEyeOption = new MenuOption();
 
-        PlayerFactory playerFactory = new PlayerFactory();
+        playerFactory = new PlayerFactory();
 
         thorCommand = new MenuCommand();
         ironManCommand = new MenuCommand();
@@ -63,27 +64,27 @@ public class MenuScreen extends World
         thorCommand.setReceiver(() -> {
             //get world from factory
             // inside factory get player from another factory
-            Greenfoot.setWorld(new MyWorld(playerFactory.getPlayer("THOR")));
+            Greenfoot.setWorld(new MyWorld((Player)playerFactory.getPlayer("THOR")));
         });
         
         ironManCommand.setReceiver(() -> {
-            Greenfoot.setWorld(new MyWorld(playerFactory.getPlayer("IRONMAN")));
+            Greenfoot.setWorld(new MyWorld((Player)playerFactory.getPlayer("IRONMAN")));
         });
         
         capCommand.setReceiver(() -> {
-            Greenfoot.setWorld(new MyWorld(playerFactory.getPlayer("CAPTAINAMERICA")));
+            Greenfoot.setWorld(new MyWorld((Player)playerFactory.getPlayer("CAPTAINAMERICA")));
         });
         
         blackWidowCommand.setReceiver(() -> {
-            Greenfoot.setWorld(new MyWorld(playerFactory.getPlayer("DrStrange")));
+            Greenfoot.setWorld(new MyWorld((Player)playerFactory.getPlayer("DrStrange")));
         });
         
         hulkCommand.setReceiver(() -> {
-            Greenfoot.setWorld(new MyWorld(playerFactory.getPlayer("SPIDERMAN")));
+            Greenfoot.setWorld(new MyWorld((Player)playerFactory.getPlayer("SPIDERMAN")));
         });
         
         hawkCommand.setReceiver(() -> {
-            Greenfoot.setWorld(new MyWorld(playerFactory.getPlayer("HAWKEYE")));
+            Greenfoot.setWorld(new MyWorld((Player)playerFactory.getPlayer("HAWKEYE")));
         });
         
         displayStats(((Actor)thorMenuOption), "Thor", 100,1); // Thor
