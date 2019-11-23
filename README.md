@@ -15,7 +15,7 @@ https://www.youtube.com/watch?v=wgCFhfREaq8
 
 ## Start Screen
 
-![Screen Shot 2019-11-22 at 2 27 48 PM](https://user-images.githubusercontent.com/33183783/69464883-7b851080-0d34-11ea-86f1-e4c8dedb1fc5.png)
+![image](https://user-images.githubusercontent.com/33183783/69478580-e708c580-0da8-11ea-8d25-179db074e8ed.png)
 
 ## Menu Screen
 
