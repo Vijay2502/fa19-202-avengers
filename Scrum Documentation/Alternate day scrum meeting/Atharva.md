@@ -40,3 +40,30 @@ To complete the code for all 6 heros
 
 None as of now
 
+# 19th Nov
+
+## What Tasks did I work on/complete
+
+Implemented Multiple characters in the game
+
+## What am I planning to work on next
+
+Implement Stratergy pattern on enemy projectile
+
+## What tasks are blocked waiting on another team member
+
+None as of now
+
+# 21st Nov
+
+## What Tasks did I work on/complete
+
+Implemented stratergy pattern on enemy projectile
+
+## What am I planning to work on next
+
+To create help screen
+
+## What tasks are blocked waiting on another team member
+
+None as of now
