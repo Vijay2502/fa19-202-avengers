@@ -7,7 +7,11 @@ Kapil Mulchandani
 Nirmit Jasapara  
 Vijay Ghanshani
 
-## Click the  link given below to check the the advertisement video for our game 
+
+## Game Description :  
+A Superhero game with the option to the user to select from a number of superheroes. The game has 4 levels, after successfully completing a level, the user gets an infinity stone. When the user has all 4 of the infinity stones, the user moves on to the final level where he encounters Thanos (The Final Level). Once he defeats Thanos, the game is completed.
+
+## Ad video for the game 
 
 https://www.youtube.com/watch?v=wgCFhfREaq8   
 
@@ -36,9 +40,6 @@ https://www.youtube.com/watch?v=wgCFhfREaq8
 # Activity Diagram
 
 ![AvengersActivity Diagram](https://user-images.githubusercontent.com/33183783/69478401-cb042480-0da6-11ea-963d-4d4af180b829.png)
-
-Game Description :  
-A Superhero game with the option to the user to select from a number of superheroes. The game has 6 levels, after successfully completing a level, the user gets an infinity stone. When the user has all 6 of the infinity stones, the user moves on to the final level where he encounters Thanos (The Final Level). Once he defeats Thanos, the game is completed.
 
 # Class Diagrams
 
