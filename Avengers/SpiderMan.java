@@ -8,19 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class SpiderMan extends Player implements IPlayer
 {
-    /**
-     * Act - do whatever the SpiderMan wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public SpiderMan()
     {
         superpowerstrategy = new TrackingProjectilesStrategy(this, "WEB");
         imagefactory = new ImageFactory("SPIDERMAN");
         this.health = 110;
-    }
-    public void act() 
-    {
-        super.act();
     }
     public void fireProjectile()
     {

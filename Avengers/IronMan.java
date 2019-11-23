@@ -14,10 +14,6 @@ public class IronMan extends Player implements IPlayer
         imagefactory = new ImageFactory("IRONMAN");
         this.health = 175;
     }
-    public void act() 
-    {
-        super.act();
-    }
     public void fireProjectile()
     {
         getWorld().addObject(new BeamProjectile(facing), getX(), getY() - 40);

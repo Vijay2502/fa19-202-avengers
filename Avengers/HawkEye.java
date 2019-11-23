@@ -8,19 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class HawkEye extends Player implements IPlayer
 {
-    /**
-     * Act - do whatever the HawkEye wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public HawkEye() 
     {
         superpowerstrategy = new TrackingProjectilesStrategy(this, "ARROW");
         imagefactory = new ImageFactory("HAWKEYE");
         this.health = 100;
-    }  
-    public void act() 
-    {
-        super.act();
     }
     public void fireProjectile()
     {

@@ -13,10 +13,6 @@ public class Thor extends Player implements IPlayer
         imagefactory = new ImageFactory("THOR");
         this.health = 200;
     }
-    public void act() 
-    {
-        super.act();
-    }
     public void fireProjectile()
     {
         getWorld().addObject(new HammerProjectile(facing), getX(), getY());
