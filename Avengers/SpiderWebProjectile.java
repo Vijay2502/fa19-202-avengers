@@ -15,7 +15,7 @@ public class SpiderWebProjectile extends HeroProjectile
         if (facing == -1)
             up.mirrorHorizontally();
         this.speed = 7;
-        this.damage = 15;
+        this.damage = 18;
         up.scale(100,40);
         setImage(up);
     }    

@@ -11,6 +11,7 @@ public class IronMan extends Player implements IPlayer
     public IronMan()
     {
         superpowerstrategy = new TrackingProjectilesStrategy(this, "MISSILE");
+        this.health = 175;
     }
     public void act() 
     {

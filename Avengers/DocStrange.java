@@ -15,6 +15,7 @@ public class DocStrange extends Player implements IPlayer
     public DocStrange()
     {
         superpowerstrategy = new AttackRainStrategy(this, "LIGHTNING");
+        this.health = 80;
     }
     public void act() 
     {

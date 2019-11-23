@@ -16,7 +16,7 @@ public class HammerProjectile extends HeroProjectile
         if (facing == -1)
             up.mirrorHorizontally();
         this.speed = 4;
-        this.damage = 25;
+        this.damage = 15;
         up.scale(40,40);
         setImage(up);
     }    

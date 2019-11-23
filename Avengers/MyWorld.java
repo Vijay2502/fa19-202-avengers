@@ -13,7 +13,7 @@ public class MyWorld extends World
     int randomSpawn;
     public Player mainPlayer;
     Counter counter = new Counter();
-    HealthBar healthbar = new HealthBar();
+    HealthBar healthbar;
     SuperPowerBar superbar;
     PlayerStateMachine psm;
     NextLevel nextLevel = new NextLevel();
@@ -25,6 +25,7 @@ public class MyWorld extends World
     { 
         super(1200, 800, 1); 
         this.mainPlayer = player;
+        healthbar = new HealthBar(mainPlayer.getHealth());
         mainPlayer.registerScoreBoardHealthObserver(healthbar);
         superbar = new SuperPowerBar(player);
         psm = new PlayerStateMachine(player);

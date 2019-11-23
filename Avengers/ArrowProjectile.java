@@ -17,7 +17,7 @@ public class ArrowProjectile extends HeroProjectile
         if (facing == -1)
             up.mirrorHorizontally();
         this.speed = 6;
-        this.damage = 10;
+        this.damage = 20;
         up.scale(80,40);
         setImage(up);
     }   

@@ -16,7 +16,7 @@ public class ShieldProjectile extends HeroProjectile
         if (facing == -1)
             up.mirrorHorizontally();
         this.speed = 5;
-        this.damage = 13;
+        this.damage = 15;
         up.scale(80,80);
         setImage(up);
         this.movementStrategy = new RotatingMovementStrategy(facing);

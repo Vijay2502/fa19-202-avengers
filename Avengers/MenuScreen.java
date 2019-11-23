@@ -87,12 +87,12 @@ public class MenuScreen extends World
             Greenfoot.setWorld(new MyWorld((Player)playerFactory.getPlayer("HAWKEYE")));
         });
         
-        displayStats(((Actor)thorMenuOption), "Thor", 100,1); // Thor
-        displayStats(((Actor)ironManOption), "IronMan",100,1); // ironman
-        displayStats(((Actor)capMenuOption), "Captain America", 100,1); //cap
-        displayStats(((Actor)drStrangeOption), "Dr Strange", 100,1); //
-        displayStats(((Actor)spiderManOption),"Spiderman", 100,1); //
-        displayStats(((Actor)hawkEyeOption),"HawkEye", 100,1); //
+        displayStats(((Actor)thorMenuOption), 100,60); // Thor
+        displayStats(((Actor)ironManOption), 87,72); // ironman
+        displayStats(((Actor)capMenuOption),  75,60); //cap
+        displayStats(((Actor)drStrangeOption),  40,100); //
+        displayStats(((Actor)spiderManOption), 55,72); //
+        displayStats(((Actor)hawkEyeOption), 50,80); //
         
         
         addObject((Actor)thorMenuOption, 111, 402);       
@@ -105,7 +105,7 @@ public class MenuScreen extends World
         
     }
     
-    public void displayStats(Actor actor, String name, int herohealth, int projectileDamage)
+    public void displayStats(Actor actor,int herohealth, int projectileDamage)
     {
         
         GreenfootImage health = new GreenfootImage("./images/health.png");
@@ -116,15 +116,13 @@ public class MenuScreen extends World
         actor.getImage().drawImage(superpower, 30, 585 );
         
         
-        actor.getImage().drawRect(60,555,99,11);
         actor.getImage().setColor(Color.RED);
-        actor.getImage().fillRect(60,555,100,10);
+        actor.getImage().drawRect(60,555,99,11);
+        actor.getImage().fillRect(60,555,herohealth,10);
         
-        actor.getImage().drawRect(60, 590,99,11);
         actor.getImage().setColor(Color.BLUE);
-        actor.getImage().fillRect(60,590,100,13);
-        GreenfootImage temp = new GreenfootImage(name, 30, Color.BLACK, new Color(0,0,0,0));
-        actor.getImage().drawImage(temp, 20 ,50);
+        actor.getImage().drawRect(60, 590,99,11);
+        actor.getImage().fillRect(60,590,projectileDamage,13);
         
     }
 }

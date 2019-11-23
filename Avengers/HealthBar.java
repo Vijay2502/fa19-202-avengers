@@ -9,20 +9,25 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class HealthBar extends Actor implements IScoreBoardHealthObserver
 {
     int health = 100;
+    int maxHealth = 100;
     double specificHealth = (double)health;
-    public HealthBar()
+    public HealthBar(int health)
     {
+        this.health = health;
+        this.maxHealth = health;
         setImage(new GreenfootImage(100,12));
         getImage().drawRect(0,0,99,11);
         getImage().setColor(Color.RED);
-        getImage().fillRect(1,1,health,10);
+        double perc = ((double)health / maxHealth) * 100;
+        getImage().fillRect(1,1,(int) perc,10);
     }
     public void act() 
     {
         setImage(new GreenfootImage(100,12));
         getImage().drawRect(0,0,99,11);
         getImage().setColor(Color.RED);
-        getImage().fillRect(1,1,health,10);
+        double perc = ((double)health / maxHealth) * 100;
+        getImage().fillRect(1,1,(int) perc,10);
         World world = getWorld();
         MyWorld myWorld = (MyWorld)world;   
     }  

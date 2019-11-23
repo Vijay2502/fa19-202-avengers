@@ -15,7 +15,7 @@ public class MagicSpellProjectile extends HeroProjectile
         if (facing == -1)
             up.mirrorHorizontally();
         this.speed = 5;
-        this.damage = 20;
+        this.damage = 25;
         up.scale(60,60);
         setImage(up);
     }   

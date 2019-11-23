@@ -16,6 +16,7 @@ abstract class Player extends Actor implements IScoreBoardHealthSubject
     protected ISuperPowerStrategy superpowerstrategy;
     protected String projectileImage = "thor_hammer";
     protected int superDuration = 100;
+    protected int health = 100;
     public Player()
     {
     }
@@ -149,6 +150,11 @@ abstract class Player extends Actor implements IScoreBoardHealthSubject
     public void fireSuperPower()
     {
         superpowerstrategy.fireSuperPower();
+    }
+    
+    public int getHealth()
+    {
+        return this.health;
     }
     abstract void fireProjectile();
     abstract void displayInfo();
