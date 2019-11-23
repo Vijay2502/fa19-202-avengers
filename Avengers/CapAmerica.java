@@ -16,6 +16,7 @@ public class CapAmerica extends Player implements IPlayer
     {
         this.superDuration = 500;
         superpowerstrategy = new InvincibleStrategy(this, null);
+        imagefactory = new ImageFactory("CAP");
         this.health = 150;
     }
     public void act() 

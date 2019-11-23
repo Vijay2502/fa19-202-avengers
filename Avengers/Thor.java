@@ -10,6 +10,7 @@ public class Thor extends Player implements IPlayer
 {
     public Thor(){
         superpowerstrategy = new AttackRainStrategy(this, "LIGHTNING");
+        imagefactory = new ImageFactory("THOR");
         this.health = 200;
     }
     public void act() 

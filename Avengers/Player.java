@@ -14,6 +14,7 @@ abstract class Player extends Actor implements IScoreBoardHealthSubject
     protected int facing = 1;
     private IScoreBoardHealthObserver observer;
     protected ISuperPowerStrategy superpowerstrategy;
+    protected ImageFactory imagefactory;
     protected int superDuration = 100;
     protected int health = 100;
     public Player()

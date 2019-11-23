@@ -15,6 +15,7 @@ public class SpiderMan extends Player implements IPlayer
     public SpiderMan()
     {
         superpowerstrategy = new TrackingProjectilesStrategy(this, "WEB");
+        imagefactory = new ImageFactory("SPIDERMAN");
         this.health = 110;
     }
     public void act() 
