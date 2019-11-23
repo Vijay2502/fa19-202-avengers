@@ -40,11 +40,14 @@ public class Level2 extends MyWorld
         }
     }
     
+    public void nextLevelTransition(){
+        Greenfoot.setWorld(new Level3(mainPlayer));
+    }
+    
     public void nextLevelProgressCheck(){
         if(counter.score == 20){
             // Need to change subsequent levels when world class is changed.
             mainPlayer.levelComplete(2);
-            Greenfoot.setWorld(new Level3(mainPlayer));
         }
     }
     
