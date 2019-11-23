@@ -126,8 +126,16 @@ abstract class Player extends Actor implements IScoreBoardHealthSubject
                     getWorld().showText("Go to level 2", 600, 100);
                     getWorld().addObject(nextLevel, 600, 700);
                     break;
-            case 2: getWorld().getBackground().drawImage(new GreenfootImage("./images/TimeStone.jpg"), 100, 100); break;
-            case 3: getWorld().getBackground().drawImage(new GreenfootImage("./images/TimeStone.jpg"), 100, 100); break;
+            case 2: getWorld().getBackground().drawImage(new GreenfootImage("./images/InfinityStone2.jpeg"), 600, 100);
+                    getWorld().showText("Go to level 3", 600, 100);
+                    getWorld().addObject(nextLevel, 600, 700);
+                    break;
+                    
+            case 3: getWorld().getBackground().drawImage(new GreenfootImage("./images/InfinityStone3.jpeg"), 600, 100);
+                    getWorld().showText("Go to level 4", 600, 100);
+                    getWorld().addObject(nextLevel, 600, 700);
+                    break;
+            
             case 4: getWorld().getBackground().drawImage(new GreenfootImage("./images/TimeStone.jpg"), 100, 100); break;
         }
     }
