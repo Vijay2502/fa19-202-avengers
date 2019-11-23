@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Level3 extends MyWorld
 {
+    int currentLevel = 3;
     /**
      * Constructor for objects of class Level3.
      * 
@@ -37,6 +38,7 @@ public class Level3 extends MyWorld
     public void nextLevelProgressCheck(){
         if(counter.score == 30){
             // Need to change subsequent levels when world class is changed.
+            mainPlayer.levelComplete(3);
             Greenfoot.setWorld(new Level4(mainPlayer));
         }
     }

@@ -119,12 +119,23 @@ abstract class Player extends Actor implements IScoreBoardHealthSubject
     public int getSuperDuration() {
         return this.superDuration;
     }
-    public void youLose() {
-        if (isTouching(Enemy.class)) {
-            getWorld().showText("You Lose ! You lasted " + (time / 60) + " seconds", getWorld().getWidth()/ 2, getWorld().getHeight() / 2);
-            Greenfoot.stop();
+    
+    public void levelComplete(int currentLevel){
+        switch(currentLevel){
+            case 1: getWorld().getBackground().drawImage(new GreenfootImage("./images/TimeStone.jpg"), 600, 200); 
+                    getWorld().showText("Go to level 2", 600, 100);
+                    break;
+            case 2: getWorld().getBackground().drawImage(new GreenfootImage("./images/imageName.png"), 100, 100); break;
+            case 3: getWorld().getBackground().drawImage(new GreenfootImage("./images/imageName.png"), 100, 100); break;
+            case 4: getWorld().getBackground().drawImage(new GreenfootImage("./images/imageName.png"), 100, 100); break;
         }
     }
+    //public void youLose() {
+    //    if (isTouching(Enemy.class)) {
+    //        getWorld().showText("You Lose ! You lasted " + (time / 60) + " seconds", getWorld().getWidth()/ 2, getWorld().getHeight() / 2);
+    //        Greenfoot.stop();
+    //    }
+    //}
     public void fireSuperPower()
     {
         superpowerstrategy.fireSuperPower();
