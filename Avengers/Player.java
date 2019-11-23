@@ -9,12 +9,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 abstract class Player extends Actor implements IScoreBoardHealthSubject
 {
     // Need to set up oberver pattern for superpower.
-    int time = 0;
-    boolean superpowerReady = false;
-    int facing = 1;
+    private int time = 0;
+    private boolean superpowerReady = false;
+    protected int facing = 1;
     private IScoreBoardHealthObserver observer;
     protected ISuperPowerStrategy superpowerstrategy;
-    protected String projectileImage = "thor_hammer";
     protected int superDuration = 100;
     protected int health = 100;
     public Player()
