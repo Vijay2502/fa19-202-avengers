@@ -8,8 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class HeroProjectile extends Projectile
 {
-    public HeroProjectile()
+    public HeroProjectile(int facing)
     {
-        facing = 1;
+        super (facing);
     }
 }

@@ -11,10 +11,10 @@ public class HammerProjectile extends HeroProjectile
     
     public HammerProjectile(int facing) 
     {
+        super (facing);
         GreenfootImage up = new GreenfootImage("./images/thor_hammer.png");
         this.speed = 4;
         this.damage = 25;
-        this.facing = facing;
         up.scale(40,40);
         setImage(up);
     }    

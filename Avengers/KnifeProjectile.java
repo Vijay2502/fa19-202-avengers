@@ -9,8 +9,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class KnifeProjectile extends EnemyProjectile
 {
     IProjectileMoveStrategy movementStrategy;
-    public KnifeProjectile(Boolean isReverse)
+    public KnifeProjectile(int facing)
     {
+        super (facing);
         GreenfootImage up = new GreenfootImage("./images/knife.png");
         this.speed = 7;
         this.damage = 15;
@@ -18,7 +19,7 @@ public class KnifeProjectile extends EnemyProjectile
         setImage(up);
         if (isReverse)
             getImage().mirrorHorizontally();
-        this.movementStrategy = new StraightMovementStrategy(isReverse);
+        this.movementStrategy = new StraightMovementStrategy(facing);
         this.movementStrategy.setProjectile(this);
     }
     

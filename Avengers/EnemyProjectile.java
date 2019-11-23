@@ -8,8 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class EnemyProjectile extends Projectile
 {
-    public EnemyProjectile()
+    public EnemyProjectile(int facing)
     {
-        facing = -1;
+        super (facing);
     }
 }
