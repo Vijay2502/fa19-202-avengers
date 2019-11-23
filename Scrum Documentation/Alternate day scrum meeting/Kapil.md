@@ -23,4 +23,19 @@ Implement the object/player creation using factory pattern on selecting the char
 Currently there are no blockers from my side.
 
 
+# 19th Nov
+## What tasks did I work on?
+I Implemented the Level 1 and Level 2 of the game with the changing enemies for each level. And also implemented the factory pattern for player creation.
+## What am I Planning to work next?
+I'll be working on Level 3 and Level 4 of the game and the transition on level completion
+## Blockers
+Currently there are no blockers from my side.
+
+# 21sh Nov
+## What tasks did I work on?
+I implemented the Level 3 and Level 4 of the game with the message displaying on end of each level.
+## What am I Planning to work next?
+I'll be working on UML diagrams i.e. class diagrams and activity diagrams.
+## Blockers
+Currently there are no blockers from my side.
 
