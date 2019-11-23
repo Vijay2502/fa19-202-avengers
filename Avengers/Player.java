@@ -180,8 +180,29 @@ abstract class Player extends Actor implements IScoreBoardHealthSubject
     {
         return this.health;
     }
+    public GreenfootImage getSuperPowerImage()
+    {
+        GreenfootImage spimage = imagefactory.getSuperPowerImage();
+        spimage.scale(150,150);
+        if (facing == -1)
+            spimage.mirrorHorizontally();
+        return spimage;
+    }
+    public GreenfootImage getAttackingImage()
+    {
+        GreenfootImage attimage = imagefactory.getAttackingImage();
+        attimage.scale(150,150);
+        if (facing == -1)
+            attimage.mirrorHorizontally();
+        return attimage;
+    }
+    public GreenfootImage getIdleImage()
+    {
+        GreenfootImage idleimage = imagefactory.getIdleImage();
+        idleimage.scale(120,150);
+        if (facing == -1)
+            idleimage.mirrorHorizontally();
+        return idleimage;
+    }
     abstract void fireProjectile();
-    abstract GreenfootImage getSuperPowerImage();
-    abstract GreenfootImage getAttackingImage();
-    abstract GreenfootImage getIdleImage();
 }
