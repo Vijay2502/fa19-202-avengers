@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class SpiderMan extends Player implements IPlayer
+public class SpiderMan extends Player
 {
     public SpiderMan()
     {

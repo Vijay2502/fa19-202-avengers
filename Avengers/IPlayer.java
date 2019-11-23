@@ -6,6 +6,5 @@
  */
 public interface IPlayer  
 {
-    public void displayInfo();
     public void act();
 }

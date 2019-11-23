@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-abstract class Player extends Actor implements IScoreBoardHealthSubject
+abstract class Player extends Actor implements IScoreBoardHealthSubject, IPlayer
 {
     // Need to set up oberver pattern for superpower.
     private int time = 0;
@@ -151,7 +151,7 @@ abstract class Player extends Actor implements IScoreBoardHealthSubject
                 break;
         }
     }
-    public void displayInfo() {
+    private void displayInfo() {
         String name = this.getClass().getName();
         getWorld().showText(name, 1100, 55);
         GreenfootImage character = imagefactory.getCharacterImage();
