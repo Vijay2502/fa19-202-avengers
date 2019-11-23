@@ -1,7 +1,15 @@
 #BlueJ class context
 comment0.target=ImageFactory
 comment0.text=\n\ Write\ a\ description\ of\ class\ ImageFactory\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=
-comment1.target=ImageFactory()
+comment1.params=imagename
+comment1.target=ImageFactory(java.lang.String)
 comment1.text=\n\ Constructor\ for\ objects\ of\ class\ ImageFactory\n
-numComments=2
+comment2.params=
+comment2.target=greenfoot.GreenfootImage\ getCharacterImage()
+comment3.params=
+comment3.target=greenfoot.GreenfootImage\ getIdleImage()
+comment4.params=
+comment4.target=greenfoot.GreenfootImage\ getAttackingImage()
+comment5.params=
+comment5.target=greenfoot.GreenfootImage\ getSuperPowerImage()
+numComments=6
