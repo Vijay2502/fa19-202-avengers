@@ -15,6 +15,7 @@ public class NextLevel extends Actor
      */
     public void act() 
     {
+        Greenfoot.setWorld(getWorld());
         // Add your action code here.
         click();
         
