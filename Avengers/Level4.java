@@ -17,6 +17,10 @@ public class Level4 extends MyWorld
     {
         super(player);
         this.setBackground( new GreenfootImage("./images/PowerStoneLevel.jpg"));
+        SoundManager manager = SoundManager.getInstance();
+        manager.getSound().stop();
+        manager.setNewSound("lvl4");
+        manager.getSound().play();
     }
     
     public void spawnEnemies () {
