@@ -10,7 +10,7 @@ public class Arrow extends SuperProjectile
 {
     public Arrow()
     {
-        GreenfootImage up = new GreenfootImage("./images/lightning.png");
+        GreenfootImage up = new GreenfootImage("./images/arrow.png");
         up.scale(40,40);
         setImage(up);
         setRotation(90);

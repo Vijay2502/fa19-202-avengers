@@ -13,6 +13,8 @@ public class ThanosProjectile extends Actor
     Boolean isReverse;
     int thanosX;
     int projectileHealth = 1;
+    int defaultImageCounter = 1;
+    int imgNum = 0;
     
     public ThanosProjectile(Player player, int thanosX, Boolean isReverse)
     {
@@ -26,6 +28,7 @@ public class ThanosProjectile extends Actor
     
     public void act() 
     {
+        setProjectileImage();
         hitByHeroProjectile();
         if(thanosX > player.getX())
             {
@@ -37,7 +40,7 @@ public class ThanosProjectile extends Actor
          else{
         int direction = isReverse ? 1 : -1;
         turnTowards(player.getX(), player.getY());
-        move(direction);
+        move(direction * 6);
         
         }
         
@@ -63,6 +66,15 @@ public class ThanosProjectile extends Actor
         
         
         
+    }
+    
+    public void setProjectileImage() {  
+        defaultImageCounter--;
+        if (defaultImageCounter == 0) {
+            defaultImageCounter = 20;
+            imgNum =(imgNum + 1) % 7;
+            setImage("/thanos/" + imgNum + ".png");
+        }
     }
 }
 

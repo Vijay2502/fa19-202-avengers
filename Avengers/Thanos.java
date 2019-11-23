@@ -160,7 +160,7 @@ public class Thanos extends Actor implements IScoreBoardHealthSubject
     
     
     public void displayInfo() {
-        GreenfootImage character = new GreenfootImage("./images/cap.png");
+        GreenfootImage character = new GreenfootImage("./images/thanos.png");
         character.scale(70,70);
         getWorld().getBackground().drawImage(character, 580, 690 );
         

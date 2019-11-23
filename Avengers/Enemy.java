@@ -87,6 +87,7 @@ public abstract class Enemy extends Actor
     public void setHitImage() {
         this.hitImageCounter = 50;
         setImage("/enemy/" + this.getClass().getName().toLowerCase() + "/" + "hit.png");
+        checkFlip();
         setScaling(); 
     }
     
@@ -96,10 +97,14 @@ public abstract class Enemy extends Actor
             defaultImageCounter = 20;
             imgNum =(imgNum + 1) % 2;
             setImage("/enemy/" + this.getClass().getName().toLowerCase() + "/" + imgNum + ".png");
-             if (getX() < player.getX())
-                getImage().mirrorHorizontally();
+            checkFlip();
         }
         setScaling();
+    }
+    
+    public void checkFlip() {        
+         if (getX() < player.getX())
+            getImage().mirrorHorizontally();                                                                                                        
     }
     
     public void setScaling() {}

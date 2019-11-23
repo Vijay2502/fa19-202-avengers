@@ -49,8 +49,8 @@ public class MenuScreen extends World
         ((Actor)thorMenuOption).setImage("images/MenuThor.jpg");
         ((Actor)ironManOption).setImage("images/MenuIron.jpg");
         ((Actor)capMenuOption).setImage("images/MenuCap.jpg");
-        ((Actor)blackWidowOption).setImage("images/MenuBlack.jpg");
-        ((Actor)hulkOption).setImage("images/MenuHulk.jpg");
+        ((Actor)hulkOption).setImage("images/MenuBlack.jpg");
+        ((Actor)blackWidowOption).setImage("images/MenuHulk.jpg");
         ((Actor)hawkEyeOption).setImage("images/MenuHawk.jpg");
         
         thorMenuOption.setCommand(thorCommand);
@@ -89,8 +89,8 @@ public class MenuScreen extends World
         displayStats(((Actor)thorMenuOption), "Thor", 100,1); // Thor
         displayStats(((Actor)ironManOption), "IronMan",100,1); // ironman
         displayStats(((Actor)capMenuOption), "Captain America", 100,1); //cap
-        displayStats(((Actor)blackWidowOption), "SpiderMan", 100,1); //
-        displayStats(((Actor)hulkOption),"Doctor Strangr", 100,1); //
+        displayStats(((Actor)blackWidowOption), "Dr Strange", 100,1); //
+        displayStats(((Actor)hulkOption),"Spiderman", 100,1); //
         displayStats(((Actor)hawkEyeOption),"HawkEye", 100,1); //
         
         
