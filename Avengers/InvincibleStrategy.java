@@ -12,7 +12,7 @@ public class InvincibleStrategy implements ISuperPowerStrategy
     
     public boolean isfiringSuperPower()
     {
-        return false;
+        return firingsuperpower;
     }
     public void fireSuperPower()
     {
