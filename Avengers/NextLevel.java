@@ -8,15 +8,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class NextLevel extends Actor
 {
-    boolean clicked = false;
-    /**
-     * Act - do whatever the NextLevel wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    public NextLevel()
+    {   
+        setImage(new GreenfootImage("Next Level", 40, Color.WHITE, new Color(0,0,0,0))); 
+        
+    }
+    
     public void act() 
-    {
+    {   getWorld().getBackground().setColor(Color.RED);
+        getWorld().getBackground().drawRect(490,660,220,70);
+        setImage(new GreenfootImage("Next Level", 40, Color.WHITE, new Color(0,0,0,0)));
+        
         Greenfoot.setWorld(getWorld());
-        // Add your action code here.
         click();
         
     }    
@@ -29,5 +32,5 @@ public class NextLevel extends Actor
             MyWorld my = (MyWorld)getWorld();
             my.nextLevelTransition();
         }
-    }
+    }  
 }
