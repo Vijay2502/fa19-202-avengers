@@ -22,20 +22,6 @@ public class CapAmerica extends Player implements IPlayer
     public void act() 
     {
         super.act();
-    } 
-    public void displayInfo() {
-        String name = this.getClass().getName();
-        getWorld().showText(name, 1100, 55);
-        GreenfootImage character = new GreenfootImage("./images/cap.png");
-        GreenfootImage health = new GreenfootImage("./images/health.png");
-        GreenfootImage superpower = new GreenfootImage("./images/power.png");
-        character.scale(70,70);
-        health.scale(30,30);
-        superpower.scale(30,30);
-        getWorld().getBackground().drawImage(character, 950, 45 );
-        getWorld().getBackground().drawImage(health, 1020, 65 );
-        getWorld().getBackground().drawImage(superpower, 1020, 95 );
-        
     }
     public GreenfootImage getSuperPowerImage()
     {
