@@ -34,11 +34,11 @@ public class ThanosHealthBar extends Actor implements IScoreBoardHealthObserver
         MyWorld myWorld = (MyWorld)world;
         health-= damage;
         
-        if(health<=0)
+        if(health<-10)
             {
-            getWorld().showText("You WIN! \n You survived for " + (myWorld.getPlayer().time/60) + " seconds", getWorld().getWidth()/2, getWorld().getHeight()/2);
-            Greenfoot.stop();
-        }
+               getWorld().showText("You WIN! \n You survived for " + (myWorld.getPlayer().time/60) + " seconds", getWorld().getWidth()/2, getWorld().getHeight()/2);
+               Greenfoot.stop();
+            }
     }
     
     public void updateScoreBoardHealth(int damage)
