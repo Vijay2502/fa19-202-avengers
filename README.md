@@ -46,6 +46,31 @@ A Superhero game with the option to the user to select from a number of superher
 
 ![image](https://user-images.githubusercontent.com/33183783/69478522-57fbad80-0da8-11ea-9a6c-0906a0fa6aeb.png)
 
+## Observer Pattern
+
+![image](https://user-images.githubusercontent.com/33183783/69478707-47e4cd80-0daa-11ea-9e12-340107934b65.png)
+
+## Command pattern
+
+![image](https://user-images.githubusercontent.com/33183783/69478695-24ba1e00-0daa-11ea-8413-1774ec001167.png)
+
+## Factory pattern
+
+![image](https://user-images.githubusercontent.com/33183783/69478700-38658480-0daa-11ea-944f-9af9c4dc0ecc.png)
+
+## State Pattern
+
+![image](https://user-images.githubusercontent.com/33183783/69478710-54692600-0daa-11ea-8573-ee7a9df8e0f5.png)
+
+
+## Stratergy Pattern
+
+![image](https://user-images.githubusercontent.com/33183783/69478714-62b74200-0daa-11ea-8d07-f7da79b937d5.png)
+
+#Observer Pattern
+
+![image](https://user-images.githubusercontent.com/33183783/69478718-79f62f80-0daa-11ea-85df-f3f281664daf.png)
+
 ## Burn Down Chart
 [Avengers Team Burn Down Chart](https://docs.google.com/spreadsheets/d/1bifDIyGqfVgvlBY-PHf2TL73WDCBWNcrwD0XIwaWKjo/edit?usp=sharing)
 
