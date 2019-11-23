@@ -40,7 +40,11 @@ public class HealthBar extends Actor implements IScoreBoardHealthObserver
         
         if(health<=0)
             {
-               getWorld().showText("You Lose! \n You survived for " + (myWorld.getPlayer().time/60) + " seconds", getWorld().getWidth()/2, getWorld().getHeight()/2);
+               getWorld().showText("You Lose! \n You survived for "
+               + (myWorld.getPlayer().getTime()/60)
+               + " seconds",
+               getWorld().getWidth()/2, 
+               getWorld().getHeight()/2);
             Greenfoot.stop();
         }
     }

@@ -33,6 +33,10 @@ abstract class Player extends Actor implements IScoreBoardHealthSubject
     {
         return superpowerReady;
     }
+    public int getTime()
+    {
+        return time;
+    }
     /**
      * Act - do whatever the Player wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
