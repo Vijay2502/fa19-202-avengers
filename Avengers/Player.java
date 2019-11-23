@@ -122,7 +122,7 @@ abstract class Player extends Actor implements IScoreBoardHealthSubject
     public void levelComplete(int currentLevel){
         NextLevel nextLevel = new NextLevel();
         switch(currentLevel){
-            case 1: getWorld().getBackground().drawImage(new GreenfootImage("./images/TimeStone.jpg"), 600, 200); 
+            case 1: getWorld().getBackground().drawImage(new GreenfootImage("./images/InfinityStone1.jpeg"), 600, 200); 
                     getWorld().showText("Go to level 2", 600, 100);
                     getWorld().addObject(nextLevel, 600, 700);
                     break;
