@@ -67,7 +67,7 @@ A Superhero game with the option to the user to select from a number of superher
 
 ![image](https://user-images.githubusercontent.com/33183783/69478714-62b74200-0daa-11ea-8d07-f7da79b937d5.png)
 
-#Observer Pattern
+## Observer Pattern
 
 ![image](https://user-images.githubusercontent.com/33183783/69478718-79f62f80-0daa-11ea-85df-f3f281664daf.png)
 
