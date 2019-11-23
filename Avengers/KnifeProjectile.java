@@ -16,9 +16,9 @@ public class KnifeProjectile extends EnemyProjectile
         this.speed = 7;
         this.damage = 15;
         up.scale(80,40);
-        setImage(up);
-        if (isReverse)
-            getImage().mirrorHorizontally();
+        setImage(up);        
+        if (facing == -1)
+            up.mirrorHorizontally();
         this.movementStrategy = new StraightMovementStrategy(facing);
         this.movementStrategy.setProjectile(this);
     }

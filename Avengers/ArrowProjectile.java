@@ -12,8 +12,10 @@ public class ArrowProjectile extends HeroProjectile
     
     public ArrowProjectile(int facing) 
     {
-        super (facing);
+        super(facing);
         GreenfootImage up = new GreenfootImage("./images/arrow.png");
+        if (facing == -1)
+            up.mirrorHorizontally();
         this.speed = 6;
         this.damage = 10;
         up.scale(80,40);

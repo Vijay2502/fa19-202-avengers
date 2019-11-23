@@ -11,13 +11,15 @@ public class ShieldProjectile extends HeroProjectile
     private IProjectileMoveStrategy movementStrategy;
     public ShieldProjectile(int facing) 
     {
-        super (facing);
+        super(facing);
         GreenfootImage up = new GreenfootImage("./images/shield.png");
+        if (facing == -1)
+            up.mirrorHorizontally();
         this.speed = 5;
         this.damage = 13;
         up.scale(80,80);
         setImage(up);
-        this.movementStrategy = new RotatingMovementStrategy(facing == -1);
+        this.movementStrategy = new RotatingMovementStrategy(facing);
         this.movementStrategy.setProjectile(this);
     } 
 
