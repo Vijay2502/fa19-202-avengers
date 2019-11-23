@@ -17,6 +17,10 @@ public class Level2 extends MyWorld
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(player);
+        SoundManager manager = SoundManager.getInstance();
+        manager.getSound().stop();
+        manager.setNewSound("lvl2");
+        manager.getSound().play();
         this.setBackground( new GreenfootImage("./images/SoulStoneLevel.png"));
     }
     public void spawnEnemies () {

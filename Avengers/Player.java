@@ -18,7 +18,6 @@ abstract class Player extends Actor implements IScoreBoardHealthSubject
     protected int superDuration = 100;
     public Player()
     {
-        Greenfoot.playSound("ThorSong.mp3");
     }
     public void superpowerReady()
     {

@@ -29,6 +29,11 @@ public class MyWorld extends World
         superbar = new SuperPowerBar(player);
         psm = new PlayerStateMachine(player);
         this.setBackground( new GreenfootImage("./images/ThorSpaceImage.png"));
+        
+        SoundManager manager = SoundManager.getInstance();
+        manager.getSound().stop();
+        manager.setNewSound("lvl1");
+        manager.getSound().play();
        
         addObject(mainPlayer, 100, getHeight() / 2);
         addObject(psm, 0, 0);
