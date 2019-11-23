@@ -16,6 +16,11 @@ public class InvincibleStrategy implements ISuperPowerStrategy
     {
         return firingsuperpower;
     }
+    public void stopFiringSuperpower()
+    {
+        firingsuperpower = false;
+        supertimer = 0;
+    }
     public void fireSuperPower()
     {
         firingsuperpower = true;
@@ -31,8 +36,7 @@ public class InvincibleStrategy implements ISuperPowerStrategy
         }
         else
         {
-            supertimer = 0;
-            firingsuperpower = false;
+            stopFiringSuperpower();
         }
     }
 }

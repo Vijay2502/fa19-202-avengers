@@ -122,6 +122,7 @@ abstract class Player extends Actor implements IScoreBoardHealthSubject
     }
     
     public void levelComplete(int currentLevel){
+        superpowerstrategy.stopFiringSuperpower();
         NextLevel nextLevel = new NextLevel();
         switch(currentLevel){
             case 1: 

@@ -14,6 +14,9 @@ public class TrackingProjectilesStrategy implements ISuperPowerStrategy
     {
         return false;
     }
+    public void stopFiringSuperpower()
+    {
+    }
     public void fireSuperPower()
     {
         SuperPowerProjectileFactory spfactory = new SuperPowerProjectileFactory();
