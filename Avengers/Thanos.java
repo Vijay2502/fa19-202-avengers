@@ -6,9 +6,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Thanos extends Actor
+public class Thanos extends Actor implements IScoreBoardHealthSubject
 {
-    protected int health = 30;
+    protected int health = 400;
     protected int damage = 10;
     protected Counter counter;
     protected Player player;
@@ -20,16 +20,17 @@ public class Thanos extends Actor
     int shootTime = 500;
     Boolean flag = true;
     GreenfootImage wormhole = new GreenfootImage("./images/enemy/thanos/wormhole.jpg");
+    private IScoreBoardHealthObserver observer;
     
     public Thanos(Player mainPlayer, Counter counter) {
         this.counter = counter;
         this.player = mainPlayer;
-         wormhole.scale(170,120);
-        
+        wormhole.scale(170,120);
+        setImage("/enemy/" + this.getClass().getName().toLowerCase() + "/" + "0.png");
     }
     
     public void act(){
-        
+        displayInfo();
         timer++;
         warmholeTimer++;
         spaceStoneTimer++;
@@ -41,24 +42,30 @@ public class Thanos extends Actor
        }
         moveAround();
         hitByProjectile();
-        
-        
+       
     }  
-    
+    public void mirrorImage()
+    {
+        if (getX() < player.getX())
+                        getImage().mirrorHorizontally();
+    }
     public void moveAround() {
         if (this.hitImageCounter > 0)
             this.hitImageCounter--;
+            
         else 
             {
                  if(spaceStoneTimer >= 400 && spaceStoneTimer <= 500)
                     {
                         setImage("/enemy/thanos/t.png");
-                        
+                         mirrorImage();
+                        getImage().scale(200, 250);
                         if(warmholeTimer >= 450 && warmholeTimer <= 500)
                         {
                             getWorld().getBackground().drawImage(wormhole, getX() - 80, getY() + 100);
                             warmholeTimer = 0;
                         }
+
                     }
                     
                 else
@@ -70,7 +77,7 @@ public class Thanos extends Actor
     
     public void setScaling() {
         GreenfootImage image = getImage();
-        image.scale(150, 158);
+        image.scale(200, 250);
     }
     
     public void fireProjectile() {        
@@ -84,19 +91,21 @@ public class Thanos extends Actor
         
         if(projectile != null)
         {
-            health -= projectile.getDamage();
+            //health -= projectile.getDamage();
+            notifyScoreBoardForHealthUpdate(projectile.getDamage());
             setHitImage();
             getWorld().removeObject(projectile);
         }
         if(superprojectile != null)
         {
-            counter.score++;
+            //counter.score++;
+            notifyScoreBoardForHealthUpdate(50);
+            setHitImage();
             getWorld().removeObject(superprojectile);
-            getWorld().removeObject(this);
+            //getWorld().removeObject(this);
         }
         
         if (health <= 0) {
-            counter.score++;
            getWorld().removeObject(this);
         }
         
@@ -110,16 +119,10 @@ public class Thanos extends Actor
     }
     
     public void setDefaultImage() {  
-        defaultImageCounter--;
-        if (defaultImageCounter == 0) {
-            defaultImageCounter = 20;
-            imgNum =(imgNum + 1) % 2;
-            
-            setImage("/enemy/" + this.getClass().getName().toLowerCase() + "/" + imgNum + ".png");
-             if (getX() < player.getX())
-                getImage().mirrorHorizontally();
-        }
-        setScaling();
+             mirrorImage();
+             setRandomImage();
+             setScaling();
+         
     }
     
     public void changeLocation()
@@ -127,8 +130,8 @@ public class Thanos extends Actor
         
         if(timer % 500 == 0)
         {
-            randomX = Greenfoot.getRandomNumber(1100);
-            randomY = Greenfoot.getRandomNumber(700);
+            randomX = Greenfoot.getRandomNumber(900);
+            randomY = Greenfoot.getRandomNumber(500);
             if(randomX <= player.getX() - 50 || randomX == player.getX() + 50)
             {
                 randomX += 300;
@@ -137,9 +140,42 @@ public class Thanos extends Actor
             this.setLocation(randomX, randomY);
             spaceStoneTimer = 0;
             getWorld().setBackground("./images/ThorSpaceImage.png");
-            
+            setRandomImage();
         }
     }
     
+    
+    public void setRandomImage()
+    {
+        int randomSpawn = Greenfoot.getRandomNumber(4);
+            switch (randomSpawn) {
+                case 0: setImage("/enemy/" + this.getClass().getName().toLowerCase() + "/" + "0.png"); break;
+                case 1: setImage("/enemy/" + this.getClass().getName().toLowerCase() + "/" + "p1.png"); break;
+                case 2: setImage("/enemy/" + this.getClass().getName().toLowerCase() + "/" + "p2.png"); break;
+                case 3: setImage("/enemy/" + this.getClass().getName().toLowerCase() + "/" + "p3.png"); break;
+                case 4: setImage("/enemy/" + this.getClass().getName().toLowerCase() + "/" + "p1.png"); break;
+            }  
+             mirrorImage();
+    }
+    
+    
+    public void displayInfo() {
+        GreenfootImage character = new GreenfootImage("./images/cap.png");
+        character.scale(70,70);
+        getWorld().getBackground().drawImage(character, 580, 690 );
+        
+    }
+    
+    public void registerScoreBoardHealthObserver(IScoreBoardHealthObserver observer){
+        this.observer = observer;
+    }
+    
+    public void unregisterScoreBoardHealthObserver(IScoreBoardHealthObserver observer){
+        
+    }
+    
+    public void notifyScoreBoardForHealthUpdate(int damage){
+        observer.updateScoreBoardHealth(damage);
+    }
     
 }
