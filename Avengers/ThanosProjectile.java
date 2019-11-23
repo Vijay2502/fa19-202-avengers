@@ -33,7 +33,7 @@ public class ThanosProjectile extends Actor
         if(thanosX > player.getX())
             {
                 turnTowards(player.getX(), player.getY());
-                move(1);
+                move(6);
             
             }
         

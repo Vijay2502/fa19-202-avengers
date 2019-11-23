@@ -17,7 +17,7 @@ public class Thanos extends Actor implements IScoreBoardHealthSubject
     protected int imgNum = 0;
     int randomX, randomY;
     int timer = 0, spaceStoneTimer = 0,warmholeTimer = 0;
-    int shootTime = 500;
+    int shootTime = 100;
     Boolean flag = true;
     GreenfootImage wormhole = new GreenfootImage("./images/enemy/thanos/wormhole.jpg");
     private IScoreBoardHealthObserver observer;
@@ -38,7 +38,7 @@ public class Thanos extends Actor implements IScoreBoardHealthSubject
         shootTime--;
         if (shootTime == 0) {
            fireProjectile();
-           shootTime = 500;
+           shootTime = 100;
        }
         moveAround();
         hitByProjectile();
@@ -55,12 +55,12 @@ public class Thanos extends Actor implements IScoreBoardHealthSubject
             
         else 
             {
-                 if(spaceStoneTimer >= 400 && spaceStoneTimer <= 500)
+                 if(spaceStoneTimer >= 200 && spaceStoneTimer <= 300)
                     {
                         setImage("/enemy/thanos/t.png");
                          mirrorImage();
                         getImage().scale(200, 250);
-                        if(warmholeTimer >= 450 && warmholeTimer <= 500)
+                        if(warmholeTimer >= 250 && warmholeTimer <= 300)
                         {
                             getWorld().getBackground().drawImage(wormhole, getX() - 80, getY() + 100);
                             warmholeTimer = 0;
@@ -128,13 +128,13 @@ public class Thanos extends Actor implements IScoreBoardHealthSubject
     public void changeLocation()
     {
         
-        if(timer % 500 == 0)
+        if(timer % 300 == 0)
         {
-            randomX = Greenfoot.getRandomNumber(900);
-            randomY = Greenfoot.getRandomNumber(500);
+            randomX = Greenfoot.getRandomNumber(700);
+            randomY = Greenfoot.getRandomNumber(400);
             if(randomX <= player.getX() - 50 || randomX == player.getX() + 50)
             {
-                randomX += 300;
+                randomX += 100;
             }
             
             this.setLocation(randomX, randomY);
